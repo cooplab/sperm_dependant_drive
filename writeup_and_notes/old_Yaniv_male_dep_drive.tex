@@ -1,0 +1,164 @@
+%%!TEX TS-program = latex
+\documentclass[12pt,letterpaper]{article}
+\usepackage{epsfig}                 
+\usepackage[authoryear]{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{psfrag}
+\usepackage{mathabx}
+\renewcommand{\baselinestretch}{1.6}
+\large
+\pagenumbering{arabic}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{fullpage}
+\bibliographystyle{genetics}
+\usepackage{multirow}
+\newcommand{\ye}{\hat{y}}
+\newcommand{\xe}{\hat{x}}
+\usepackage{color}
+\usepackage[normalem]{ulem}  
+\title{Sperm modifiers of female drive.}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\rhead{}
+\renewcommand{\headrulewidth}{0.0pt}
+\rfoot{}
+\cfoot{\thepage}
+%\author{Yaniv Brandvain \\ email: ybrandvain@gmail.com  \and Graham Coop \\ email: gmcoop@ucdavis.edu }
+\date{}
+\begin{document}
+\maketitle
+\begin{center}
+Center for Population Biology \& Section in Evolution and Ecology \\ University of California - Davis \\ Davis, CA, 95616
+\end{center}
+
+%FIgures 
+% 2 cartoon5.eps
+% 3 Unlinked.eps
+% 4 Linked.eps
+% 5 3locus.eps
+\newpage
+
+{\bf Abstract:}
+Gametic drive, the selfish distortion of gametogenesis by an allele to increase its representation in the next generation is potentially common evolutionary force, which has received much attention. 
+What has received less attention is the possibility that an allele in one individual can modify drive in his mate, the subject of this note.
+Critically, the biological opportunity for this model occurs because in many organisms, the final division of female meiosis does not occur until after fertilization.
+%We show that a green bearded driver which enhances female drive examine both the case of `green beard' drive, where an allele in sperm enhances drive during female meiosis II, and `red beard' drive drive, where an allele in sperm hinders drive of that same allele in females.
+%We show that green bearded drivers are difficult to maintain at equilibrium because positive frequency dependent selection on these alleles overwhelms the negative frequency dependance of recessive fitness cost.
+%By contrast, female drivers which act to suppress their own drive in females can spread when rare and be maintained at a polymorphic equilibrium. 
+These unexpected results highlight the diverse consequences of intragenomic conflict.
+\newpage
+
+\section*{Introduction}
+Since all alleles within an individual rely on individual survival and reproduction for evolutionary success, most of life in a diploid eukaryotic genome is harmonious.
+However, this harmony is incomplete, as in numerous cases an allele can benefit (in the short or long term) from taking advantage of its host individual.
+A clear opportunity for this conflict arises during gametogenesis where alternative alleles are in direct competition for representation in the next generation.
+The evolution of gametic drive in both spermatogenesis and oogenesis, and the consequences of drive have been well explored, and convincing cases of meiotic drive have been documented.
+Additionally, because these selfish drivers potentially increase in frequency at the cost of individual fitness numerous models have explored mechanisms by which unlinked loci act to suppress the effect of drive.
+
+What has been less appreciated is the opportunity for loci in sperm to modify the effect of a driving allele, perhaps because this possibility seems somewhat far-fetched.
+However, since in many species, the final division female female meiotic division does not occur until after fertilization, there is an opportunity for an allele in sperm to influence the outcome of meiotic drive.
+This opportunity appears to have been realized in mice where drive at both the XXX and YYYY loci depend on sperm genotype.
+
+Here, we present a first theoretical treatment of this problem, examining the evolutionary dynamics of loci  in sperm that act to enhance or suppress female meiotic drive.
+We begin with an allele that drives in female meiosis and has reached an equilibrium between drive and selection.
+We then explore the dynamics of an allele that acts in sperm to enhance or suppress drive in female meiosis II, and investigate how this locus evolves when linked or unlinked to the female drive locus.
+
+\newpage
+\section*{The Model}
+In Table 1, we present a standard model of female drive. 
+Here, the female drive locus is balletic with D and d alleles at frequency $f_D$ and $f_d = 1 -f_D$, respectively.
+The D  allele biases the $2^{nd}$ meiotic division in its favor by $\alpha$ when there has been a recombination event between itself and the centromere, which occurs with probability $r$. 
+This dependence on recombination follows from the biology of female meiotic drive -- for an allele to drive during meiosis II, diads must be heteromorphic such that there is an opportunity for selection, and we focus on the on an MII driver because it this form of female drive which could be plausibly influenced by sperm genotype.
+Thus, for example, when a driver is complete (i.e. $\alpha = 1$) the D allele is transmitted to all eggs of drive heterozygotes in which there was a recombination event between driver and centromere.
+
+After the female drive locus reaches an drive-viability equilibrium, (which equals XXX in the case of a recessive lethal driver), we introduce a third allele at the drive locus.
+This allele acts to modify female drive such that the efficacy of drive depends on sperm genotype. 
+ equilibrium frequency deter  Under this model, the equilibrium frequency of the female driver locus equals MATH, where the fitness of ecotypes dd, Dd and DD equals $1$, $1-s_1$ and $1-s_2$, respectively.
+
+
+In Table 1B we present a model where female drive is modified by a sperm's haplotype. 
+In this model, the efficacy of drive is linearly enhanced by $\delta$ when fertilized by an M bearing sperm. 
+We ask how the m locus evolves as a function of $\delta$ and the linkage relationship between male modifier (m) and female drive (d) loci, and how this influences the frequency of the female drive allele.
+
+Throughout our analyses we begin at an equilibrium frequency of the driving allele and introduce a rare modifier.
+We assume random mating among genotypes; however, the potential recessive cost of female drive and the influence of sperm on the function of drive prevent us from assuming linkage equilibrium or Hardy-Weinberg frequencies. 
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{ccc}
+  \hline
+1A  & Egg \\   \hline
+mat 	& 		d 			& 		D 	\\  \hline
+dd		& 		1		&		0	\\
+Dd		& $(1-r \alpha)/2$	&	 $(1+r \alpha)/2$ 	\\
+DD		& 		0			&		1	\\
+   \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{cccc}
+  \hline
+1B  		& 			& Egg \\   \hline
+mat 	& Sperm	&		d 					& 		D 	\\  \hline
+dd		& M	 or m	&	1						&		0	\\
+Dd		& m			&$(1-r \alpha)/2$			&	 $(1+r \alpha)/2$ 	\\
+Dd		& M			&$(1-r (\alpha +\delta))/2$	&	 $(1+r( \alpha+\delta))/2$ 	\\
+DD		& M	 or m	&0							&		1	\\
+   \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+\subsection*{Complete linkage, gametic phase }
+
+
+\subsection*{Complete linkage, repulsion phase }
+
+\subsection*{Unlinked loci}
+
+\end{document}
+
+\label{predictions}
+\begin {tabular} { | p{1.5cm} | p{1.5cm} |  p{2.75cm} | p{2.75cm} | p{2.75cm} |p{2.75cm}  |}
+\hline
+&&  Offspring  \\  \hline
+Mom & Dad &DD & Dd &dD &  dd  \\  \hline
+DD & DD & 1 & 0  & 0 & 0 \\  \hline
+DD & Dd & 1/2 & 1/2 &0&0\\  \hline
+DD & dd & 0 & 1&0&0 \\  \hline
+Dd & DD & $\frac{1 - r \alpha_D}{2}$ & 0&$\frac{1 + r \alpha_D}{2}$  &  0 \\  \hline
+Dd & Dd & $\frac{1 - r \alpha_D}{4}$ & $\frac{1 - r \alpha_d}{4}$ &$\frac{1 + r \alpha_D}{4}$ & $\frac{1 + r \alpha_d}{4}$ \\  \hline
+Dd & dd & 0 & $\frac{1 - r \alpha_d}{2}$&0&$\frac{1+ r \alpha_d}{2}$ \\  \hline
+dd & DD & 0 & 0 & 1 & 0 \\  \hline
+dd & Dd & 0 & 0 &1/2&1/2\\  \hline
+dd & dd & 0 & 0 &0&1 \\  \hline
+\end {tabular}
+\caption{Relative male ($r_\Mars$) to female ($r_\Venus$) recombination rates as predicted by the meiotic drive theory.} 
+\label{}
+\end{table}
+
+
+We then find the frequency of the $ij^{th}$ genotype in the next generation, $f_{ij}'$, by taking the weighted sum of the frequency of $ij$ genotypes produced in the $k^{th}$ family 
+
+\begin{equation}
+	f_{ij}' =  \sum \limits_{k} X_i \phi_{ij|k}
+\end{equation}
+Where $X_{k}$ is the frequency of the $k^{th}$ family, and $\phi_{ij|k}$ is the frequency of genotype $ij$ in offspring of the $k^{th}$ family before selection:
+\\
+\begin{equation}
+  f_{ij}'=\begin{cases}
+    f_{i\Venus} f_{j\Mars} - f_{Dd\Venus}f_{j\Mars}r\alpha_j/2& \text{  \hspace{1cm} if $j=D$}.\\
+    f_{i\Venus} f_{j\Mars} + f_{Dd\Venus}f_{j\Mars}r\alpha_j/2& \text{  \hspace{1cm} if $j=d$}.\\
+  \end{cases}
+  \label{hapgenofreq}
+\end{equation}
+Where $i$ and $j$ are maternally and paternally derived alleles, respectively, and are calculated after selection in the previous generation. 
+Note that in equation, \ref{hapgenofreq}, Dd and dD heterozygotes are calculated separately, so these must be summed to obtain the frequency of heterozygotes.
+
+\end{document}
