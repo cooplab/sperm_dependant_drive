@@ -16,7 +16,7 @@ iterate.1.locus.drive<-function(s2,s3,num.iterations,female.transmission.probs,m
 		geno.freqs["12"]<-2*allele.freqs["1"]*allele.freqs["2"]
 		geno.freqs["13"]<-2*allele.freqs["1"]*allele.freqs["3"]
 		geno.freqs["23"]<-2*allele.freqs["3"]*allele.freqs["2"]
-		stopifnot(sum(geno.freqs)==1)
+		stopifnot(sum(geno.freqs)>0.9999999999 & sum(geno.freqs)< 1.0000000001)
 
 	}else{
 		print("initiating from my.geno.freqs")
@@ -328,13 +328,14 @@ examples.for.talk <-function(){
 		 D["1 or 2","12"]<-0.5
 	 D["1 or 2","13"]<-0.5
 	 D["3","12"]<-.5
-	 D["3","13"]<-1
+	 D["3","13"]<-0.6
 	 D["1 or 2","23"]<- 1-0.5
 	 D["3","23"]<-0.5
 		 female.transmission.probs<-make.male.geno.dep.female.transmission.prob(D)
 	par(mar=c(4,4,1,1))
-	old.geno.freqs<-iterate.1.locus.drive(s2=0,s3=1,num.iterations=10000,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(0.99, 0,0.01 ))
+	old.geno.freqs<-iterate.1.locus.drive(s2=0,s3=.1,num.iterations=3000,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(0.99, 0,0.01 ))
 	plot.freqs(old.geno.freqs)
+
 	
 }
 
