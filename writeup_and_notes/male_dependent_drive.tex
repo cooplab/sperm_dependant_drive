@@ -29,6 +29,7 @@
 \rfoot{}
 \cfoot{\thepage}
 \date{}
+\bibliographystyle{plain}
 \begin{document}
 \maketitle
 \begin{center}
@@ -41,57 +42,74 @@ Center for Population Biology \& Section in Evolution and Ecology \\ University 
 
 \section*{Introduction}
 
-Since all alleles within an individual rely on individual survival and reproduction for evolutionary success, most of life in a diploid eukaryotic genome is harmonious.
-However, this harmony is incomplete, as in numerous cases an allele can benefit (in the short or long term) from taking advantage of its host individual.
-A clear opportunity for this conflict arises during gametogenesis where alternative alleles are in direct competition for representation in the next generation.
-Female meiosis is particularly unfair, only one of the four products of meiosis becomes an egg, while the other threes
-are disgarded into polar bodies. 
-Alleles that can segregate into the egg more than half the time in heterozygotes, by exploiting asymmetries, 
-can potentially increase in frequency in the population (i.e. experiencing true meiotic drive).
-If such alleles have fitness consequences they are a source of genetic conflict, 
-and can become balanced in the population if their host in homozygotes 
-out weighs their ability to spread to spread through heterozygotes. 
-Such balanced drive systems can cause the subsequent evolution of linked enhancers of drive
-and of supressors of drive throughout the genome. 
-Indeed, the known polymorphic female meiotic drive systems (OM, maize knobs, IN, mimulus, others?) habor
-a great diversity of enhancers and supressors. 
+%Since all alleles within an individual rely on individual survival and reproduction for evolutionary success, most of life in a diploid eukaryotic genome is harmonious.
+%However, this harmony is incomplete, as in numerous cases an allele can benefit (in the short or long term) from taking advantage of its host.
+Despite the apparent unity of the organism, occasionally alleles can gain an evolutionary advantage at a cost to  individual fitness \citep{Burt2006}.
+%A clear opportunity for this conflict arises during gametogenesis where alternative alleles are in direct competition for representation in the next generation.
+Female meiosis, an event in which only one of two alternate alleles enters the  egg, is one such occasion \citep{Sandler1957,Pardo-ManuelDeVillena2001a}. 
+%Female meiosis is particularly unfair, only one of the four products of meiosis becomes an egg, while the other threes are disgarded into polar bodies. 
+An allele that biases female meiosis in its favor (i.e. a meiotic driver), may increase in frequency even if this driver entails a pleiotropic fitness cost \citep{Prout1973}, generating a genetic conflict between the success of the driver and organismal fitness.
+%Alleles that can segregate into the egg more than half the time in heterozygotes, by exploiting asymmetries, 
+%can potentially increase in frequency in the population (i.e. experiencing true meiotic drive).
+%If such alleles have fitness consequences they are a source of genetic conflict, 
+%and can become balanced in the population if their host in homozygotes 
+%out weighs their ability to spread to spread through heterozygotes. 
+Meiotic drivers observed in nature (in both plants \citep{Buckler1999,Fishman2005,Fishman2008}, and animals \citep{Agulnik1990,Wu2005,Pardo-ManuelDeVillena2001c}) highlight this conflict -- the selfish benefits of drive and the associated pleiotropic fitness costs sustain a balanced polymorphism, and often generate on ongoing evolutionary escalation of drive suppressors and enhancers \citep{Dawe1996,Fishman2008}. 
+%Such balanced drive systems can cause the subsequent evolution of linked enhancers of drive
+%and of supressors of drive throughout the genome. 
+%Indeed, the known polymorphic female meiotic drive systems (OM, maize knobs, IN, mimulus, others?) habor
+%a great diversity of enhancers and supressors. 
+The threat of meiotic drive to organismal fitness is potentially so severe that that many basic properties of meiosis and o\"{o}genesis, including the initial genome doubling in meiosis I \citep{Haig1991}, the commonness of arrested female meiosis \citep{Mira1998}, and sex differences in the recombination rate \citep{Haig2010,Brandvain2012} have putatively evolved to discourage the evolution of meiotic drive an enforce fairness.
 
-Another unusual aspect of animal female meiosis is the fact that it is paused at XXX.
-In fact in many species of animal the final stages of female meiosis are only completed upon fertlization of the egg by sperm.There's considerable variation in 
-which stage of meiosis requires fertilization.
-This raises the possibility that an allele in sperm could influence the outcome of meiosis in its favor. 
-For example imagine an allele that when a sperm bearing this allele were to encounter an egg, whose meiotic product was currently heterozygote for 
-another copy of itself, the sperm allele biased meiosis in favor of the other copy of itself.
-At first sight, it seems as although female meiosis is primed to be exploited by selfish sperm systems. 
+It is therefore somewhat surprising that despite the intense evolutionary pressure on female meiosis to prevent meiotic drive, 
+it is potentially open to sabotage by a virtual stranger -- a haploid sperm genome.
+That is, in many animal species, the completion of female meiosis requires fertilization of the egg, 
+and there is ample opportunity for interaction between the sperm and female meiotic machinery.
+If, for example, an allele in sperm could facilitate meiotic drive by a genetically equivalent allele in a 
+heteromorphic dyad, such an allele could presumably bias meiosis in its favor and rapidly spread through the population.
+At first sight, it seems as although female meiosis is primed to be exploited by selfish sperm systems.  
 
-Why then is the requirement of fertilization to complete female meiosis so unbiquitous? 
-It is certainly not the case that mechanistically animals are incapable of evolving past this requirement.
-A number of animal clades (should we try and lower bound how many transitions?) have evolved
+%Another unusual aspect of animal female meiosis is the fact that it is paused at XXX.
+%In fact in many species of animal the final stages of female meiosis are only completed upon fertlization of the egg by sperm.There's considerable variation in 
+%which stage of meiosis requires fertilization.
+%This raises the possibility that an allele in sperm could influence the outcome of meiosis in its favor. 
+%For example imagine an allele that when a sperm bearing this allele were to encounter an egg, whose meiotic product was currently heterozygote for 
+%another copy of itself, the sperm allele biased meiosis in favor of the other copy of itself.
+%At first sight, it seems as although female meiosis is primed to be exploited by selfish sperm systems. 
+
+Why then is the requirement of fertilization to complete female meiosis so ubiquitous? 
+It is certainly not the case that animals are mechanistically incapable of evolving past this requirement.
+There is considerable variation in which stage of meiosis requires fertilization, and 
+a number of animal clades (should we try and lower bound how many transitions?) have evolved
 to allow the completion of female meiosis upon ovulation. 
 %(Although even in these organisms female meiosis 
 %may also be subjection to influence by sperm alleles, if the sperm arrives at the egg soon enough after 
 %ovulation to influence meiosis.) 
 
-This is not just idle speculation, as there is also direct evidence that sperm components and indeed different sperm genotypes can affect female meiosis.
+It is also not the case that sperm is mechanistically incapable of influencing the outcome of female meiosis.
+%This is not just idle speculation, as there is also direct evidence that sperm components and indeed different sperm genotypes can affect female meiosis.
 %are mechanistic reasons to think that this is more than idle speculation.
-
-In C elegans supressing XXX leads to premature deployment of the aster (a vitial component of mitotic mechinary) provided by the sperm, distrupting MII meiotic segregation in the egg, leading to a triploid zygote. 
-This demonstrates that physical components derived from the sperm are are capable of affecting the outcome of female meiosis.
-Furthermore, there is also more direct genetic evidence that the allele of a sperm can influence the outcome of female meiotic drive in their favor.
-There are two female meiotic drive systems in mouse, In and Om, both of which are thought to operate
-through drive at MII. In these systems the outcome of female meiosis seems to depend on 
-the genotype of the fertilizing sperm. 
+Mechanistic evidence for this possibility comes from \emph{C. elegans}, where experimentally suppressing XXX leads to premature deployment of the aster (a vital component of mitotic machinery) provided by the sperm, disrupting MII meiotic segregation in the egg, leading to a triploid zygote. 
+%This demonstrates that physical components derived from the sperm are are capable of affecting the outcome of female meiosis.
+Additionally, genetic evidence suggests that the transmission patterns in heterozygous females can depend on sperm haplotype. 
+Specifically, the two best characterized female meiotic drive systems in mouse (In and Om), both operate by distorting the second meiotic division, 
+and in both systems the outcome of female meiosis depends the genotype of the fertilizing sperm \citep{Agulnik1993,Wu2005}. 
 
 
 In this article we explore through simple models the consequences of alleles that influence the outcome 
 of female meiosis. 
 We use these models to argue that it is actually surprisingly hard for the influence of
 sperm on the outcome of meiosis to drive sustained conflict. In fact we find that sperm and egg 
-genomes' interests are often aligned as they are both invested in the fate of the zygote they will form.
+genomes' interests are often aligned as they are both invested in the fate of the zygote they will form (as was suggested for the In locus \citep{Pomiankowski1993}).
 This suggests that females are unlikely to evolve to prevent the influence of sperm on meiosis,
 and indeed feature of meiosis may evolve that facilitate the interaction of sperm with female meiosis. 
 
 \section*{Results}
+
+YB: I think we should do our best to be very short and sweet here. There are many opportunities to move off to cool math and cool biological scenarios. 
+We should fight all of them and focus on mission critical results. All others can go in supp or appease reviewers. Lets talk about why the critical results are. To me its (1) male enhancement of female drive cannot maintain a stable polymorphisms, and (2) An allele in sperm can evolve to suppress its drive in females.
+
+
 Rough order of rest of text
 \subsection*{Lay out Model} 
 We imagine that drive acts in such a way that an allele promote itself into a fraction of d
@@ -130,6 +148,7 @@ show that such alleles:
 \item If these alleles take off they speed through to fixation\\
 \item If allele has any drive ability in absence of sperm effect that is what allows it to enter the population
 and sperm effect isn't a further cause of conflict. What if anything do we mean by this?\\
+\item PERHAPS HERE WE INTRODUCE A SELF-RESTRAINING ALLELE
 \end{enumerate}
 
 Conclusion, such alleles are unlikely to cause evolution of female supressors, they test hemselves in a homozygous
@@ -170,7 +189,7 @@ So what can happen?
 can spread. They benefit from drive, but avoid some of the
 consequences ( (Bi) in Figure \ref{Eggsperm_3_allele_cartoon} ). Overall as a side product they are benefiting all in pop.\\
 \item Presumably alleles that actually switch the allele that drives may do even better? As they'd end up in 
-hets. Although they'd not drive, so hard to say.\\
+hets. Although they'd not drive, so hard to say. YB: There is evidence that In distorts meiosis in the other direction (they still drive when rare i.e. when not fused with drive supp sperm) \\
 \item Alleles that cause sperm to switch off drive that arise on other background or unlinked to the drive system
 are selected, and spread as fast as female supressors of drive ( (Bii) in Figure \ref{Eggsperm_3_allele_cartoon} )..\\
 \item Alleles that in females facilitate the action of sperm supressors of drive (or vis versa) can spread. Haven't actually checked this.\\
@@ -180,12 +199,15 @@ are selected, and spread as fast as female supressors of drive ( (Bii) in Figure
 Discussion of general conclusion that females have little reason to evolve supression mechanisms to prevent sperm influence on meiosis. 
 General logic that sperm genome has to live in a zygote with consequences of its effect on female meiosis, so
 it can not generate too dire a consequence.
+I THINK THERE IS A MORE SUBTLE POINT . The sperm has special knowledge that if it allows drive it will end up in the low fitness homozygote. 
+
 
 This logic may not hold for sex chromosomes. In ZW systems 
  Male modification of recombination rates
 POssibility that this could happen in plants if pollen emit signals to ``egg''
 Discussion of OM and IN.
 
+\bibliography{refs}
 \end{document}
 
 
