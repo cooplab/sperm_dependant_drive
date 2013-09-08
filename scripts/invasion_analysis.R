@@ -1,6 +1,12 @@
+library("RColorBrewer")
 
-
-test.invasion<-function(d,s2,s3,x=.001,steps=10){
+test.invasion.self.prop<-function(d,s.het,s.hom,x=.001,steps=10){
+	s.array<-rep(0,6)
+	names(s.array)<-c("11","12","13","23","22","33")
+	s.array["13"]<- s.het
+	s.array["33"]<- s.hom
+	
+	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd 
 	D["1 or 2","12"]<-0.5
 	D["1 or 2","13"]<-0.5
 	D["3","12"]<-.5
@@ -8,22 +14,42 @@ test.invasion<-function(d,s2,s3,x=.001,steps=10){
 	D["1 or 2","23"]<- 1-0.5
 	D["3","23"]<-0.5
 	female.transmission.probs<-make.sperm.dep.female.transmission.prob(D)
-	par(mar=c(4,4,1,1))
-	old.geno.freqs<-iterate.1.locus.drive(s2=s2,s3=s3,num.iterations=steps,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(1-x, 0,x))
+	old.geno.freqs<-iterate.1.locus.drive(s.array,num.iterations=steps,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(1-x, 0,x))
 
 	invading<-old.geno.freqs[["allele.freqs"]][steps,3]>old.geno.freqs[["allele.freqs"]][1,3]
 	return(invading)
 }
 
+test.fixation.of.simple.driver<-function(d,s.het,s.hom,x=.999,steps=10){
+	s.array<-rep(0,6)
+	names(s.array)<-c("11","12","13","23","22","33")
+	s.array["12"]<- s.het
+	s.array["22"]<- s.hom
+	
+	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd 
+	D["1 or 2","12"]<- d
+	D["1 or 2","13"]<-0.5
+	D["3","12"]<- 0.5
+	D["3","13"]<- 0.5
+	D["1 or 2","23"]<- 1-0.5
+	D["3","23"]<-0.5
+	female.transmission.probs<-make.sperm.dep.female.transmission.prob(D)
+	old.geno.freqs<-iterate.1.locus.drive(s.array=s.array,num.iterations=steps,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(1-x, x,0))
+
+	fixing<-old.geno.freqs[["allele.freqs"]][steps,2]>old.geno.freqs[["allele.freqs"]][1,2]
+	return(fixing)
+}
+
 
 ###invasion of self-driver against homozy. cost.
+	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd allele listed against the 1st.
 
-d.range<-seq(0.5,1,length=100)
+d.range<-seq(0.5,1,length=200)
 s3.range<-seq(0,1,length=200)
 
 invasion.grid<-sapply(s3.range,function(s3){
 	sapply(d.range,function(d){
-		test.invasion(d=d,s2=0,s3=s3)
+		test.invasion.self.prop(d=d,s.het=0,s.hom=s3)
 	})
 })
 
@@ -31,7 +57,7 @@ invasion.lines.s3.cutoff<-s3.range[apply(invasion.grid,1,function(x){max(which(x
 
 image(d.range, s3.range,invasion.grid,xlab="Drive coeff. D",ylab="Homozygous cost, s")
 theory.s3.cutoff<-d.range-0.5
-lines(d.range,theory.s3.cutoff)
+lines(d.range,theory.s3.cutoff,col="blue")
 
 invasion.grid.HWE<-sapply(s3.range,function(s3){
 	sapply(d.range,function(d){
@@ -77,18 +103,86 @@ invasion.grid<-sapply(s3.range,function(s3){
 	})
 })
 
-####bistable invasion of driver against heterozyg. cost
 
-
-s=.01
-
-d.range<-seq(0.5,1,length=10)
-x.range<-seq(0.001,.99,length=20)
-
-invasion.grid.bistable<-sapply(x.range,function(x){
+###testing fixation of simple driver###############
+fixation.grid<-sapply(s3.range,function(s3){
 	sapply(d.range,function(d){
-		test.invasion(d=d,s2=s,s3=0,x=x)
+		test.fixation.of.simple.driver(d=d,s2=s3,s3=s3)
 	})
 })
 
+fixation.grid.hwe<-sapply(s3.range,function(s3){
+	sapply(d.range,function(D1){
 
+		s.homozyg=s3;d=D1;a=s.homozyg;b=.5-s.homozyg-d;c=d-.5
+		quad.soln<- (-b +c(-1,1)*sqrt(b^2-4*a*c))/(2*a)
+		return(!any(quad.soln<0.999 & quad.soln >0.001))
+	})
+})
+image(d.range,s3.range,fixation.grid)
+image(d.range,s3.range,fixation.grid.hwe)
+
+
+fixation.lines.s3<-s3.range[apply(fixation.grid,1,function(x){max(which(x))})]
+lines(d.range,fixation.lines.s3)
+fixation.lines.s3.hwe<-s3.range[apply(fixation.grid.hwe,1,function(x){max(which(x))})]
+lines(d.range,fixation.lines.s3)
+
+
+####bistable invasion of driver against heterozyg. cost
+pdf(file=paste(directory,"bistable_x_vs_d_additive_s.pdf",sep=""))
+d.range<-seq(0.5,1,length=200)
+x.range<- 10^seq(-7,0,length=200)  #seq(0.001,.99,length=50)
+plot(range(d.range),c(10^(-6),1),type="n",log="y",xlab="D",ylab="x bistable cutoff")
+
+my.s<-c(0.01,0.001,0.0001,0.00001)
+my.cols<-brewer.pal(length(my.s),name="Dark2")
+my.x.bistable<-numeric()
+
+for(i in 1:length(my.s)){
+	
+	invasion.grid.bistable<-sapply(d.range,function(d){
+		sapply(x.range,function(x){
+			test.invasion.self.prop(d=d,s.het=my.s[i],s.hom=my.s[i]*2.0,x=x,step=10)
+		})
+	})
+	#image(d.range,x.range,invasion.grid.bistable,log="y")
+	invasion.x.lines<-x.range[apply(invasion.grid.bistable,1,function(x){min(which(x))})]
+	lines(d.range[-length(d.range)],invasion.x.lines[-length(d.range)],col=my.cols[i],lwd=2)
+#	text(d.range[round(length(d.range)/2)],invasion.x.lines[round(length(d.range)/2)],s,col="red")
+	my.x.bistable<-rbind(my.x.bistable,invasion.x.lines)
+}
+legend(x="bottomleft",legend=paste("s=",my.s),col=my.cols,lty=1,lwd=2)
+dev.off()
+
+##############Phase diagram figure
+
+	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd allele listed against the 1st.
+
+d.range<-seq(0.5,1,length=200)
+s3.range<-seq(0,1,length=200)
+
+invasion.grid<-sapply(s3.range,function(s3){
+	sapply(d.range,function(d){
+		test.invasion.self.prop(d=d,s.het=0,s.hom=s3)
+	})
+})
+
+invasion.lines.s3.cutoff<-s3.range[apply(invasion.grid,1,function(x){max(which(x))})]
+
+fixation.grid<-sapply(s3.range,function(s3){
+	sapply(d.range,function(d){
+		test.fixation.of.simple.driver(d=d,s.het=0,s.hom=s3)
+	})
+})
+fixation.lines.s3<-s3.range[apply(fixation.grid,1,function(x){max(which(x))})]
+
+pdf(file=paste(directory,"invasion_space_recessive_driver.pdf",sep=""))
+plot(c(0.5,1),c(0,1),xlab="Drive coefficient",ylab="selection coeff against homozygotes")
+polygon(x=c(d.range,rev(d.range)),y=c(fixation.lines.s3,rep(1,length(d.range))),col="white")
+polygon(x=c(d.range,rev(d.range)),y=c(fixation.lines.s3,rev(invasion.lines.s3.cutoff)),col="red")
+polygon(x=c(d.range,rev(d.range)),y=c(invasion.lines.s3.cutoff,rep(0,length(d.range))),col="blue")
+text(0.7,0.6,"Simple driver invades but can't fix")
+text(0.9,0.3,"Simple driver can fix")
+text(0.8,0.05,"Simple driver & Self promoter driver can fix",col="white")
+dev.off()

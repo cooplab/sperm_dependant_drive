@@ -1,4 +1,4 @@
-iterate.1.locus.drive<-function(s2,s3,num.iterations,female.transmission.probs,my.geno.freqs,initialize.allele.freqs=c(0.999,0.001,0)){
+iterate.1.locus.drive<-function(s.array,num.iterations,female.transmission.probs,my.geno.freqs,initialize.allele.freqs=c(0.999,0.001,0)){
 	geno.freqs<-rep(NA,6)
 	names(geno.freqs)<-geno.names
 
@@ -28,9 +28,15 @@ iterate.1.locus.drive<-function(s2,s3,num.iterations,female.transmission.probs,m
 
 	for(i in 1:num.iterations){
 	#selection
-		geno.freqs["22"]<-geno.freqs["22"] * (1-s2)
-		geno.freqs[c("33","23")]<-geno.freqs[c("33","23")] * (1-s3)
+		geno.freqs["11"]<-geno.freqs["11"] * (1-s.array["11"])
+		geno.freqs["12"]<-geno.freqs["12"] * (1-s.array["12"])
+		geno.freqs["13"]<-geno.freqs["13"] * (1-s.array["13"])
 
+		geno.freqs["22"]<-geno.freqs["22"] * (1-s.array["22"])
+		geno.freqs["23"]<-geno.freqs["23"] * (1-s.array["23"])
+
+		geno.freqs["33"]<-geno.freqs["33"] * (1-s.array["33"])
+	
 		geno.freqs<-geno.freqs/sum(geno.freqs)	
 
 		geno.freqs.array<-outer(rep(geno.freqs,each=2),rep(geno.freqs,each=2),"*")
