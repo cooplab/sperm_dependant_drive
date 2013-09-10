@@ -26,6 +26,8 @@ iterate.1.locus.drive<-function(s.array,num.iterations,female.transmission.probs
 		
 		}
 
+	my.freqs<-rbind(my.freqs,geno.freqs)
+
 	for(i in 1:num.iterations){
 	#selection
 		geno.freqs["11"]<-geno.freqs["11"] * (1-s.array["11"])

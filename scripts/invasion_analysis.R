@@ -35,7 +35,6 @@ test.fixation.of.simple.driver<-function(d,s.het,s.hom,x=.999,steps=10){
 	D["3","23"]<-0.5
 	female.transmission.probs<-make.sperm.dep.female.transmission.prob(D)
 	old.geno.freqs<-iterate.1.locus.drive(s.array=s.array,num.iterations=steps,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(1-x, x,0))
-
 	fixing<-old.geno.freqs[["allele.freqs"]][steps,2]>old.geno.freqs[["allele.freqs"]][1,2]
 	return(fixing)
 }
@@ -177,12 +176,46 @@ fixation.grid<-sapply(s3.range,function(s3){
 })
 fixation.lines.s3<-s3.range[apply(fixation.grid,1,function(x){max(which(x))})]
 
+
+my.cols<-brewer.pal(2,name="Dark2")
 pdf(file=paste(directory,"invasion_space_recessive_driver.pdf",sep=""))
-plot(c(0.5,1),c(0,1),xlab="Drive coefficient",ylab="selection coeff against homozygotes")
+plot(c(0.5,1),c(0,1),xlab="Drive coefficient",ylab="selection coeff against homozygotes",type="n")
 polygon(x=c(d.range,rev(d.range)),y=c(fixation.lines.s3,rep(1,length(d.range))),col="white")
-polygon(x=c(d.range,rev(d.range)),y=c(fixation.lines.s3,rev(invasion.lines.s3.cutoff)),col="red")
-polygon(x=c(d.range,rev(d.range)),y=c(invasion.lines.s3.cutoff,rep(0,length(d.range))),col="blue")
-text(0.7,0.6,"Simple driver invades but can't fix")
-text(0.9,0.3,"Simple driver can fix")
-text(0.8,0.05,"Simple driver & Self promoter driver can fix",col="white")
+polygon(x=c(d.range,rev(d.range)),y=c(fixation.lines.s3,rev(invasion.lines.s3.cutoff)),col=my.cols[1])
+polygon(x=c(d.range,rev(d.range)),y=c(invasion.lines.s3.cutoff,rep(0,length(d.range))),col=my.cols[2])
+text(0.8,0.35,"Simple driver invades but can't fix",srt=25)
+text(0.85,0.27,"Simple driver can invade & fix",col="white",srt=15)
+text(0.8,0.05,"Simple driver & Self promoter driver can invade & fix",col="white")
+
+par(fig=c(grconvertX(0.51, from = "user", to = "ndc"), grconvertX(0.75, from = "user", to = "ndc"), grconvertY(0.4, from = "user", to = "ndc"), grconvertY(1, from = "user", to = "ndc")), new = TRUE); 
+par(mar=c(2,2,1,0))
+
+drive.coeffs<-c(0.6,.7,.8)
+my.point.cols<-c("red","blue","orange")
+
+	s.array<-rep(0,6)
+	names(s.array)<-c("11","12","13","23","22","33")
+	s.array["33"]<- 0.1
+
+
+plot(c(0,2000),c(0,1),type="n",xlab="",ylab="",axes=FALSE)
+box();
+axis(1,tick=FALSE,line=-0.5);axis(1,label=FALSE);
+axis(2,tick=FALSE,line=-0.5);axis(2,label=FALSE);
+mtext("generations",side=1,line=1.5)
+mtext("frequency",side=2,line=1.5)
+
+for(i in 1:3){
+		 D["1 or 2","12"]<-0.5
+	 D["1 or 2","13"]<-0.5
+	 D["3","12"]<-.5
+	 D["3","13"]<-drive.coeffs[i]
+	 D["1 or 2","23"]<- 1-0.5
+	 D["3","23"]<-0.5
+		 female.transmission.probs<-make.male.geno.dep.female.transmission.prob(D)
+
+	old.geno.freqs<-iterate.1.locus.drive(s.array=s.array,num.iterations=2000,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(0.99, 0,0.01 ))
+	lines(old.geno.freqs[["allele.freqs"]][,3],col=my.point.cols[i],lwd=2)
+	}
+
 dev.off()
