@@ -161,12 +161,12 @@ plot.freqs<-function(new.geno.freqs,plot.HWE.dev=FALSE){
 }
 
 
-run.iterations<-function(D,s2,s3,sperm.or.geno.dependent,num.iter=4000,plot.initial.rise=FALSE){
+run.iterations<-function(D,s.array,sperm.or.geno.dependent,num.iter=4000,plot.initial.rise=FALSE){
 	if(sperm.or.geno.dependent=="sperm"){ female.transmission.probs<-make.sperm.dep.female.transmission.prob(D)}
 	if(sperm.or.geno.dependent=="geno"){ female.transmission.probs<-make.male.geno.dep.female.transmission.prob(D)}
 	
-	old.geno.freqs<-iterate.1.locus.drive(s2=s2,s3=s3,num.iterations=num.iter,female.transmission.probs=female.transmission.probs)
-	new.geno.freqs<-iterate.1.locus.drive(s2=s2,s3=s3,num.iterations=num.iter,female.transmission.probs=female.transmission.probs,my.geno.freqs=old.geno.freqs)
+	old.geno.freqs<-iterate.1.locus.drive(s.array,num.iterations=num.iter,female.transmission.probs=female.transmission.probs)
+	new.geno.freqs<-iterate.1.locus.drive(s.array=s.array,num.iterations=num.iter,female.transmission.probs=female.transmission.probs,my.geno.freqs=old.geno.freqs)
 	
 	if(plot.initial.rise) new.geno.freqs[["allele.freqs"]]<-rbind(old.geno.freqs[["allele.freqs"]],new.geno.freqs[["allele.freqs"]])
 	plot.freqs(new.geno.freqs)
@@ -179,6 +179,49 @@ directory<-"~/Dropbox/Ideas/Om/scripts/"
 geno.names<-c("11", "12","13", "22", "23", "33")
 transmitted.allele<-c(1,1,1,2,1,3,2,2,2,3,3,3)
 
+
+figures.of.traj.for.paper(){
+	layout(t(1:2)); par(mar=c(3,3,1,1))
+	##female driver followed by sperm supressor
+	
+	s.array<-rep(0,6);names(s.array)<-c("11","12","13","23","22","33")
+	s.array["22"]<- 1
+
+	D1 = 1
+	D2 = 0.5
+	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23")))
+	 D["1 or 2","12"]<-D1
+	 D["1 or 2","13"]<-D1
+	 D["3","12"]<-D2
+	 D["3","13"]<-D2
+	 D["1 or 2","23"]<- 1-D1
+	 D["3","23"]<-0.5
+	
+	run.iterations(D=D,s.array=s.array,sperm.or.geno.dependent="sperm",num.iter=200,plot.initial.rise=TRUE)
+	text(x=125,y=0.9,"Driver invades")
+	text(x=325,y=0.5,"Sperm-acting \n drive supressor \n invades")
+	mtext("generations",side=1,line=2)
+	mtext("Frequency",side=2,line=2)
+
+	##driver that avoids itself 
+	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd allele listed against the 1st.
+	D1 = 1
+	D2 = 0.5
+	s.array<-rep(0,6);names(s.array)<-c("11","12","13","23","22","33")
+	s.array["23"]<- 1; s.array["33"]<- 1; s.array["22"]<- 1
+	
+	 D["1 or 2","12"]<-D1
+	 D["1 or 2","13"]<-D1
+	 D["3","12"]<-D2
+	 D["3","13"]<-D2
+	 
+	run.iterations(D=D,s.array=s.array,sperm.or.geno.dependent="sperm",num.iter=200,plot.initial.rise=TRUE)
+	text(x=125,y=0.9,"Driver invades")
+	text(x=310,y=0.8,"Sperm-acting \n driver & supressor \n invades")
+	mtext("generations",side=1,line=2)
+	mtext("Frequency",side=2,line=2)
+	dev.copy2eps(file=paste(directory,"trajectories_of_sperm_based_supressors.eps",sep=""))
+}
 
  		
  		
@@ -292,14 +335,16 @@ examples.for.talk <-function(){
 	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd allele listed against the 1st.
 	D1 = 1
 	D2 = 0.5
-	s=1
+	s.array<-rep(0,6)
+	names(s.array)<-c("11","12","13","23","22","33")
+	s.array["23"]<- 1; s.array["33"]<- 1; s.array["22"]<- 1
 	
 	 D["1 or 2","12"]<-D1
 	 D["1 or 2","13"]<-D1
 	 D["3","12"]<-D2
 	 D["3","13"]<-D2
 	 
-	run.iterations(D=D,s2=s,s3=s,sperm.or.geno.dependent="sperm",num.iter=200,plot.initial.rise=TRUE)
+	run.iterations(D=D,s.array=s.array,sperm.or.geno.dependent="sperm",num.iter=200,plot.initial.rise=TRUE)
 	dev.off()
 	
 	###sperm allele that stops drive, and doesn't drive in females and is driven against by 3.

@@ -129,56 +129,69 @@ lines(d.range,fixation.lines.s3)
 
 
 ####bistable invasion of driver against heterozyg. cost
-pdf(file=paste(directory,"bistable_x_vs_d_additive_s.pdf",sep=""))
+#pdf(file=paste(directory,"bistable_x_vs_d_additive_s.pdf",sep=""))
 d.range<-seq(0.5,1,length=200)
 x.range<- 10^seq(-7,0,length=200)  #seq(0.001,.99,length=50)
-plot(range(d.range),c(10^(-6),1),type="n",log="y",xlab="D",ylab="x bistable cutoff")
 
 my.s<-c(0.01,0.001,0.0001,0.00001)
-my.cols<-brewer.pal(length(my.s),name="Dark2")
-my.x.bistable<-numeric()
 
-for(i in 1:length(my.s)){
+if(FALSE){
+	my.x.bistable<-numeric()
 	
-	invasion.grid.bistable<-sapply(d.range,function(d){
-		sapply(x.range,function(x){
-			test.invasion.self.prop(d=d,s.het=my.s[i],s.hom=my.s[i]*2.0,x=x,step=10)
+	for(i in 1:length(my.s)){
+		
+		invasion.grid.bistable<-sapply(d.range,function(d){
+			sapply(x.range,function(x){
+				test.invasion.self.prop(d=d,s.het=my.s[i],s.hom=my.s[i]*2.0,x=x,step=10)
+			})
 		})
-	})
-	#image(d.range,x.range,invasion.grid.bistable,log="y")
-	invasion.x.lines<-x.range[apply(invasion.grid.bistable,1,function(x){min(which(x))})]
-	lines(d.range[-length(d.range)],invasion.x.lines[-length(d.range)],col=my.cols[i],lwd=2)
-#	text(d.range[round(length(d.range)/2)],invasion.x.lines[round(length(d.range)/2)],s,col="red")
-	my.x.bistable<-rbind(my.x.bistable,invasion.x.lines)
+		#image(d.range,x.range,invasion.grid.bistable,log="y")
+		invasion.x.lines<-x.range[apply(invasion.grid.bistable,1,function(x){min(which(x))})]
+	#	text(d.range[round(length(d.range)/2)],invasion.x.lines[round(length(d.range)/2)],s,col="red")
+		my.x.bistable<-rbind(my.x.bistable,invasion.x.lines)
+	}
+	
+	save(file=paste(directory,"bistable_invasion_grid.Robj",sep=""),my.x.bistable,my.s)
 }
+
+plot(range(d.range),c(10^(-6),1),type="n",log="y",xlab="d",ylab="x bistable cutoff freq.")
+for(i in 1:length(my.s)){
+	lines(d.range,my.x.bistable[i,],col=my.cols[i],lwd=2)
+	my.cols<-brewer.pal(length(my.s),name="Dark2")
+}
+
 legend(x="bottomleft",legend=paste("s=",my.s),col=my.cols,lty=1,lwd=2)
-dev.off()
+
+dev.copy2eps(file=paste(directory,"bistable_x_vs_d_additive_s.eps",sep="")
+#dev.off()
 
 ##############Phase diagram figure
-
+if(FALSE){
 	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd allele listed against the 1st.
-
-d.range<-seq(0.5,1,length=200)
-s3.range<-seq(0,1,length=200)
-
-invasion.grid<-sapply(s3.range,function(s3){
-	sapply(d.range,function(d){
-		test.invasion.self.prop(d=d,s.het=0,s.hom=s3)
+	
+	d.range<-seq(0.5,1,length=200)
+	s3.range<-seq(0,1,length=200)
+	
+	invasion.grid<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.invasion.self.prop(d=d,s.het=0,s.hom=s3)
+		})
 	})
-})
-
-invasion.lines.s3.cutoff<-s3.range[apply(invasion.grid,1,function(x){max(which(x))})]
-
-fixation.grid<-sapply(s3.range,function(s3){
-	sapply(d.range,function(d){
-		test.fixation.of.simple.driver(d=d,s.het=0,s.hom=s3)
+	
+	invasion.lines.s3.cutoff<-s3.range[apply(invasion.grid,1,function(x){max(which(x))})]
+	
+	fixation.grid<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.fixation.of.simple.driver(d=d,s.het=0,s.hom=s3)
+		})
 	})
-})
-fixation.lines.s3<-s3.range[apply(fixation.grid,1,function(x){max(which(x))})]
+	fixation.lines.s3<-s3.range[apply(fixation.grid,1,function(x){max(which(x))})]
+save(file=paste(directory,"invasion_grid_homozy_cost.Robj",sep=""),fixation.lines.s3,fixation.grid,invasion.lines.s3.cutoff,invasion.grid)
+}
 
+show(load(paste(directory,"invasion_grid_homozy_cost.Robj",sep="")))
 
 my.cols<-brewer.pal(2,name="Dark2")
-pdf(file=paste(directory,"invasion_space_recessive_driver.pdf",sep=""))
 plot(c(0.5,1),c(0,1),xlab="Drive coefficient",ylab="selection coeff against homozygotes",type="n")
 polygon(x=c(d.range,rev(d.range)),y=c(fixation.lines.s3,rep(1,length(d.range))),col="white")
 polygon(x=c(d.range,rev(d.range)),y=c(fixation.lines.s3,rev(invasion.lines.s3.cutoff)),col=my.cols[1])
@@ -218,4 +231,4 @@ for(i in 1:3){
 	lines(old.geno.freqs[["allele.freqs"]][,3],col=my.point.cols[i],lwd=2)
 	}
 
-dev.off()
+dev.copy2eps(file=paste(directory,"invasion_space_recessive_driver.eps",sep=""))
