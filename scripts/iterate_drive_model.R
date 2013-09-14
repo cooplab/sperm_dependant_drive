@@ -137,9 +137,45 @@ make.male.geno.dep.female.transmission.prob<-function(D){
 
 	transmission.probs[male.geno.3,colnames(transmission.probs) == "23" & transmitted.allele == 2] <- 1-D["3","23"]
 	transmission.probs[male.geno.3,colnames(transmission.probs) =="23" & transmitted.allele == 3] <- D["3","23"]
-	
+	recover()
 transmission.probs
 }
+
+
+make.male.geno.dep.female.transmission.prob.w.dom<-function(D){
+ 	geno.names<-c("11", "12","13", "22", "23", "33")
+	transmission.probs<-matrix(0.5,nrow=12,ncol=12)
+	rownames(transmission.probs)<-rep(geno.names,each=2)
+	colnames(transmission.probs)<-rep(geno.names,each=2)
+	transmitted.allele<-c(1,1,1,2,1,3,2,2,2,3,3,3)
+ 	
+ 	
+	transmission.probs[,colnames(transmission.probs) =="12" & transmitted.allele == 1] <- 1-D["1 or 2","12"]
+	transmission.probs[,colnames(transmission.probs) =="12" & transmitted.allele == 2] <- D["1 or 2","12"]
+
+	transmission.probs[,colnames(transmission.probs) =="13" & transmitted.allele == 1] <- 1-D["1 or 2","13"]
+	transmission.probs[,colnames(transmission.probs) =="13" & transmitted.allele == 3] <- D["1 or 2","13"]
+
+	transmission.probs[,colnames(transmission.probs) == "23" & transmitted.allele == 2] <- 1-D["1 or 2","23"]
+	transmission.probs[,colnames(transmission.probs) =="23" & transmitted.allele == 3] <- D["1 or 2","23"]
+
+
+	##males carrying allele 3 alter rate of female drive in dominant fashion. 
+	
+	male.geno.3<-grep("3",rownames(transmission.probs))
+	
+	transmission.probs[male.geno.3,colnames(transmission.probs) == "13" & transmitted.allele == 1] <- 1-D["3","13"]
+	transmission.probs[male.geno.3,colnames(transmission.probs) =="13" & transmitted.allele == 3] <- D["3","13"]
+
+	transmission.probs[male.geno.3,colnames(transmission.probs) == "12" & transmitted.allele == 1] <- 1-D["3","12"]
+	transmission.probs[male.geno.3,colnames(transmission.probs) =="12" & transmitted.allele == 2] <- D["3","12"]
+
+	transmission.probs[male.geno.3,colnames(transmission.probs) == "23" & transmitted.allele == 2] <- 1-D["3","23"]
+	transmission.probs[male.geno.3,colnames(transmission.probs) =="23" & transmitted.allele == 3] <- D["3","23"]
+	recover()
+transmission.probs
+}
+
 
 
 plot.freqs<-function(new.geno.freqs,plot.HWE.dev=FALSE){

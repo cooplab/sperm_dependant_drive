@@ -1,6 +1,6 @@
 library("RColorBrewer")
 
-test.invasion.self.prop<-function(d,s.het,s.hom,x=.001,steps=10){
+test.invasion.self.prop<-function(d,s.het,s.hom,x=.001,steps=10,sperm.or.male="sperm"){
 	s.array<-rep(0,6)
 	names(s.array)<-c("11","12","13","23","22","33")
 	s.array["13"]<- s.het
@@ -13,9 +13,11 @@ test.invasion.self.prop<-function(d,s.het,s.hom,x=.001,steps=10){
 	D["3","13"]<-d
 	D["1 or 2","23"]<- 1-0.5
 	D["3","23"]<-0.5
-	female.transmission.probs<-make.sperm.dep.female.transmission.prob(D)
+	stopifnot(sperm.or.male=="sperm" | sperm.or.male=="male")
+	if(sperm.or.male=="sperm"){ female.transmission.probs<-make.sperm.dep.female.transmission.prob(D)}
+	if(sperm.or.male=="male"){ female.transmission.probs<-make.male.geno.dep.female.transmission.prob(D) }
 	old.geno.freqs<-iterate.1.locus.drive(s.array,num.iterations=steps,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(1-x, 0,x))
-
+recover()
 	invading<-old.geno.freqs[["allele.freqs"]][steps,3]>old.geno.freqs[["allele.freqs"]][1,3]
 	return(invading)
 }
@@ -225,10 +227,49 @@ for(i in 1:3){
 	 D["3","13"]<-drive.coeffs[i]
 	 D["1 or 2","23"]<- 1-0.5
 	 D["3","23"]<-0.5
-		 female.transmission.probs<-make.male.geno.dep.female.transmission.prob(D)
+		 female.transmission.probs<-make.sperm.dep.female.transmission.prob(D)
 
 	old.geno.freqs<-iterate.1.locus.drive(s.array=s.array,num.iterations=2000,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(0.99, 0,0.01 ))
 	lines(old.geno.freqs[["allele.freqs"]][,3],col=my.point.cols[i],lwd=2)
 	}
 
 dev.copy2eps(file=paste(directory,"invasion_space_recessive_driver.eps",sep=""))
+
+
+#####invasion space for male genotype controlled allele
+
+d.range<-seq(0.5,1,length=200)
+s3.range<-seq(0,1,length=200)
+
+invasion.grid.male.control<-sapply(s3.range,function(s3){
+	sapply(d.range,function(d){
+		test.invasion.self.prop(d=d,s.het=0,s.hom=s3,sperm.or.male="male")
+	})
+})
+
+fixation.grid.male.control<-sapply(s3.range,function(s3){
+	sapply(d.range,function(d){
+		test.invasion.self.prop(d=d,s.het=0,s.hom=s3,x=0.999,sperm.or.male="male")
+	})
+})
+
+invasion.lines.s3.cutoff.male<-s3.range[apply(invasion.grid.male.control,1,function(x){max(which(x))})]
+fixation.lines.s3.cutoff.male<-s3.range[apply(fixation.grid.male.control,1,function(x){max(which(x))})]
+
+plot(d.range,invasion.lines.s3.cutoff.male,col="red")
+lines(d.range,fixation.lines.s3.cutoff.male,col="green")
+
+
+s.array<-rep(0,6)
+	names(s.array)<-c("11","12","13","23","22","33")
+	s.array["33"]<- 0.3
+	
+	
+	 D["1 or 2","12"]<-0.5
+	 D["1 or 2","13"]<-0.5
+	 D["3","12"]<-.5
+	 D["3","13"]<-0.8
+	 D["1 or 2","23"]<- 1-0.5
+	 D["3","23"]<-0.5
+	female.transmission.probs<-make.male.geno.dep.female.transmission.prob(D) 
+old.geno.freqs<-iterate.1.locus.drive(s.array=s.array,num.iterations=4000,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(0.99, 0,0.01 ))
