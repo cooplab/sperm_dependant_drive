@@ -63,7 +63,7 @@ gain an evolutionary advantage at a cost to  individual fitness
 \citep{Burt2006}, often by exploiting meiosis and gametogensis.
 %A clear opportunity for this conflict arises during gametogenesis where alternative alleles are in direct competition for representation in the next generation.
 Female meiosis, an asymmetric event in which only one of two alternate alleles
-enters the  egg, with the others consigned to the polar body, is one such occasion \citep{Sandler1957,Pardo-ManuelDeVillena2001a}. 
+enters the  egg, with the others consigned to the polar body, \yb{particularly vulnerable to such exploitation}  \citep{Sandler1957,Pardo-ManuelDeVillena2001a}. 
 %Female meiosis is particularly unfair, only one of the four products of meiosis becomes an egg, while the other threes are disgarded into polar bodies. 
 An allele that biases female meiosis in its favor (i.e. a meiotic driver), may increase in frequency even if this driver entails a pleiotropic fitness cost \citep{Prout1973}, generating a genetic conflict between the success of the driver and organismal fitness.
 %Alleles that can segregate into the egg more than half the time in heterozygotes, by exploiting asymmetries, 
@@ -86,7 +86,7 @@ The threat of meiotic drive to organismal fitness is potentially so
 severe that it has been hypothesized that many basic properties of
 meiosis and o\"{o}genesis, including the initial genome doubling in
 meiosis I \citep{Haig1991}, arrested female meiosis
-\citep{Mira1998}, centromere mechinery \citep{MalikHenikoff}, and sex differences in the recombination rate \citep{Haig2010,Brandvain2012} have evolved to disrupt meiotic drive and enforce fairness.
+\citep{Mira1998}, centromere machinery \citep{MalikHenikoff}, and sex differences in the recombination rate \citep{Haig2010,Brandvain2012} have evolved to disrupt meiotic drive and enforce fairness.
 
 It is therefore somewhat surprising that despite the intense evolutionary pressure on female meiosis to prevent meiotic drive, 
 it is potentially open to sabotage by a virtual stranger -- a haploid sperm genome.
@@ -95,6 +95,7 @@ and there is ample opportunity for interaction between the sperm and female meio
 If, for example, an allele in sperm could facilitate meiotic drive by a genetically equivalent allele in a 
 heteromorphic dyad, such an allele could presumably bias meiosis in its favor and rapidly spread through the population.
 At first sight, it seems as although female meiosis is primed to be exploited by selfish sperm systems.  
+\yb{Why then is the requirement of fertilization to complete female meiosis so ubiquitous? }
 
 %Another unusual aspect of animal female meiosis is the fact that it is paused at XXX.
 %In fact in many species of animal the final stages of female meiosis are only completed upon fertlization of the egg by sperm.There's considerable variation in 
@@ -104,7 +105,7 @@ At first sight, it seems as although female meiosis is primed to be exploited by
 %another copy of itself, the sperm allele biased meiosis in favor of the other copy of itself.
 %At first sight, it seems as although female meiosis is primed to be exploited by selfish sperm systems. 
 
-Why then is the requirement of fertilization to complete female meiosis so ubiquitous? 
+%Why then is the requirement of fertilization to complete female meiosis so ubiquitous? 
 It is certainly not the case that animals are mechanistically incapable of evolving past this requirement.
 There is considerable variation in which stage of meiosis requires fertilization, and 
 a number of animal clades (should we try and lower bound how many transitions?) have evolved
@@ -124,100 +125,174 @@ machinery) provided by the sperm, disrupting MII meiotic segregation in the egg,
 Additionally, genetic evidence suggests that the transmission patterns
 in heterozygous females many potentially depend on sperm haplotype. 
 Specifically, the two best characterized female meiotic drive systems in mouse (In and Om), both operate by distorting the second meiotic division, 
-and in both systems the outcome of female meiosis depends the genotype of the fertilizing sperm \citep{Agulnik1993,Wu2005}. 
+and in both systems the outcome of female meiosis depends the genotype of the fertilizing sperm \citep{Agulnik1993,Wu2005}; 
+	\yb{however,  we acknowledge the difficulty in reeling out early mortality as an alternative explanation of these putative drivers}.
 
 
-In this article we explore through simple population genetic models the consequences of alleles that influence the outcome 
-of female meiosis. 
-We use these models to argue that it is actually surprisingly hard for the influence of
-sperm on the outcome of meiosis to drive sustained conflict. In fact we find that sperm and egg 
-genomes' interests are often aligned as they are both invested in the fate of the zygote they will form (as was suggested for the In locus \citep{Pomiankowski1993}).
-This suggests that females are unlikely to evolve to prevent the influence of sperm on meiosis,
-and indeed features of meiosis may evolve that facilitate the interaction of sperm with female meiosis. 
+Here, we develop population genetic models exploring the evolution of alleles in sperm that influence the outcome of female meiosis 
+%In this article we explore through simple population genetic models the consequences of alleles that influence the outcome of female meiosis.
+These models argue that it is actually surprisingly hard for the influence of sperm on the outcome of meiosis to drive sustained conflict. 
+In fact, the interests of sperm and egg  genomes' are often aligned, as are both invested in the fate of the resultant zygote 
+	(as was speculated for the In locus \citep{Pomiankowski1993}).
+Therefore, there is little selective benefit to females in preventing sperm to influence female meioses,
+	indeed features of meiosis may evolve that facilitate the interaction of sperm with female meiosis. 
 
 \section*{Results}
 
 \subsection*{ A) Invasion of the population by a driving allele that promotes
 itself.}
 
+%yb version
+In the standard model of female meiotic drive, the driving allele at a balletic site is transmitted to the egg with probability  $d > \frac{1}{2}$, regardless of sperm genotype. 
+To depict a case of a self-promoting (or `green-bearded') meiotic driver,  we modify this standard model such that the female meiotic driver is only effective when fertilized by a sperm carrying that allele (see Figure \ref{Eggsperm_2_allele_cartoon}).
+We then identify the conditions under which this self propagating driver can spread, and if it drive the evolution of suppressors? 
+We note that the timing of fertilization relative to female meiosis places another constrain ton $d$, 
+	for example, if fertilization (and therefore, sperm dependent drive) takes place at MII (as in mammals),
+	female drive requires an uneven number of crossovers between the centromere and the drive locus, 
+	so $d$ is bounded to be $<0.75$?.
+\yb{I THINK THIS ORDER IS A BIT BETTER, BUT STILL ``OFF'', perhaps this is a footnote, or in methods or something...}
 
 
-The standard model of female meiotic drive is two allele model, where the
-allele $1$ is transmitted $d$ fraction of the time through female
-meiosis ($d > \frac{1}{2}$), regardless of the genotype of the sperm. 
-In mammals, fertilization takes place at MII, so we imagine this drive must be taking place at MII in order
-for a sperm to have any influence. For drive to take place at MII there has to be an uneven number of
- crossovers between the centromere and the drive locus, such that realistically $d$ is bounded to be $<0.75$?. 
-In other systems where fertilization occurs during MI, sperm could influence either drive at MI or MII, 
-and drivers at MI can have a $d=1$ if they occur in tight linkage with the centromere.
+%coop version
+%The standard model of female meiotic drive is two allele model, where the allele $1$ is transmitted $d$ fraction of the time through female meiosis ($d > \frac{1}{2}$), regardless of the genotype of the sperm. 
+%In mammals, fertilization takes place at MII, so we imagine this drive must be taking place at MII in order
+%for a sperm to have any influence. For drive to take place at MII there has to be an uneven number of
+% crossovers between the centromere and the drive locus, such that realistically $d$ is bounded to be $<0.75$?. 
+%In other systems where fertilization occurs during MI, sperm could influence either drive at MI or MII, 
+%and drivers at MI can have a $d=1$ if they occur in tight linkage with the centromere.
 
-We can model a simple sperm dependent meiotic drive system, by
-modifying this model so that the allele only drives during female
-meiosis if it fertilized by a sperm carrying that allele
- (see Figure \ref{Eggsperm_2_allele_cartoon}). Under what conditions can
-this self propograting driver allele spread, and could it drive the
-evolution of supressors? 
 
-We first consider the situation where the driving allele has no
-fitness consequences in heterozygotes, only in homozygotes (whose
-relative fitness is $1-s$). A standard meiotic drive allele can always
-invade the population in this situation, as it is initially only
-present mostly in heterozygotes and rarely suffers the consequences of
-the problems in homozygotes. However, if the cost in homozygotes is
-strong enough ($s>XXd$), then the allele is prevented from reaching
-fixation and instead is maintained as a balanced polymorphism in the
-population \citep{Prout1973}. Such balanced polymorphisms can then
-drive the evolution of supressors of drive \citep{XX}, and most of our
-examples of drive systems are of this form. 
+%We can model a simple sperm dependent meiotic drive system, by
+%modifying this model so that the allele only drives during female
+%meiosis if it fertilized by a sperm carrying that allele
+ %(see Figure \ref{Eggsperm_2_allele_cartoon}). Under what conditions can
+%this self propagating driver allele spread, and could it drive the
+%evolution of supressors? 
 
-Under a recessive fitness cost model our sperm dependent driver
-actually has far more restrictive conditions to invade the population,
-than a standard meiotic driver (see Figure \ref{Invasion_space}).
-That is because our allele which drives only when it is present in the
-fertilizing sperm is guarenteed to form a homzygote. Thus, 
-to even spread in the population when it is rare, our sperm-dependent
-driver has to overcome the cost it suffers in the homozygote state.
+% YB VERSION
+We first consider the situation where the driving allele is neutral in heterozygotes, 
+	but deleterious in homozygotes (whose relative fitness is $1-s$).  
+In this model, a standard meiotic driver can always invade because 
+	when rare it occurs predominantly in heterozygotes and therefore it initially pays no fitness cost. 
+However, a severe homozygotes fitness cost ($s>XXd$) prevents  
+	drivers from fixing  \citep{Prout1973}, 
+	and provides an opportunity for the
+	evolution of drive suppressors  \citep{XX}, corresponding well to 
+	empirical examples of female meiotic drive. 
 
-When conditions are suitable for such alleles to spread into the
-population, they spread slowly through low frequencies as they rarely
-drive as they are unlikely to be fertilized by a sperm with the right
-allele. Once they become established they spread rapidly to fixation due to their
-positive frequency dependent behavior (Inset in Figure \ref{Invasion_space}). 
-Unlike standard meiotic drive systems 
-these alleles can not become balanced in the population  by homozygote
-cost, as they have already over come this cost just to enter the population.
+%COOP VERSION
 
-Things are even worse for the sperm-dependent driver if it suffers any
-fitness cost in the heterozygote. Our standard driver can invade the
-population from low frequency if its drive in heterozygotes out weighs
-the fitness cost they suffer (XXX). However, when at low frequency our
-sperm dependent driver is often in heterozygotes but will only drive
-if fertilized by the same allele. If our allele incurs even very weak costs
-in heterozygotes it can be prevented from spreading from very low
-frequencies, unless its drive is very strong. The dynamics of 
-our sperm-dependent drivers with an additive cost resemble an underdominant polymorphism
-(in that the system is bistable). Below a cutoff frequency the allele is
-unable to enter the population (in a deterministic model) as it is
-paying the cost of the drive but drive is ineffective (see Figure
-S\ref{bistable_additive}). Above this
-frequency the allele increases deterministically as its drive is sufficiently effective 
-becayse heterozygote eggs are fertilized by sperm with our allele
-sufficiently often to beat the costs. 
-This bistability suggests that sperm-dependent drivers will often be 
-unable to enter into reasonably sized populations, and if they do they
-should rapidly be spread fixation.
+%We first consider the situation where the driving allele is has no
+%fitness consequences in heterozygotes, only in homozygotes (whose
+%relative fitness is $1-s$). 
+%A standard meiotic drive allele can always
+%invade the population in this situation, as it is initially only
+%present mostly in heterozygotes and rarely suffers the consequences of
+%the problems in homozygotes. 
+%However, if the cost in homozygotes is
+%strong enough ($s>XXd$), then the allele is prevented from reaching
+%fixation and instead is maintained as a balanced polymorphism in the
+%population \citep{Prout1973}. Such balanced polymorphisms can then
+%drive the evolution of supressors of drive \citep{XX}, and most of our
+%examples of drive systems are of this form. 
 
-A model where the sperm allele affects outcome of female meiosis may not be biologically
-realistic as there is very little sperm expression. More realistically the male genotype that produced the sperm
-may be more relevant, as males could place products in their sperm that influenced the outcome of female meoisis.
-However, in practice models that allow the influence of fertilizing male genotype on female meiosis 
-seem to behave qualitatively to those based on the allele of the
-fertilizing sperm (see Supplementary Figures XXX and XXX).
 
-Given the difficulty that meotic drive alleles that promote themselves
-through sperm have even entering the population, and the speed at
-which they fix if they do, it seems very unlikely that such alleles
-could drive the evolution of female 
+%YB VERSION
+In contrast to a traditional driver, which can drive but pay no fitness cost when rare, 
+	our green-bearded driver drives by creating homozygotes, and therefore pays a fitness cost even when rare. 
+To simply increase when rare, our sperm-dependent driver must overcome a homozygous fitness cost.
+Therefore with a recessive fitness cost,
+	the conditions allowing the invasion of our green-bearded driver 
+ 	are far more restrictive than those for a standard meiotic driver (see Figure \ref{Invasion_space}).
+
+%COOP VERSION
+%Under a recessive fitness cost model our sperm dependent driver
+%actually has far more restrictive conditions to invade the population,
+%than a standard meiotic driver (see Figure \ref{Invasion_space}).
+%That is because our allele which drives only when it is present in the
+%fertilizing sperm is guarenteed to form a homzygote. Thus, 
+%to even spread in the population when it is rare, our sperm-dependent
+%driver has to overcome the cost it suffers in the homozygote state.
+
+%YB VERSION
+When a deleterious recessive green-bearded driver does spread, 
+	it spends much time at low frequency, because when rare it is unlikely to meet a complimentary sperm. 
+However, once common, a green bearded driver spreads rapidly to fixation due to their
+	positive frequency dependent behavior (Inset in Figure \ref{Invasion_space}).  PERHAPS COMPARE TO TRADITIONAL DRIVER IN THIS FIGURE
+Unlike standard meiotic drive systems, polymorphism of a green-bearded driver cannot be sustained by a homozygous cost, 
+	because it already overcame this cost just to enter the population.
+The lack of a balanced polymorphism precludes the evolution of an allele that suppresses this form of meiotic drive.
+
+%COOP VERSION
+%When conditions are suitable for such alleles to spread into the
+%population, they spread slowly through low frequencies as they rarely
+%drive as they are unlikely to be fertilized by a sperm with the right
+%allele. Once they become established they spread rapidly to fixation due to their
+%positive frequency dependent behavior (Inset in Figure \ref{Invasion_space}). 
+%Unlike standard meiotic drive systems 
+%these alleles can not become balanced in the population  by homozygote
+%cost, as they have already over come this cost just to enter the population.
+
+%YB VERSION
+Inclusion of a heterozygous fitness cost (e.g. additivity) further constrains the evolution of a sperm-dependent driver. 
+A  standard female  driver can invade from low frequency so long as drive in heterozygotes out weighs the fitness cost they suffer (XXX); 
+	however, when at low frequency our sperm dependent driver pays the heterozygous fitness cost but rarely drives because it is rare in sperm.
+Therefore, even very weak heterozygous fitness costs
+	prevent the spread of a very rare green-bearded driver, unless its drive is very strong. 
+With an additive cost, the dynamics of a green-bearded driver resembles that of an underdominant mutation (in that the system is bistable). 
+Below a cutoff frequency the allele deterministically decreases in frequency 
+	because it pays the  heterozygous fitness cost  but drives is ineffectively (see FigureS\ref{bistable_additive}). 
+Above this frequency, the allele increases deterministically because the commonness of sperm carrying this allele 
+	make drive effective enough to overcome the associated fitness cost.
+%becayse heterozygote eggs are fertilized by sperm with our allele %sufficiently often to beat the costs. 
+This bistability will  prevent sperm-dependent drivers from invading 	
+	reasonably sized populations, and assures that if they do invade they will rapidly fix.
+
+%COOP VERSION
+%Things are even worse for the sperm-dependent driver if it suffers any
+%fitness cost in the heterozygote. Our standard driver can invade the
+%population from low frequency if its drive in heterozygotes out weighs
+%the fitness cost they suffer (XXX). However, when at low frequency our
+%sperm dependent driver is often in heterozygotes but will only drive
+%if fertilized by the same allele. If our allele incurs even very weak costs
+%in heterozygotes it can be prevented from spreading from very low
+%frequencies, unless its drive is very strong. The dynamics of 
+%our sperm-dependent drivers with an additive cost resemble an underdominant polymorphism
+%(in that the system is bistable). Below a cutoff frequency the allele is
+%unable to enter the population (in a deterministic model) as it is
+%paying the cost of the drive but drive is ineffective (see Figure
+%S\ref{bistable_additive}). Above this
+%frequency the allele increases deterministically as its drive is sufficiently effective 
+%becayse heterozygote eggs are fertilized by sperm with our allele
+%sufficiently often to beat the costs. 
+%This bistability suggests that sperm-dependent drivers will often be 
+%unable to enter into reasonably sized populations, and if they do they
+%should rapidly be spread fixation.
+
+
+
+%yb version
+%trying to make the models above sound less silly
+While the sperm allele  could plausible influence the outcome of female meiosis, the limited levels of gene expression in sperm 
+	suggest that sperm may influence the outcome of female meiosis as a function a the diploid genotype that produced the sperm perhaps due to proteins and RNAs packed in the sperm.
+Models where male genotype, rather than sperm haplotype, determines the outcome of female meiosis 
+	seem to behave qualitatively to those based on the allele of the
+	fertilizing sperm (see Supplementary Figures XXX and XXX).
+	\yb{THIS IS NOW WRONG WE NEED TO THINK ABOUT HOW TO WRITE THIS}
+
+%coop version
+%A model where the sperm allele affects outcome of female meiosis may not be biologically realistic as there is very little sperm expression. 
+%More realistically the male genotype that produced the sperm
+%may be more relevant, as males could place products in their sperm that influenced the outcome of female meoisis.
+%However, in practice models that allow the influence of fertilizing male genotype on female meiosis 
+%seem to behave qualitatively to those based on the allele of the
+%fertilizing sperm (see Supplementary Figures XXX and XXX).
+
+
+Given the difficulty that meiotic drive alleles that promote themselves
+through sperm have entering the population, the speed at
+which they fix if they do, \yb{and the absence of balanced polymorphisms at such loci,} it seems very unlikely that such alleles
+could drive the evolution of female \yb{suppressors}.
 
 \begin{figure}
 	\rotatebox{270}{\includegraphics[width = 0.8
@@ -239,6 +314,12 @@ could drive the evolution of female
 \caption{transmission probabilities righthand allele through female
   meiosis}  \label{Eggsperm_3_allele_cartoon}
 \end{figure}
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\newline
+EDITED TO HERE\newline
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\newline
+
 
 \begin{figure}
 \includegraphics[width = 0.8 \textwidth]{Figures/trajectories_of_sperm_based_supressors.eps} 
@@ -352,6 +433,9 @@ state when they enter the population, and sweep quickly (all the way to fixation
 \item Setup a drive-selection balanced polymorphism in std. drive model. 
 Do this by imagining the sperm-influence allele arising on the background of the driver, 
 so the allele has drive capabilities, and can have had time to evolve new biology. 
+
+Multilocus drivers held together with inversions, may offer a relatively large mutational/functional target.
+
 Evolving on the new background means that the allele suffers the fitness consequences of the 
 driver.  See A in Figure \ref{Eggsperm_3_allele_cartoon} \\
 \item Sperm-based enhancers of drive can't invade (can they in some situations?). \\
