@@ -4,7 +4,7 @@ iterate.1.locus.drive<-function(s.array,num.iterations,female.transmission.probs
 
 	my.freqs<-numeric()
 	if(missing(my.geno.freqs)){
-		print("running 2 allele system to stablity")
+#≈ßprint("running 2 allele system to stablity")
 		allele.freqs<-initialize.allele.freqs	
 		names(allele.freqs)<-c("1","2","3")	
 
@@ -162,17 +162,30 @@ make.male.geno.dep.female.transmission.prob.w.dom<-function(D){
 
 	##males carrying allele 3 alter rate of female drive in dominant fashion. 
 	
-	male.geno.3<-grep("3",rownames(transmission.probs))
+	male.heterozy<-rownames(transmission.probs) %in%  c("13","23")
+	male.homozy<-rownames(transmission.probs) =="33"
 	
-	transmission.probs[male.geno.3,colnames(transmission.probs) == "13" & transmitted.allele == 1] <- 1-D["3","13"]
-	transmission.probs[male.geno.3,colnames(transmission.probs) =="13" & transmitted.allele == 3] <- D["3","13"]
+	
+	transmission.probs[male.heterozy,colnames(transmission.probs) == "13" & transmitted.allele == 1] <- 1-D["3.het","13"]
+	transmission.probs[male.heterozy,colnames(transmission.probs) =="13" & transmitted.allele == 3] <- D["3.het","13"]
 
-	transmission.probs[male.geno.3,colnames(transmission.probs) == "12" & transmitted.allele == 1] <- 1-D["3","12"]
-	transmission.probs[male.geno.3,colnames(transmission.probs) =="12" & transmitted.allele == 2] <- D["3","12"]
+	transmission.probs[male.heterozy,colnames(transmission.probs) == "12" & transmitted.allele == 1] <- 1-D["3.het","12"]
+	transmission.probs[male.heterozy,colnames(transmission.probs) =="12" & transmitted.allele == 2] <- D["3.het","12"]
 
-	transmission.probs[male.geno.3,colnames(transmission.probs) == "23" & transmitted.allele == 2] <- 1-D["3","23"]
-	transmission.probs[male.geno.3,colnames(transmission.probs) =="23" & transmitted.allele == 3] <- D["3","23"]
-	recover()
+	transmission.probs[male.heterozy,colnames(transmission.probs) == "23" & transmitted.allele == 2] <- 1-D["3.het","23"]
+	transmission.probs[male.heterozy,colnames(transmission.probs) =="23" & transmitted.allele == 3] <- D["3.het","23"]
+
+##homozy. male effect
+	transmission.probs[male.homozy,colnames(transmission.probs) == "13" & transmitted.allele == 1] <- 1-D["3","13"]
+	transmission.probs[male.homozy,colnames(transmission.probs) =="13" & transmitted.allele == 3] <- D["3","13"]
+
+	transmission.probs[male.homozy,colnames(transmission.probs) == "12" & transmitted.allele == 1] <- 1-D["3","12"]
+	transmission.probs[male.homozy,colnames(transmission.probs) =="12" & transmitted.allele == 2] <- D["3","12"]
+
+	transmission.probs[male.homozy,colnames(transmission.probs) == "23" & transmitted.allele == 2] <- 1-D["3","23"]
+	transmission.probs[male.homozy,colnames(transmission.probs) =="23" & transmitted.allele == 3] <- D["3","23"]
+
+#	recover()
 transmission.probs
 }
 

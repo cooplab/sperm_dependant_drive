@@ -22,6 +22,29 @@ recover()
 	return(invading)
 }
 
+####invasion test for male dependent drive w. dominance controled by d.dom
+test.invasion.self.prop.w.dom<-function(d,d.dom,s.het,s.hom,x=.001,steps=10){
+	s.array<-rep(0,6)
+	names(s.array)<-c("11","12","13","23","22","33")
+	s.array["13"]<- s.het
+	s.array["33"]<- s.hom
+	
+		D<-matrix(1/2,nrow=3,ncol=3,dimnames=list(c("1 or 2","3.het","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd 
+ ##entries are drive coeff of the 2nd 
+	D["3","13"]<-d
+	D["3.het","13"]<-(d-0.5)*d.dom + 0.5  ##d.dom modifies the effect of drive 
+	D["1 or 2","23"]<- 1-0.5
+	D["3","23"]<-0.5
+	
+	female.transmission.probs<-make.male.geno.dep.female.transmission.prob.w.dom(D) 
+	old.geno.freqs<-iterate.1.locus.drive(s.array,num.iterations=steps,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(1-x, 0,x))
+#recover()
+	invading<-old.geno.freqs[["allele.freqs"]][steps,3]>old.geno.freqs[["allele.freqs"]][1,3]
+	return(invading)
+}
+
+
+
 test.fixation.of.simple.driver<-function(d,s.het,s.hom,x=.999,steps=10){
 	s.array<-rep(0,6)
 	names(s.array)<-c("11","12","13","23","22","33")
@@ -235,9 +258,10 @@ for(i in 1:3){
 
 dev.copy2eps(file=paste(directory,"invasion_space_recessive_driver.eps",sep=""))
 
-
+#######################################################
 #####invasion space for male genotype controlled allele
 
+##fully dominant allele
 d.range<-seq(0.5,1,length=200)
 s3.range<-seq(0,1,length=200)
 
@@ -259,10 +283,54 @@ fixation.lines.s3.cutoff.male<-s3.range[apply(fixation.grid.male.control,1,funct
 plot(d.range,invasion.lines.s3.cutoff.male,col="red")
 lines(d.range,fixation.lines.s3.cutoff.male,col="green")
 
+if(FALSE){
+pdf(file=paste(directory,"effect_of_dominance_on_invasion_space.pdf",sep=""))
+
+invasion.w.dom<-numeric()
+fixation.w.dom<-numeric()
+
+for(d.dom in seq(0,1,length=5)){
+	print(d.dom)
+	d.range<-seq(0.5,1,length=200)
+	s3.range<-seq(0,1,length=200)
+	
+	invasion.grid.male.control<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.invasion.self.prop.w.dom(d,d.dom=d.dom,s.het=0,s.hom=s3,x=.001,steps=10)
+		})
+	})
+	
+	fixation.grid.male.control<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.invasion.self.prop.w.dom(d,d.dom=d.dom,s.het=0,s.hom=s3,x=.999,steps=10)
+		})
+	})
+	
+	invasion.lines.s3.cutoff.male<-s3.range[apply(invasion.grid.male.control,1,function(x){max(which(x))})]
+	fixation.lines.s3.cutoff.male<-s3.range[apply(fixation.grid.male.control,1,function(x){max(which(x))})]
+	
+	invasion.w.dom<-rbind(invasion.w.dom,invasion.lines.s3.cutoff.male)
+	fixation.w.dom<-rbind(fixation.w.dom,fixation.lines.s3.cutoff.male)
+	
+	plot(d.range,invasion.lines.s3.cutoff.male,col="red",ylim=c(0,1),main=paste("dominance of male genotype = ",d.dom),type="l",lwd=2)
+	lines(d.range,fixation.lines.s3.cutoff.male,col="green",lwd=2)
+}
+dev.off()
+save(file=paste(directory,"effect_of_dominance_male_control.Robj",sep=""),invasion.w.dom,fixation.w.dom)
+}
+load(file=paste(directory,"effect_of_dominance_male_control.Robj",sep=""))
+
+my.cols<-brewer.pal(nrow(invasion.w.dom),name="Dark2")
+plot(c(0.5,1),c(0,0.5),type="n",,xlab="Drive coefficient",ylab="selection coeff against homozygotes")
+sapply(1:nrow(invasion.w.dom),function(i){lines(d.range,invasion.w.dom[i,],lty=1,col=my.cols[i])})
+sapply(1:nrow(invasion.w.dom),function(i){lines(d.range,fixation.w.dom[i,],lty=2,col=my.cols[i])})
+legend("topleft",lty=c(1,2,rep(NA,nrow(invasion.w.dom))),pch=c(NA,NA,rep(19,nrow(invasion.w.dom))),col=c(rep("black",2),my.cols),legend=c("invasion line","fixation line",paste("dominance = ",seq(0,1,length=5))))
+dev.copy2eps(file=paste(directory,"effect_of_dominance_on_invasion_space_one_graph.eps",sep=""))
+
 
 s.array<-rep(0,6)
 	names(s.array)<-c("11","12","13","23","22","33")
-	s.array["33"]<- 0.3
+	s.array["33"]<- 0.35
 	
 	
 	 D["1 or 2","12"]<-0.5
@@ -273,3 +341,4 @@ s.array<-rep(0,6)
 	 D["3","23"]<-0.5
 	female.transmission.probs<-make.male.geno.dep.female.transmission.prob(D) 
 old.geno.freqs<-iterate.1.locus.drive(s.array=s.array,num.iterations=4000,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(0.99, 0,0.01 ))
+plot(old.geno.freqs[["allele.freqs"]][,3],col="green")
