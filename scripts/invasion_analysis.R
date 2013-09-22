@@ -178,7 +178,7 @@ if(FALSE){
 	
 	save(file=paste(directory,"bistable_invasion_grid.Robj",sep=""),my.x.bistable,my.s)
 }
-
+load(file=paste(directory,"bistable_invasion_grid.Robj",sep=""))
 plot(range(d.range),c(10^(-6),1),type="n",log="y",xlab="d",ylab="x bistable cutoff freq.")
 for(i in 1:length(my.s)){
 	lines(d.range,my.x.bistable[i,],col=my.cols[i],lwd=2)
@@ -187,7 +187,7 @@ for(i in 1:length(my.s)){
 
 legend(x="bottomleft",legend=paste("s=",my.s),col=my.cols,lty=1,lwd=2)
 
-dev.copy2eps(file=paste(directory,"bistable_x_vs_d_additive_s.eps",sep="")
+dev.copy2eps(file=paste(directory,"bistable_x_vs_d_additive_s.eps",sep=""))
 #dev.off()
 
 ##############Phase diagram figure
