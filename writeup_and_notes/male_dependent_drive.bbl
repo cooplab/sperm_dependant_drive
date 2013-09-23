@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\citeauthoryear{??}{Mas}{1985}]{Masui_book}
+, 1985\ \ {\em Biology Of Fertilization. Model Systems And Oogenesis, Volume
+  1}, Chapter Meiotic arrest in animal oocytes.
+\newblock Elsevier.
+
 \bibitem[\protect\citeauthoryear{Agulnik, Agulnik, and
   Ruvinsky}{\textsc{Agulnik} {\em et~al.\@}}{1990}]{Agulnik1990}
 \textsc{Agulnik, S.~I.}, \textsc{A.~I. Agulnik}, and \textsc{A.~O. Ruvinsky},
@@ -62,6 +67,20 @@
 \textsc{Haig, D.} and \textsc{A.~Grafen}, 1991\ \ {Genetic scrambling as a
   defence against meiotic drive.}
 \newblock Journal of Theoretical Biology~{\em 153\/}(4)\textbf{:}\ 531--558.
+
+\bibitem[\protect\citeauthoryear{Joseph and Kirkpatrick}{\textsc{Joseph} and
+  \textsc{Kirkpatrick}}{2004}]{Joseph2004}
+\textsc{Joseph, S.} and \textsc{M.~Kirkpatrick}, 2004\ \ {Haploid selection in
+  animals}.
+\newblock Trends in Ecology \& Evolution~{\em 19\/}(11)\textbf{:}\ 592--597.
+
+\bibitem[\protect\citeauthoryear{McNally, Fabritius, Ellefson, Flynn, Milan,
+  and McNally}{\textsc{McNally} {\em et~al.\@}}{2012}]{McNally2012}
+\textsc{McNally, K.~L.}, \textsc{A.~S. Fabritius}, \textsc{M.~L. Ellefson},
+  \textsc{J.~R. Flynn}, \textsc{J.~A. Milan}, and \textsc{F.~J. McNally}, 2012,
+  Apr){{K}inesin-1 prevents capture of the oocyte meiotic spindle by the sperm
+  aster}.
+\newblock Dev. Cell~{\em 22\/}(4)\textbf{:}\ 788--798.
 
 \bibitem[\protect\citeauthoryear{Mira}{\textsc{Mira}}{1998}]{Mira1998}
 \textsc{Mira, A.}, 1998, Sep)Why is meiosis arrested?
