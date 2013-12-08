@@ -24,15 +24,13 @@
 
 
 %Why do animals allow male control of female meiosis?
-
 %Why does female meiosis allow the opportunity for exploitation by selfish sperm?
-
-
 %sperm and egg genomes both favour the peaceful resolution of female meiotic drive
 %strange bed fellows
 
-\title{Why does female meiosis allow the opportunity for exploitation
-  by selfish sperm? BETTER TITLE?}
+%\title{Why does female meiosis allow the opportunity for exploitation by selfish sperm? BETTER TITLE?}
+\title{Sperm do not evolve to collaborate in  female meiotic drive}
+
 \author{Yaniv Brandvain \\ email: ybrandvain@gmail.com  \and Graham Coop \\ email: gmcoop@ucdavis.edu }
 
 \usepackage{fancyhdr}
@@ -56,7 +54,7 @@ Center for Population Biology \& Department of Evolution and Ecology \\ Universi
 
 \section*{Introduction}
 
-Despite the apparent unity of the organism, occasionally alleles can
+Despite the apparent unity of the organism, alleles can
 gain an evolutionary advantage at a cost to  individual fitness
 \citep{Burt2006}, often by exploiting meiosis and gametogensis.
 Because only one of the four products of female meiosis is transmitted to the egg, female meiosis is particularly vulnerable to such exploitation \citep{Sandler1957,Pardo-ManuelDeVillena2001a}. 
@@ -67,7 +65,7 @@ Meiotic drivers observed in nature (in both plants
 conflict -- the selfish benefits of drive and the associated
 pleiotropic fitness costs sustain a balanced polymorphism
 \citep{Prout1973}, 
-and often generate on ongoing evolutionary escalation of drive suppressors and enhancers \citep{Dawe1996,Fishman2008}. 
+and often generate an ongoing evolutionary escalation of drive suppressors and enhancers \citep{Dawe1996,Fishman2008}. 
 The threat of meiotic drive to organismal fitness is potentially so
 severe that many basic properties of
 meiosis and o\"{o}genesis, including the initial genome doubling in
@@ -77,18 +75,17 @@ have perhaps evolved to disrupt meiotic drive and enforce fairness.
 
 It is therefore somewhat surprising that despite the intense evolutionary pressure on female meiosis to prevent meiotic drive, 
 it is potentially open to sabotage by a virtual stranger -- a haploid sperm genome.
-That is, in many animal species, the completion of female meiosis requires fertilization of the egg \citep{Masui_book}, 
-and there is ample opportunity for interaction between the sperm and female meiotic machinery.
-If, for example, an allele in sperm could facilitate meiotic drive by a genetically equivalent allele in a 
-heteromorphic dyad, such an allele could presumably bias meiosis in its favor and rapidly spread through the population.
+That is, in many animal species, female meiosis is competed only after fertilization \citep{Masui_book}, 
+creating ample opportunity for interaction between the sperm and female meiotic machinery. 
+For example, an allele in sperm that facilitates meiotic drive by a genetically equivalent allele in female meiosis %(a  heteromorphic dyad), 
+     could presumably rapidly spread through the population.
 At first sight, it seems as although female meiosis is primed to be exploited by selfish sperm systems.  
 Why then is the requirement of fertilization to complete female meiosis so ubiquitous? 
 
 It is certainly not the case that animals are mechanistically incapable of circumventing this requirement.
-There is considerable variation in which stage of meiosis requires fertilization, and 
-a number of animal clades (should we try and lower bound how many transitions?) have evolved
-to allow the completion of female meiosis upon ovulation \citep[see
-Table 1 of ][]{Masui_book}. 
+The stage at which female meiosis requires fertilization varies widely across taxa, and in a few animal taxa, 
+	female meiosis is complete upon ovulation (that is fertilization is not required for female meiosis \citep[see
+	Table 1 of ][]{Masui_book}). 
 
 It is also not the case that sperm is mechanistically incapable of influencing the outcome of female meiosis.
 Mechanistic evidence for this possibility comes from
@@ -98,14 +95,16 @@ in the egg, leading to a triploid zygote \citep{McNally2012}.
 Additionally, genetic evidence suggests that the transmission patterns
 in heterozygous females many potentially depend on sperm haplotype. 
 Specifically, the two best characterized female meiotic drive systems in mouse (In and Om), both operate by distorting the second meiotic division, 
-and in both systems the outcome of female meiosis depends the genotype of the fertilizing sperm \citep{Agulnik1993,Wu2005}; 
-However,  we acknowledge the difficulty in ruling out early mortality
-as an alternative explanation of the 
-specifics of these putative drivers \citep[Give page numbers to
-discussion of this in][]{Burt2006}. \gc{should be careful here as the
-  Om locus is pretty convincingly a meiotic driver, doubts have just
-  been raised about whether IN is. Whether the sperm dep nature of
-  either is robust to this is I think more at question.}
+and in both systems the outcome of female meiosis depends the genotype of the fertilizing sperm \citep{Agulnik1993,Wu2005}. 
+While such genetic evidence is suggestive, we note the difficulty in ruling out the alternative hypothesis of early selection    \citep[Give page numbers to discussion of this in][]{Burt2006}.
+
+%However,  we acknowledge the difficulty in ruling out early mortality
+%as an alternative explanation of the 
+%specifics of these putative drivers \citep[Give page numbers to
+%discussion of this in][]{Burt2006}. \gc{should be careful here as the
+ % Om locus is pretty convincingly a meiotic driver, doubts have just
+ % been raised about whether IN is. Whether the sperm dep nature of
+ % either is robust to this is I think more at question.}
 
 
 Here, we develop population genetic models exploring the evolution of sperm influence on female meiotic drive. 
@@ -121,9 +120,11 @@ Therefore, there is little selective benefit to females in preventing sperm to i
 
 \subsection*{ Invasion of the population by a driving allele that promotes
 itself.}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% PLEIOTROPY MODEL [self-promoting]
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%yb version
-In the standard model of female meiotic drive, the driver is one of two alleles, and in heterozygotes is transmitted to the egg with probability  $d > \frac{1}{2}$, regardless of sperm genotype. 
+In the standard single-locus, biallelic model of female meiotic drive, the driving allele is transmitted to the egg  in heterozygotes with probability  $d > \frac{1}{2}$, regardless of sperm genotype. 
 To depict a case of a self-promoting (or `green-bearded') meiotic
 driver,  we modify this standard model such that the driver is only effective when fertilized by a sperm carrying that allele (see Figure
 \ref{Eggsperm_2_allele_cartoon}) \footnote{the timing of fertilization relative to female meiosis places another constraint on $d$, for example, if fertilization (and therefore, sperm dependent drive) takes place at MII (as in mammals),
@@ -131,11 +132,11 @@ driver,  we modify this standard model such that the driver is only effective wh
 	so $d$ is bounded to be $<0.75$? \citep[see ][ for discussion]{Buckler1999}. Could also put this in
         caption of fig.}.
 We then identify the conditions under which this self propagating driver can spread, and evaluate whether a driver of this form could generate a sustained conflict favoring the evolution of suppressors. 
-
+\yb{EQUATIONS A1-A4}
 
 
 We first consider a driving allele neutral in heterozygotes, 
-	but deleterious in homozygotes (whose relative fitness is $1-s$).  
+	but deleterious in homozygotes (whose relative fitness is $1-s$) \yb{(EQUATIONS A3-A4)}.  
 In this model, a standard meiotic driver can always invade because 
 	when rare it occurs predominantly in heterozygotes and it therefore drives without a fitness cost. 
 However, a severe homozygous fitness cost ($s>XXd$) prevents  
@@ -148,36 +149,36 @@ However, a severe homozygous fitness cost ($s>XXd$) prevents
 
 In contrast to a traditional driver, which drives but pays effectively
 no fitness cost as a rare deleterious recessive, 
-	our green-bearded driver creates homozygotes
+	a self-promoting driver creates homozygotes
         when it drives, and therefore there is a drive-associated fitness cost even when rare. 
-Our sperm-dependent driver must overcome this homozygous fitness cost simply to spread when rare.
+Our self-promoting driver must overcome this homozygous fitness cost simply to spread when rare.
 Therefore with a recessive fitness cost,
-	the conditions allowing the invasion of our green-bearded driver 
+	the conditions allowing the invasion of a self-promoting driver
  	are far more restrictive than those for a standard meiotic driver (see Figure \ref{Invasion_space}).
 
-When a deleterious recessive green-bearded driver does spread, 
+When a deleterious recessive self-promoting driver does spread, 
 	it spends much time at low frequency, because when rare it is unlikely to meet a complimentary sperm. 
-However, once relatively common, a green-bearded driver spreads rapidly to fixation due to its
+However, once relatively common, a self-promoting driver spreads rapidly to fixation due to its
 	positive frequency dependent behavior (Inset in Figure \ref{Invasion_space}).  
 This lack of a balanced polymorphism precludes the evolution of an allele that suppresses this form of meiotic drive.
+\yb{POINT TO SOME MATHS OR FIGURE}
 
 
 
-
-
-%YB VERSION
-Inclusion of a heterozygous fitness cost (e.g. additive fitness cost) further constrains the evolution of a sperm-dependent driver. 
+Inclusion of a heterozygous fitness cost (e.g. additive fitness cost) further constrains the evolution of a self-promoting driver. 
 While a  standard female  driver invades from low frequency when the transmission advantage outweighs the fitness cost (XXX),
-	a rare sperm dependent driver pays a fitness cost, but drives only weakly because complementary sperm are uncommon. 
+	a rare self-promoter pays a fitness cost, but drives only weakly because complementary sperm are uncommon. 
 This frequency independent fitness cost, and positive frequency dependent drive generates a bistable system. 
-Below a cutoff frequency the green-bearded driver deterministically decreases in frequency 
+Below a cutoff frequency the self-promoter driver deterministically decreases in frequency 
 	because it pays the  heterozygous fitness cost  but drives ineffectively (see FigureS\ref{bistable_additive}). 
 Above this frequency, the allele increases deterministically because the commonness of complementary sperm 
 	make drive effective enough to overcome the associated fitness cost.
-This bistability prevents sperm-dependent drivers from invading 	
+This bistability prevents self-promoting drivers from invading 	
 	reasonably sized populations, and assures that if they do invade they will rapidly fix.
+\yb{Our model therefore predicts that self-promoting drivers will not be observed as polymorphisms in natural populations. }
 
-While an the allelic identity of sperm could plausibly influence the outcome of female meiosis, 
+
+While the allelic identity of sperm could plausibly influence the outcome of female meiosis, 
 	limited gene expression in sperm \citep[e.g.][]{Joseph2004}
 	suggest a model where sperm influence female meiosis via expression of the fertilizing male's
 	diploid genotype (perhaps due to proteins and RNAs packaged into the sperm).
@@ -224,14 +225,30 @@ female meiotic drive.
 merge this figure the 3 allele cartoon}  \label{Trajectories_of_supressors}
 \end{figure}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% TWO LOCUS MODEL [modify (general) / facilitate (helps ) / prevent (stops)] 
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \yb{********* DO WE NEED TO DO THE MALE GENOTYPE THING HERE TOO? *********}
 
 Above, we explored a model were a driver that drove in females when signaled by a complementary allele in sperm.  
-This complicated pleiotropic effect, while plausible is somewhat unlikely. 
-Here, we examine an alternative scenario (and more realistic) in which
-initially a driver, with no sperm-dependency, is at drive-viability equilibrium (with two alleles
+We complement this single locus model  of pleiotropy with an alternative model of two linked loci - one female driver and the other a sperm allele which modifies the effect of drive upon fertilization. 
+%Here, we examine an alternative scenario (and more realistic) in which
+In this model initially a female meiotic driver, with no sperm-dependency, reaches drive-viability equilibrium (with two alleles
 $A$ and $B$ are the ancestral non-driver and driver alleles).
-Subsequently a sperm-acting modifier of female meiotic drive arises tightly
+Subsequently, a sperm-acting modifier of female meiotic drive arises tightly
         linked to this balanced locus (effectively creating a third
         allele/haplotype at this locus).
 Assuming tight linkage between female driver and sperm modifier is consistent with the nature of well characterized meiotic drive systems 
@@ -240,8 +257,8 @@ Assuming tight linkage between female driver and sperm modifier is consistent wi
 
 \yb{??In the SUPP we explore the dynamics of a sperm modifier of female drive unlinked to the female driver??} 
 
-
-We consider a sperm-acting facilitator of
+%%%sperm-acting facilitator
+We first consider a sperm-acting facilitator of
 	female meiotic drive tightly linked to the $B$ background, 
 	generating a third allele $B^{+}$ (i.e. the non-recombining haplotype of a
         driver allele and sperm-acting drive modifier). 
@@ -249,36 +266,33 @@ This new allele acts in sperm to increase the effectiveness of both
 	the $B$ and  $B^{+}$ drive in $AB$ and $AB^{+}$ heterozygotes, see Figure \ref{Eggsperm_3_allele_cartoon} 
 	for a simple schematic of this drive model.  
 Naively, the $B^{+}$ may spread by capitalizing on the additional drive it causes; hover,  
-%Naively the $B^{+}$ allele might be able to increase in frequency in the
-%	population as then it could be allowed to spread due to the additional
-%	drive it causes. 
 	this is not the case for a few simple reasons. 
-First, the sperm-acting drive promoter (the novel $B^{+}$ haplotype) 
+First, the sperm-acting drive facilitator (the novel $B^{+}$ haplotype) 
 	arises when the ancestral driver ($B$) is at drive-selection balance, 
 	and therefore immediately suffers a homozygous fitness cost.  
 Worse yet, a novel $B^{+}$ haplotype most often helps 
 	the $B$  allele drive ($B^+$ sperm meeting $AB$ eggs), because $B$ is initially more common than $B^{+}$. 
 As $B^{+}$ facilitates $B$ these interactions frequently form 
 	$BB^{+}$ heterozygotes that suffer the same fitness costs as $BB$. 
-Therefore, sperm-acting self promoting alleles experience a profound disadvantage
+Therefore, sperm-acting drive facilitator alleles experience a profound disadvantage 
 	in this scenario, even more so than under the previous two allele model. 
 We have found no parameter range of this
-	three allele system that allows the selfish sperm-acting allele $B^{+}$ to
+	three allele system that allows the sperm-acting drive facilitator $B^{+}$ to
 	invade the population. \yb{MATHS?}
 
+%%%sperm-acting drive suppressors
 While  sperm enhancement of a female drive cannot displace a polymorphic female driver, sperm based drive suppression - 
-	that is sperm-acting alleles that act to restore 
-	fairness of female meiosis can. 
+	that is sperm-acting alleles that act to restore  fairness of female meiosis can. 
 If these sperm-acting drive suppressors arise on
-	the $A$ background (creating a third allele $A^{-}$) ;
+	the non-driving $A$ background (creating a third allele $A^{-}$) ;
 	or are unlinked to the drive locus they readily invade a population segregating
 	for the drive system ($AB$, see Figure). 
 This allele lowers the frequency of the original drive system (perhaps to zero),
 	and spreads to fixation if it does not carry strong fitness costs
 	(Figure \ref{Eggsperm_3_allele_cartoon} and \ref{Trajectories_of_supressors}A). 
-\yb{This result is unsurprising, as drive suppressors unlinked to drivers or in repulsion phase with them usually invade polymorphic drive systems (CITE).}  
+\yb{This result is consistent with previous work showing that drive suppressors unlinked to, or in repulsion phase with drivers usually invade polymorphic drive systems \citep[e.g. ][]{Brandvain2012}.}  
 
-More surprisingly, sperm disruptors of female meiotic drive can spread
+More surprisingly, sperm-acting suppressors of female drive can spread
 	even when tightly linked to the original drive system (B), forming
 	an novel third allele $B^{-}$ as above 
 	(Figures \ref{Eggsperm_3_allele_cartoon} and \ref{Trajectories_of_supressors}B). 
@@ -301,26 +315,25 @@ Despite displacing the ancestral driver ($B$), self avoiding driver, $B^*$ it's 
 %that female oogenesis and meiosis will evolve to prevent their effect. 
 
 
-Sexual reproduction is a high-stakes event that determines which
-determines what gets transmitted to the next generation.  
+Sexual reproduction is a high-stakes event that determines what gets transmitted to the next generation.  
 As a consequence of this intense competition, alleles that gain a transmission advantage during reproduction 
 	can succeed evolutionarily, even if they lower the 
         fitness of the population, 
 	the mother whose offspring they will inhabit, 
 	and even the organism in which they reside. 
-This potential generates numerous conflicts  \cite{genesInConflict} including sexual conflicts between mates \cite{sexualConflict}, 
-	as well as conflicts between alleles that are overtransmitted in meiosis and the organisms they injure while doing so.
+This potential generates numerous conflicts  \cite{Burt2006} including sexual conflicts between mates \cite{Arnqvist2005}, 
+	as well as conflicts between alleles that are overtransmitted in meiosis and the organisms they injure while doing so. 
+Such conflicts and their resolution likely play a major role in the structure and evolution of many basic biological processes \citep{Rice2013}.
 
 It seems that allowing sperm to influence the outcome of meiosis would generate a confluence of these potential conflicts -- 
 	sperm could actually assist an allele that distorts female meiosis.
 However, this is not the case.
-We find that an allele which acts through sperm to distort female meiosis in its favor, %YB [too awkward / unclear?] 
+We find that an allele which acts through sperm to distort female meiosis in its favor %YB [too awkward / unclear?] 
 	can rarely spread through a population if it bears any cost. 
-Additionally, when this self-promoting driver can spread, it can only
-rarely 
-be maintained as a protected polymorphism, and due to its positive frequency dependence 
+Additionally, when this self-promoting driver can spread, it can only rarely 
+	be maintained as a protected polymorphism, and due to its positive frequency dependence 
 	it spends very little time at intermediate frequency.
-As such, these type of exploitation cannot drive sustained genetic conflict and so it is unlikely
+As such, this type of exploitation cannot generate a sustained genetic conflict and so it is unlikely
 	that female oogenesis and meiosis will evolve to prevent their effect.  
 This likely explains why females can delay the completion of meiosis until after fertilization 
 	without risking exploitation by collaborations by female
@@ -328,12 +341,13 @@ This likely explains why females can delay the completion of meiosis until after
 %Male modification of recombination rates. \yb{trying to think through this \dots{}}
 
 Why is it that an allele that biases female meiosis in its favor can generate a genetic conflict, but an allele in sperm that assists this female driver cannot? 
-So long as the transmission advantage of female meiotic drive out way the organismal fitness cost to heterozygotes the female driver can spread when rare, and it increases in 		
+So long as the transmission advantage of female meiotic drive outweigh the organismal fitness cost to heterozygotes the female driver can spread when rare, and it increases in 		
 	frequency until the fitness cost experienced when homozygous balances the transmission advantage.
 By contrast a sperm promotor of female drive is only effective when matched with a heterozgyote female -- meaning that when rare this allele rarely enhances female drive. 
-Even worse, when it does so it will find itself in a low fitness drive homozygote. 
+Even worse, when it does so it will preferentially find itself in a low fitness drive homozygote. 
 Not only are drive-promoting sperm alleles unable to create a sustained genetic conflict, 
-	but alleles in sperm with the opposite effect - that is those that prevent their own drive through female meiosis do.
+	but alleles in sperm with the opposite effect - that is those that prevent their own drive through female meiosis do maintain a polymorphisms and 
+	provide evolution  with time and opportunity to further minimize drive.
 This is because such drive suppressing alleles reduced their chances of forming  low fitness homozygotes.
 In fact, an allele in sperm which causes the alternate allele to drive can be favored (FIG), a counterintuitive result 
 	consistent with the tenuous evidence that the non-driving
@@ -342,23 +356,17 @@ In fact, an allele in sperm which causes the alternate allele to drive can be fa
 
 \yb{DOES THIS GO ANYWHERE? }
 
-Males can potentially influence the outcome of meiosis even before
-fertilization. 
+Males can potentially influence the outcome of meiosis even before fertilization. 
 For example in Drosophila and other taxa, sperm accessory
         gland proteins (ACPs) increase the female recombination rate
         \cite{SOMEthING}, and there is some evidence that there is
         variance across male genotypes in there effect on female
         recombination rate \cite{Stevison2012}.
 Presumably this is a pleiotropic consequence of the resolution of double strand breaks initiated by the stressful/toxic composition of ACPs. 
-However, a pleiotropic effect of this is to increase the recombination
-rate which can decrease the effectiveness of female meiotic drivers
-active during MI. 
-
- 
-	pleiotropically enhancing female fitness in a way (while
-        decreasing it in many others, \cite{Partridge and Hurst}). 
-
- We speculate that other effects of sperm on female meiosis may also be tolerated by females as a way of ensuring meiotic fairness, 
+However, a pleiotropic effect of this is to increase the recombination rate which can decrease the effectiveness of female meiotic drivers
+active during MI \citep{Brandvain}. 
+We speculate that other effects of sperm on female meiosis may also be tolerated by females as a way of ensuring meiotic fairness -- 
+	that is females evolve to allow male influence on female meiosis in cases in which the male influence is  egalitarian. 
 
 
 
