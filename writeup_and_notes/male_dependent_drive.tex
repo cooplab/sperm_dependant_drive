@@ -172,7 +172,7 @@ While a standard female driver invades from low frequency when the transmission 
 	a rare self-promoter pays a fitness cost, but drives only weakly because complementary sperm are uncommon. 
 This frequency-independent fitness cost, and positive frequency dependent drive generates a bistable system. 
 Below a cutoff frequency the self-promoter driver deterministically decreases in frequency 
-	because it pays the  heterozygous fitness cost  but drives
+	because it pays the  heterozygous fitness cost but drives
         ineffectively (see Figure S\ref{bistable_additive}). 
 Above this frequency, the allele increases deterministically because the commonness of complementary sperm 
 	make drive effective enough to overcome the associated fitness cost.
@@ -236,7 +236,7 @@ female meiotic drive.
 	\rotatebox{90}{\includegraphics[width = 0.8
           \textwidth]{Figures/Sperm_egg_cartoon_paper_Fig2.eps}}
 \caption{Dynamics in 3 allele system
-\bf{A)} The sperm-dependent transmission probabilities of alleles through
+{\bf (A) } The sperm-dependent transmission probabilities of alleles through
 female meiosis (female germ cells depicted as circles, sperm indicated by wiggly
 tails). In each case the top and bottom entry in each cell give the
 transmisson probability of the left and right allele in the female
@@ -247,8 +247,8 @@ being transmitted to the egg. In the left panel we show the transmission probabi
 $d'<d$). In the right panel we depict the transmission probabilities for
   A, B, and A$^-$ allele a non-driven allele that acts to reduce the
   effects of female drive through sperm.
-\bf{B) Frequency trajectories in the three allele system. }
-}  \label{Eggsperm_3_allele_cartoon}
+{\bf (B)} Frequency trajectories in the three allele system. }
+ \label{Eggsperm_3_allele_cartoon}
 \end{figure}
 
 
@@ -278,7 +278,7 @@ Assuming tight linkage between female driver and sperm modifier is consistent wi
 	which are often maintained as polymorphic inversions with numerous linked modifiers (CITE).
 
 
-\yb{??In the SUPP we explore the dynamics of a sperm modifier of female drive unlinked to the female driver??} 
+%\yb{??In the SUPP we explore the dynamics of a sperm modifier of female drive unlinked to the female driver??} 
 
 %%%sperm-acting facilitator
 We first consider a sperm-acting facilitator of
@@ -304,8 +304,7 @@ We have found no parameter range of this
 	invade the population. \yb{MATHS?}
 
 %%%sperm-acting drive suppressors
-While  sperm enhancement of a female drive cannot displace a polymorphic female driver, sperm based drive suppression - 
-	that is sperm-acting alleles that act to restore  fairness of female meiosis can. 
+While  sperm enhancement of a female drive cannot displace a polymorphic female driver, sperm based drive suppression - that is sperm-acting alleles that act to restore  fairness of female meiosis can. 
 If these sperm-acting drive suppressors arise on
 	the non-driving $A$ background (creating a third allele $A^{-}$) ;
 	or are unlinked to the drive locus they readily invade a population segregating
@@ -450,22 +449,95 @@ where the mean fitness of the population is
 \begin{equation}
 \bar{w} = w_{AA} x_{AA}+w_{AB}  x_{AB} +w_{BB}  x_{BB}.
 \end{equation}
+We iteration can then iterate this recursion over generations, for
+example to produce the frequency trajectories shown in the inset
+Figure \ref{Invasion_space} by plotting $x_{BB}+ \frac{1}{2}x_{AB}$
+over time. We can also use this to assess the
+invasion criteria for the allele by starting allele B at very low
+frequency, and seeing if it increases across the generations.
+
+\paragraph{Dominance} In the supplement we also explore a model where
+the genotype of the male who produced the fertilizing sperm affects female drive,
+instead of just the allelic type of the sperm. We assume that if a
+heterozygous egg ($AB$) is fertilized by a spermwith the following
+male ($\Mars$) genotypes the $B$ allele will be transmitted through
+female meiosis with the follow probabilites
+\begin{tabular}{cccc}
+$\Mars$ geno. & AA & AB  & BB\\
+B transmission prob. & $\frac{1}{2}$ &  $\frac{1}{2} + h(d-\frac{1}{2})$  & $d$\\ 
+\end{tabular}
+where $d > 1/2$ and $h$ ($0<h<1$) acts to specify the dominance of the $B$
+allele's effect on female meiotic drive through the males genotype. We
+set up a set of recursions, similar to those in eqn.
+\ref{eqn.A1}-\ref{eqn.A1}, but now featuring these male genotype
+transmission probabilites. In Supplementary Figure \ref{Effect_of_dominance} we show the invasion
+criteria for both the A and the B allele when they are rare in the
+population. We find that there is a narrow parameter range the B allele
+can invade but not fix if it is dominant (i.e. $h>0$) and the cost in homozygotes
+is not too great. This reflects the fact that when the allele is rare
+it can increase in frequency due to fertilization of heterozygous eggs
+by sperm from heterozygote males, where the sperm do not themselves
+carry the allele. But as the B allele becomes common it will frequently be
+present in the homozygous state in males, and so will be unable to
+avoid the production of unfit homozygote zygotes leaving it trapped in
+the population.
 
 
+
+\paragraph{three allele system}
+%$x_{AA}$, $x_{AB}$,$x_{AB'}$, $w_{BB'} x_{BB'}$, $w_{B'B'} x_{BB}$, $w_{B'B'} x_{B'B'}$
+We denote the frequency of the three genotypes in the population at birth are
+$x_{AA}$, $x_{AB}$, $x_{AB'}$, $x_{BB'}$, $x_{BB}$, $x_{B'B'}$. 
+The mean relative fitness of the population is 
+\begin{equation}
+x_{AA}+x_{AB}+ x_{AB'}+ w_{BB'} +x_{BB'}+w_{B'B'}x_{BB} + w_{B'B'} x_{B'B'} 
+\end{equation}
+The frequency of the genotypes in meiotic-cells of female adults is 
+\begin{equation}
+\frac{1}{\bar{w}}\Big( x_{AA}, ~x_{AB},~ x_{AB'},~ w_{BB'} x_{BB'},~ w_{B'B'}x_{BB},
+~w_{B'B'} x_{B'B'} \Big)
+\end{equation}
+The frequency of fertilization events can be found by combining these
+female frequencies with the frequency of the three alleles in sperm is
+\begin{eqnarray}
+x_A = & x_{AA} + \frac{1}{2} x_{AB}+ \frac{1}{2} x_{AB'} \\
+x_B = & w_{BB}  x_{BB} +   w_{BB'} \frac{1}{2} x_{BB'}+ \frac{1}{2} x_{AB} \\
+x_{B'} = & w_{B'B'}  x_{B'B'} +   w_{BB'} \frac{1}{2} + x_{BB'}+ \frac{1}{2} x_{AB'}  
+\end{eqnarray}
+in combination with the transmission probabilities given in Figure \ref{Eggsperm_3_allele_cartoon}A.
+
+\begin{table}
+\begin{tabular}{lllll}
+\hline 
+  &  \multicolumn{4}{c}{Sperm genotype}   \\
+  &  & A & B & B'  \\
+$\Venus$ geno. & Freq.  & $x_{AA} + \frac{1}{2} x_{AB}+ \frac{1}{2} x_{AB'} $ & $ w_{BB}  x_{BB} +   w_{BB'} \frac{1}{2} x_{BB'}+
+\frac{1}{2} x_{AB}$ & $ w_{B'B'}  x_{B'B'} +   w_{BB'} \frac{1}{2}
+x_{BB'}+ \frac{1}{2} x_{AB'}  $\\
+\hline\\
+AA & $x_{AA}$ &  & & \\
+AB & $x_{AB}$ &  & & \\
+AB' & $x_{AB'}$ &  & & \\
+BB' & $w_{BB'} x_{BB'}$ &  & & \\
+BB & $w_{B'B'} x_{BB}$ &  & & \\
+B'B' & $w_{B'B'} x_{B'B'}$ &  & & \\
+\end{tabular}
+\caption{ALTERNATIVELY I COULD FILL IN THIS MATRIX  with genotype }
+\end{table}
 \bibliography{refs}
 
 \section*{Supplementary Stuff}
 
 \begin{figure}
 \includegraphics[width = 0.8 \textwidth]{Figures/bistable_x_vs_d_additive_s.eps} 
-\caption{Bistable green-bearded allele when selection cost (s) acts
+\caption{Bistable of a drive allele when selection cost (s) acts
   additively, for an allele whose effect
  on female meoisis is mediated by sperm allele. }  \label{bistable_additive}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width = 0.8 \textwidth]{Figures/effect_of_dominance_on_invasion_space_one_graph.eps} 
-\caption{Invasion analysis of green-bearded sperm allele whose effect
+\caption{Invasion analysis of an allele whose effect
  on female meoisis is mediated by the genotype of the fertilizing
  male. The area below the solid/dotted line is the parameter region
  where the allele can invade/fix (from $1/1000$ and $999/1000$
