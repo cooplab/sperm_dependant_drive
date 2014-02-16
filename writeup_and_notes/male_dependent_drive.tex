@@ -411,7 +411,7 @@ In light of that it is interesting to consider whether the phylogenetic variatio
 %make a high fitness zygote even if that means alleles in sperm
 %disrupting other copies of themselves from gaining a 
 %transmission advantage through female meiosis.
-  
+  \appendix
 \section*{Appendix}
 In our first scenerio allele $A$ is the ancestral allele and allele
 $B$ is our sperm dependent drive allele.
@@ -456,19 +456,37 @@ over time. We can also use this to assess the
 invasion criteria for the allele by starting allele B at very low
 frequency, and seeing if it increases across the generations.
 
+\paragraph{cost of driver in heterozygotes}
+We also explored a range of other costs to the drive alleles other than a
+simple recessive cost, for example an additive cost. We modified the recursions given in eqn
+\ref{eqn.A1}-\ref{eqn.A3} to feature an additive cost $s$ for each
+copy of the $B$ allele. A none recessive cost to the drive allele can
+cause bistability of the drive allele. The B allele is unable to enter
+the population when rare, this results from the fact that
+when the allele is rare ($x_B \ll 1$) sperm carrying it rarely
+encounter heterozygous eggs ($\sim x^2$) but the allele still pays a
+cost in heterozygous individuals.  While when the B allele is common ($x_B
+\gg 0$) encounters between heterozygous eggs and $B$ allele sperm
+become more common allowing drive to occur this can allow the $B$
+allele to spread when common. In Supplementary Figure
+\ref{bistable_additive} we show the unstable equilibrium frequency
+above which the $B$ allele can invade. This equilibrium frequency was found by a simple
+parameter search.  \gc{wonder if a bit of work could find this}
+
 \paragraph{Dominance} In the supplement we also explore a model where
 the genotype of the male who produced the fertilizing sperm affects female drive,
 instead of just the allelic type of the sperm. We assume that if a
-heterozygous egg ($AB$) is fertilized by a spermwith the following
+heterozygous egg ($AB$) is fertilized by a sperm with the following
 male ($\Mars$) genotypes the $B$ allele will be transmitted through
-female meiosis with the follow probabilites
+female meiosis with the follow probabilites\\
 \begin{tabular}{cccc}
 $\Mars$ geno. & AA & AB  & BB\\
-B transmission prob. & $\frac{1}{2}$ &  $\frac{1}{2} + h(d-\frac{1}{2})$  & $d$\\ 
-\end{tabular}
-where $d > 1/2$ and $h$ ($0<h<1$) acts to specify the dominance of the $B$
+P(B). & $\frac{1}{2}$ &  $\frac{1}{2} + h(d-\frac{1}{2}) $ & $d$ 
+\end{tabular}\\
+where $d > 1/2$ and $h$ ($0 \geq h \geq 1$) acts to specify the dominance of the $B$
 allele's effect on female meiotic drive through the males genotype. We
-set up a set of recursions, similar to those in eqn.
+set up a set of recursions using a recessive sex independent cost to
+the driver, similar to those in eqn.
 \ref{eqn.A1}-\ref{eqn.A1}, but now featuring these male genotype
 transmission probabilites. In Supplementary Figure \ref{Effect_of_dominance} we show the invasion
 criteria for both the A and the B allele when they are rare in the
@@ -480,7 +498,8 @@ by sperm from heterozygote males, where the sperm do not themselves
 carry the allele. But as the B allele becomes common it will frequently be
 present in the homozygous state in males, and so will be unable to
 avoid the production of unfit homozygote zygotes leaving it trapped in
-the population.
+the population. \gc{Perhaps we should show the equil. freq. in the
+  fig, as I'm guessing it might be rare}
 
 
 
@@ -504,7 +523,10 @@ x_A = & x_{AA} + \frac{1}{2} x_{AB}+ \frac{1}{2} x_{AB'} \\
 x_B = & w_{BB}  x_{BB} +   w_{BB'} \frac{1}{2} x_{BB'}+ \frac{1}{2} x_{AB} \\
 x_{B'} = & w_{B'B'}  x_{B'B'} +   w_{BB'} \frac{1}{2} + x_{BB'}+ \frac{1}{2} x_{AB'}  
 \end{eqnarray}
-in combination with the transmission probabilities given in Figure \ref{Eggsperm_3_allele_cartoon}A.
+in combination with the transmission probabilities given in Figure
+\ref{Eggsperm_3_allele_cartoon}A.
+
+\gc{Alternatively we could give the table below:}
 
 \begin{table}
 \begin{tabular}{lllll}
