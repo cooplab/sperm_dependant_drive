@@ -64,9 +64,9 @@ gain an evolutionary advantage at a cost to  individual fitness
 \citep{Burt2006}, often by exploiting meiosis and gametogenesis.
 Because only one of the four products of female meiosis is transmitted to the egg, female meiosis is particularly vulnerable to such exploitation \citep{Sandler1957,Pardo-ManuelDeVillena2001a}. 
 An allele that biases female meiosis in its favor (i.e. a meiotic driver), may increase in frequency even if this driver entails a pleiotropic fitness cost \citep{Prout1973}, generating a genetic conflict between the success of the driver and organismal fitness.
-Meiotic drivers observed in nature (in both plants
+Meiotic drivers observed in both plants
 \citep{Buckler1999,Fishman2005,Fishman2008}, and animals
-\citep{Agulnik1990,Wu2005,Pardo-ManuelDeVillena2001c}) highlight this
+\citep{Agulnik1990,Wu2005,Pardo-ManuelDeVillena2001c} highlight this
 conflict -- the selfish benefits of drive and the associated
 pleiotropic fitness costs sustain a balanced polymorphism
 \citep{Prout1973}, 
@@ -82,9 +82,9 @@ It is therefore somewhat surprising that despite the intense evolutionary pressu
 it is potentially open to sabotage by a virtual stranger -- a haploid sperm genome.
 That is, in many animal species, female meiosis is competed only after fertilization \citep{Masui_book}, 
 creating ample opportunity for interaction between the sperm and female meiotic machinery. 
-For example, an allele in sperm that facilitates meiotic drive by a genetically equivalent allele in female meiosis %(a  heteromorphic dyad), 
+Therefore, an allele in sperm that facilitates meiotic drive by a genetically equivalent allele in female meiosis %(a  heteromorphic dyad), 
      could presumably rapidly spread through the population. 
-At first sight, it seems as although female meiosis is primed to be exploited by selfish sperm systems.  
+At first sight, female meiosis appears primed for exploitation by selfish sperm systems.  
 Why then is the requirement of fertilization to complete female meiosis so ubiquitous? 
 
 It is certainly not the case that animals are mechanistically incapable of circumventing this requirement.
@@ -93,25 +93,19 @@ The stage at which female meiosis requires fertilization varies widely across ta
 ][]{Masui_book}). 
 
 It is also not the case that sperm is mechanistically incapable of influencing female meiosis.
-In \emph{C. elegans} premature deployment of the aster (a vital component of mitotic
-machinery) provided by the sperm can disrupts MII meiotic segregation
+In \emph{C. elegans} premature deployment of the aster, a vital component of mitotic
+machinery, provided by the sperm disrupts MII meiotic segregation
 in the egg, leading to a triploid zygote \citep{McNally2012}. 
-Thus, there is direct mechanistic evidence for that sperm can influence female meiosis.
- Additionally, genetic evidence from the In and Om  drive system sin mice suggests that the 
+Thus, there is direct mechanistic evidence that sperm can influence female meiosis.
+ Additionally, genetic evidence from the \emph{In} and \emph{Om}  drive systems in mice suggests that the 
  transmission of alternate alleles in heterozygous females can depend on sperm haplotype.  
- Both of these female drive systems operate by distorting the second meiotic division, 
- and in both systems the outcome of female meiosis depends the genotype of the fertilizing sperm \citep{Agulnik1993,Wu2005}.  
-While such genetic evidence is suggestive, we note the difficulty in
-ruling out the alternative hypothesis of early selection on zygotes \citep[pages
-52-54][]{Burt2006}.
-
-%However,  we acknowledge the difficulty in ruling out early mortality
-%as an alternative explanation of the 
-%specifics of these putative drivers \citep[Give page numbers to
-%discussion of this in][]{Burt2006}. \gc{should be careful here as the
- % Om locus is pretty convincingly a meiotic driver, doubts have just
- % been raised about whether IN is. Whether the sperm dep nature of
- % either is robust to this is I think more at question.}
+ While ruling out the alternative hypothesis of early selection on zygotes \citep[pages
+52-54][]{Burt2006} in these cases is challenging, it appears that the extent to which \emph{In} and \emph{Om} distort the second female meiotic division partially depends on the genotype of the fertilizing sperm \citep{Agulnik1993,Wu2005}.  
+% Both of these female drive systems operate by distorting the second meiotic division, 
+% and in both systems the outcome of female meiosis depends the genotype of the fertilizing sperm \citep{Agulnik1993,Wu2005}.  
+%While such genetic evidence is suggestive, we note the difficulty in
+%ruling out the alternative hypothesis of early selection on zygotes \citep[pages
+%52-54][]{Burt2006}.
 
 
 Here, we develop population genetic models exploring the evolution of sperm influence on female meiotic drive. 
@@ -147,7 +141,7 @@ We first consider a driving allele neutral in heterozygotes,
         $1-s$). This model is laid out in eqn. \ref{eqn.A1}-\ref{eqn.A3}.
 In this model, a standard meiotic driver can always invade because 
 	when rare it occurs predominantly in heterozygotes and it therefore drives without a fitness cost. 
-However, a severe homozygous fitness cost ($s>XXd$) prevents  
+However, a severe homozygous fitness cost prevents  
 	drivers from fixing  \citep{Prout1973}, 
 	providing an opportunity for the evolution of
 	drive suppressors (CITE - citep{XX}), corresponding well to 
@@ -161,6 +155,8 @@ The self-promoting driver must overcome this homozygous fitness cost simply to s
 Therefore with a recessive fitness cost,
 	the conditions allowing the invasion of a self-promoting driver
  	are far more restrictive than those for a standard meiotic driver (see Figure \ref{Invasion_space}).
+\yb{When fully recessive, a self-promoting driver can only invade when $s$, the selection against the drive homozygote, is less than $\frac{2 d - 1}{4 d}$ (The tan region in Figure  \ref{Invasion_space}).} 
+
 
 When a deleterious recessive self-promoting driver does spread, 
 	it spends much time at low frequency, because when rare it is unlikely to meet a complimentary sperm. 
@@ -168,7 +164,8 @@ However, once relatively common, a self-promoting driver spreads rapidly to fixa
 	positive frequency dependent behavior (Inset in Figure \ref{Invasion_space}).  
 This lack of a balanced polymorphism ( Figure \ref{Invasion_space}) precludes the evolution of an
 allele that suppresses this form of meiotic drive in females.
-\yb{POINT TO SOME MATHS OR FIGURE}
+\yb{In fact, while a rare self promoting driving can only invade if $s<\frac{2 d - 1}{4 d}$, a common self-promoting driver can fix over a broader range of parameter space (i.e. if $s<\frac{2d-1}{2}$). 
+This system therefore displays bistability, when $\frac{2 d - 1}{4 d}<s<\frac{2d-1}{2}$, the driver will deterministically fix when introduced at a frequency greater than $\frac{1-2d+4ds}{2s(2d-1)}$, but will be lost otherwise.}
 
 Inclusion of a heterozygous fitness cost (e.g. additive fitness cost) further constrains the evolution of a self-promoting driver. 
 While a standard female driver invades from low frequency when the transmission advantage outweighs the fitness cost (XXX),
@@ -463,6 +460,21 @@ Figure \ref{Invasion_space} by plotting $x_{BB}+ \frac{1}{2}x_{AB}$
 over time. We can also use this to assess the
 invasion criteria for the allele by starting allele B at very low
 frequency, and seeing if it increases across the generations.
+
+\yb{\paragraph{Recessive fitness cost of self-promoting driver}
+When the self-promoting driver has a recessive fitness cost, $s$ genotype frequencies after selection and drive equal
+\begin{equation}	x'_{BB} =\frac{x_{B}^2(1-s)}{\bar{w} }  \Big( F+(1-F)(x_{B}+2x_{A} d) \Big) 	\end{equation}
+\begin{equation}	x'_{AA} =\frac{1}{\bar{w} }  \Big(x_{A}^2\Big) 	\end{equation}
+and
+\begin{equation}	x'_{AB} =\frac{2 x_{A}x_{B} }{\bar{w} }  \Big(1-x_{B}(d-1/2)(1-F) \Big)	\end{equation}
+
+its change in frequency across generations $\Delta f_B$ is
+\begin{equation}
+\frac{f_A f_B^2}{\bar{w}} \left( [1-F][ d(1-2 f_A s) - f_B s-1/2] - s  F \right)
+\end{equation}
+where $F$ is the deviation from Hardy-Weinberg expectations, and $f_A$ is the frequency of the non-driving allele. 
+For analytical solutions presented above, we assume that $F$ 
+}
 
 \paragraph{cost of driver in heterozygotes}
 We also explored a range of other costs to the drive alleles other than a
