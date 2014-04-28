@@ -201,9 +201,17 @@ Although the allelic identity of sperm could plausibly influence the outcome of 
 	limited gene expression in sperm \citep[e.g.][]{Joseph2004}
 	suggest a model where sperm influence female meiosis via expression of the fertilizing male's
 	diploid genotype (perhaps due to proteins and RNAs packaged into the sperm).
-This adds an additional parameter to the system -- the dominance of the drive enhancer in heterozygous males, 
-	when this dominance is high, a narrow sliver of parameter space sustaining a polymorphism emerges (see Figure S\ref{Effect_of_dominance})
- presumably because positive frequency dependence diminishes with the dominance of the male effect driver.
+%GRAHAM I HAVE REWRITTEN THIS SECTION TO REFLECT MATHS AND MY PARAMETERIZATION. WE CAN WORK ON SYNCHING OUR NOTATION
+%This adds an additional parameter to the system -- the dominance of the drive enhancer in heterozygous males, 
+%	when this dominance is high, a narrow sliver of parameter space sustaining a polymorphism emerges (see Figure S\ref{Effect_of_dominance})
+ %presumably because positive frequency dependence diminishes with the dominance of the male effect driver.
+This male-genotype dependent model requires one additional parameter, as we exchange $d$ in the sperm dependent case for $d_{het}$ and $d_{hom}$ which describe the transmission of the drive allele in a heterozygous female mating with males heterozygous and homozygous for the self-promoting drive allele, respectively.  
+When $d_{het}$ is large relative to $d_{hom}$, a narrow sliver of parameter space sustains a polymorphism (see Figure S\ref{Effect_of_dominance}), presumably because positive frequency dependence diminishes with the dominance of the male effect driver. 
+As an analytical example, consider the case of male-genotype dependent deleterious recessive female driver 
+	(assuming, as above, $w_{BB}=1-s$, and $w_{AA}=w_{AB}=1$). 
+Here, a rare driver invades when $s<\frac{d_{het}-1/2}{d_{het}}$, and fixes when $s < d_{hom} - \frac{1}{2}$. 
+Intermediate values of $s$, which represent a small proportion of parameter space can maintain a polymorphism. 
+
 
 %\gc{Add short paragraph about sex chromosomes here? XY systems don't care. ZW systems (males ZZ, females ZW). If there is
 %sex ratio distortion how could this play out?}
