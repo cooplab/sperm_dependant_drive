@@ -124,7 +124,7 @@ itself.}
 % PLEIOTROPY MODEL [self-promoting]
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-In the standard single-locus, biallelic model of female meiotic drive, the driving allele is transmitted to the egg  in heterozygotes with probability  $d > \frac{1}{2}$, regardless of sperm genotype. 
+In the standard single-locus, biallelic model of female meiotic drive, the driving allele is transmitted to the egg  in heterozygotes with probability  $d > 1/2$, regardless of sperm genotype. 
 To depict a case of a self-promoting meiotic
 driver,  we modify this standard model such that the driver is only effective when fertilized by a sperm carrying that allele (see Figure
 \ref{Eggsperm_2_allele_cartoon}). 
@@ -138,7 +138,7 @@ We then identify the conditions allowing the spread of this self-promoting drive
 
 
 For comparative purposes, we present the standard drive model in equations \ref{eqn.A1}-\ref{eqn.A3}, 
-	and refer readers to the previous literature on this model (\citep[e.g. ][]{Prout1973,Ubeda2004} for additional results). 
+	and refer readers to the previous literature on this model \citep[e.g. ][]{Prout1973,Ubeda2004} for additional results. 
 In this case, assuming the driving allele is deleterious but fully recessive 
 	(i.e. homozygous fitness equals $w_{BB}=1-s$ and other genotypic fitnesses equal $w_{AA}=w_{AB}=1$), 
 	it always invades because,  when rare, it occurs predominantly in heterozygotes and therefore drives without a fitness cost. 
@@ -151,13 +151,13 @@ In contrast to a traditional driver, which drives but pays effectively
 	no fitness cost when rare, 
 	a self-promoting driver specifically creates homozygotes by driving. 
 %, and therefore there is a drive-associated fitness cost even when rare. 
-Thus it must overcome a drive-associated homozygous fitness cost simply to spread when rare,
-	and the conditions allowing the invasion of a self-promoting driver
- 	are far more restrictive than those for a standard meiotic driver.
+It must therefore overcome a drive-associated homozygous fitness cost simply to spread when rare. 
+The conditions allowing the invasion of a self-promoting driver
+ 	are consequently far more restrictive than those for a standard meiotic driver.
 When rare, a fully recessive, self-promoting driver can only invade when $s$ 
 	%, the selection against the drive homozygote, 
-	is less than $\frac{2 d - 1}{4 d}$. 
-This analytical result, derived  from Equation \eqref{deltadriver} assuming Hardy-Weinberg, 
+	is less than $(2 d - 1)/(4 d)$. 
+This analytical approximation, derived  from Equation \eqref{deltadriver} assuming Hardy-Weinberg, 
 	closely matches results obtained by exact numerical iteration (Figure \ref{Invasion_space}). 
 
 
@@ -170,18 +170,19 @@ This lack of a balanced polymorphism (Figure \ref{Invasion_space}) precludes the
 	allele that suppresses this form of meiotic drive in females.
 
 The positive frequency dependence of a self-promoting driver can induce bistability in its spread. 
-When rare, a  recessive self-promoting driver can spread only if $s < \frac{2 d - 1}{4 d}$;
-	however, once common such a driver can fix over a broader range of parameter space (i.e. if $s<\frac{2d-1}{2}$). 
-Therefore, when $\frac{2 d - 1}{4 d}<s<\frac{2d-1}{2}$, 
-	a recessive self-promoting driver will deterministically fix if drift, mutation, 
-	or migration pressure bring its frequency above $\frac{1-2d+4ds}{2s(2d-1)}$, 
+Compared to the invasion criteria, parameter space allowing fixations is much broader -- 
+	a common, recessive, self-promoting driver fixes if  $s$ is less than $(2d-1)/2$. 
+Therefore, when $(2 d - 1)/(4 d)<s<(2d-1)/(2)$, 
+	a recessive, self-promoting driver will deterministically fix if drift, mutation, 
+	or migration pressure bring its frequency above $(1-2d+4ds)/(2s(2d-1))$, 
 	but it will be lost otherwise.
 Inclusion of a heterozygous fitness cost (i.e. $w_{AB}=1-h_s$)
 	%(e.g. additive fitness cost) 
 	further constrains the evolution of a self-promoting driver. 
-This case also displays bistability -- a rare self-promoting driver cannot spread; 
-	however, if $s < \frac{2 d - 1+s_h(3-2d)}{2}$ it will fix deterministically if its 
-	frequency is greater than some threshold, $f_B^*$ [Equation \eqref{thresh2}, and \yb{FIGURES SXX}].
+This case also displays bistability -- with any heterozygous fitness cost, a rare self-promoting driver cannot spread. 
+However, if $s < d - 1/2+s_h(3-2d)/2$, 
+	it will fix deterministically if its 
+	frequency is greater than a threshold, $f_B^*$ [Equation \eqref{thresh2}, and \yb{FIGURES SXX}].
 %	because it pays the  heterozygous fitness cost but drives
  %      ineffectively (see Figure S\ref{bistable_additive})
 %While a standard female driver invades from low frequency when the transmission advantage outweighs the fitness cost (XXX),
@@ -200,7 +201,7 @@ Our model therefore predicts that self-promoting drivers will not be observed as
 Although the allelic identity of sperm could plausibly influence the outcome of female meiosis, 
 	limited gene expression in sperm \citep[e.g.][]{Joseph2004}
 	suggest a model where sperm influence female meiosis via expression of the fertilizing male's
-	diploid genotype (perhaps due to proteins and RNAs packaged into the sperm).
+	diploid genotype (perhaps due to proteins and RNAs packaged into the sperm), rather than sperm haplotype.
 %GRAHAM I HAVE REWRITTEN THIS SECTION TO REFLECT MATHS AND MY PARAMETERIZATION. WE CAN WORK ON SYNCHING OUR NOTATION
 %This adds an additional parameter to the system -- the dominance of the drive enhancer in heterozygous males, 
 %	when this dominance is high, a narrow sliver of parameter space sustaining a polymorphism emerges (see Figure S\ref{Effect_of_dominance})
@@ -209,7 +210,7 @@ This male-genotype dependent model requires one additional parameter, as we exch
 When $d_{het}$ is large relative to $d_{hom}$, a narrow sliver of parameter space sustains a polymorphism (see Figure S\ref{Effect_of_dominance}), presumably because positive frequency dependence diminishes with the dominance of the male effect driver. 
 As an analytical example, consider the case of male-genotype dependent deleterious recessive female driver 
 	(assuming, as above, $w_{BB}=1-s$, and $w_{AA}=w_{AB}=1$). 
-Here, a rare driver invades when $s<\frac{d_{het}-1/2}{d_{het}}$, and fixes when $s < d_{hom} - \frac{1}{2}$. 
+Here, a rare driver invades when $s$ is less than $(d_{het}-1/2)/d_{het}$, and fixes when $s$ is less than $d_{hom} - 1/2$. 
 Intermediate values of $s$, which represent a small proportion of parameter space can maintain a polymorphism. 
 
 
