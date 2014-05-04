@@ -217,13 +217,20 @@ save(file=paste(directory,"invasion_grid_homozy_cost.Robj",sep=""),fixation.line
 show(load(paste(directory,"invasion_grid_homozy_cost.Robj",sep="")))
 
 my.cols<-brewer.pal(2,name="Dark2")
-plot(c(0.5,1),c(0,1),xlab="Drive coefficient",ylab="selection coeff against homozygotes",type="n")
+plot(c(0.5,1),c(0,1),xlab="",ylab="",type="n")
+mtext("Drive coefficient, d",side=1,line=2)
+mtext("selection against homozygotes, s",side=2,line=2)
+
 polygon(x=c(d.range,rev(d.range)),y=c(fixation.lines.s3,rep(1,length(d.range))),col="white")
-polygon(x=c(d.range,rev(d.range)),y=c(fixation.lines.s3,rev(invasion.lines.s3.cutoff)),col=my.cols[1])
-polygon(x=c(d.range,rev(d.range)),y=c(invasion.lines.s3.cutoff,rep(0,length(d.range))),col=my.cols[2])
+polygon(x=c(d.range,rev(d.range)),y=c(fixation.lines.s3,rev(invasion.lines.s3.cutoff)),col=my.cols[1],border=NA)
+polygon(x=c(d.range,rev(d.range)),y=c(invasion.lines.s3.cutoff,rep(0,length(d.range))),col=my.cols[2],border=NA)
 text(0.8,0.35,"Simple driver invades but can't fix",srt=25)
 text(0.85,0.27,"Simple driver can invade & fix",col="white",srt=15)
 text(0.8,0.05,"Simple driver & Self promoter driver can invade & fix",col="white")
+lines(d.range,(2*d.range- 1)/2,col="black",lwd=3,lty=1) ##simple driver fixes below this line
+lines(d.range,(2*d.range- 1)/(4*d.range),col="black",lwd=3,lty=2) ##self prom. fixes below this line
+
+text(x=0.95,y=0.95,"A.",cex=2)
 
 par(fig=c(grconvertX(0.51, from = "user", to = "ndc"), grconvertX(0.75, from = "user", to = "ndc"), grconvertY(0.4, from = "user", to = "ndc"), grconvertY(1, from = "user", to = "ndc")), new = TRUE); 
 par(mar=c(2,2,1,0))
@@ -255,7 +262,7 @@ for(i in 1:3){
 	old.geno.freqs<-iterate.1.locus.drive(s.array=s.array,num.iterations=2000,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(0.99, 0,0.01 ))
 	lines(old.geno.freqs[["allele.freqs"]][,3],col=my.point.cols[i],lwd=2)
 	}
-
+text(x=50,y=0.95,"B.",cex=1)
 dev.copy2eps(file=paste(directory,"invasion_space_recessive_driver.eps",sep=""))
 
 #######################################################
