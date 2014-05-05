@@ -124,32 +124,36 @@ itself.}
 % PLEIOTROPY MODEL [self-promoting]
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-In the standard single-locus, biallelic model of female meiotic drive, the driving allele is transmitted to the egg  in heterozygotes with probability  $d > 1/2$, regardless of sperm genotype. 
-To depict a case of a self-promoting meiotic
-driver,  we modify this standard model such that the driver is only effective when fertilized by a sperm carrying that allele (see Figure
+In the standard single-locus, biallelic model of female meiotic drive,
+the driving allele is transmitted to the egg  in heterozygotes with
+probability  $d > 1/2$, regardless of sperm genotype. To depict a case
+of a self-promoting meiotic driver,  we modify this standard model such that the driver is only effective when fertilized by a sperm carrying that allele (see Figure
 \ref{Eggsperm_2_allele_cartoon}). 
-%\footnote{the timing of fertilization relative to female meiosis places another constraint on $d$, for example, if fertilization (and therefore, sperm dependent drive) takes place at MII (as in mammals),
-%	female drive requires an uneven number of crossovers between the centromere and the drive locus, 
-%	so $d$ is bounded to be $<0.75$? \citep[see ][ for discussion]{Buckler1999}. Could also put this in
-  %      caption of fig.}.
+\footnote{the timing of fertilization relative to female meiosis places another constraint on $d$, for example, if fertilization (and therefore, sperm dependent drive) takes place at MII (as in mammals),
+	female drive requires an uneven number of crossovers between the centromere and the drive locus, 
+	so $d$ is bounded to be $<0.75$? \citep[see ][ for
+        discussion]{Buckler1999}. }. %PUT THIS BACK IN
 We then identify the conditions allowing the spread of this self-promoting driver, 
 	and evaluate whether a driver of this form could generate a sustained conflict favoring the evolution of suppressors. 
-%\yb{ We present a general framework for this problem in equations A1-A4, and evaluate specialized cases below.}
-
 
 For comparative purposes, we present the standard drive model in equations \ref{eqn.A1}-\ref{eqn.A3}, 
 	and refer readers to the previous literature on this model \citep[e.g. ][]{Prout1973,Ubeda2004} for additional results. 
-In this case, assuming the driving allele is deleterious but fully recessive 
+In this case, assuming the driving allele is deleterious in both sexes but fully recessive 
 	(i.e. homozygous fitness equals $w_{BB}=1-s$ and other genotypic fitnesses equal $w_{AA}=w_{AB}=1$), 
 	it always invades because,  when rare, it occurs predominantly in heterozygotes and therefore drives without a fitness cost. 
-However, when $s$ is large drivers cannot fix \citep{Prout1973}, 
-	providing an opportunity for the evolution of
-	drive suppressors, corresponding well to 
-	empirical examples of female meiotic drive \citep[reviewed in ][]{Burt2006}. 
+However, when $s$ is large ($s>(2d-1)/(2)$) a driver cannot fix, and
+will be maintained as a protected polymorphism \citep{Prout1973}. The
+        parameter space where the allele can invade but not fix is shown in white
+        in Figure \ref{Invasion_space}A., and where it can fix in the green
+        and orange areas \ref{Invasion_space}B. When the allele is
+        maintained as a polymorphism it providing an opportunity for the evolution of
+	drive suppressors, corresponding well to empirical examples of
+        female meiotic drive \citep[reviewed in ][]{Burt2006}. 
 
 In contrast to a traditional driver, which drives but pays effectively
 	no fitness cost when rare, 
-	a self-promoting driver specifically creates homozygotes by driving. 
+	a self-promoting driver specifically creates homozygote
+        zygotes when it drives in heterozygotes. 
 %, and therefore there is a drive-associated fitness cost even when rare. 
 It must therefore overcome a drive-associated homozygous fitness cost simply to spread when rare. 
 The conditions allowing the invasion of a self-promoting driver
@@ -157,7 +161,7 @@ The conditions allowing the invasion of a self-promoting driver
 When rare, a fully recessive, self-promoting driver can only invade when $s$ 
 	%, the selection against the drive homozygote, 
 	is less than $(2 d - 1)/(4 d)$. 
-This analytical approximation, derived  from Equation \eqref{deltadriver} assuming Hardy-Weinberg, 
+This analytical approximation, derived from Equation \eqref{deltadriver} assuming Hardy-Weinberg, 
 	closely matches results obtained by exact numerical iteration (Figure \ref{Invasion_space}). 
 
 
@@ -169,15 +173,17 @@ However, once relatively common, it  rapidly achieves fixation due to its
 This lack of a balanced polymorphism (Figure \ref{Invasion_space}) precludes the evolution of an
 	allele that suppresses this form of meiotic drive in females.
 
-The positive frequency dependence of a self-promoting driver can induce bistability in its spread. 
-Compared to the invasion criteria, parameter space allowing fixations is much broader -- 
-	a common, recessive, self-promoting driver fixes if  $s$ is less than $(2d-1)/2$. 
+The positive frequency dependence of a self-promoting driver can
+induce bistability in its spread, i.e. there is a critical frequency
+above which it can spread and below which it moves towards loss. 
+Compared to the invasion criteria, the bistable parameter space allowing fixations is much broader -- 
+	a common, recessive, self-promoting driver fixes if
+        $s<(2d-1)/2$ approximately. 
 Therefore, when $(2 d - 1)/(4 d)<s<(2d-1)/(2)$, 
 	a recessive, self-promoting driver will deterministically fix if drift, mutation, 
 	or migration pressure bring its frequency above $(1-2d+4ds)/(2s(2d-1))$, 
 	but it will be lost otherwise.
 Inclusion of a heterozygous fitness cost (i.e. $w_{AB}=1-h_s$)
-	%(e.g. additive fitness cost) 
 	further constrains the evolution of a self-promoting driver. 
 This case also displays bistability -- with any heterozygous fitness cost, a rare self-promoting driver cannot spread. 
 However, if $s < d - 1/2+s_h(3-2d)/2$, 
@@ -195,8 +201,8 @@ However, if $s < d - 1/2+s_h(3-2d)/2$,
 %	make drive effective enough to overcome the associated fitness cost.
 This bistability prevents self-promoting drivers from invading 	
 	reasonably sized populations, and assures that, if they do invade, they will rapidly fix.
-Our model therefore predicts that self-promoting drivers will not be observed as polymorphisms in natural populations. 
-
+Our model therefore predicts that self-promoting drivers will not be
+observed as stable polymorphisms in natural populations. 
 
 Although the allelic identity of sperm could plausibly influence the outcome of female meiosis, 
 	limited gene expression in sperm \citep[e.g.][]{Joseph2004}
@@ -252,7 +258,7 @@ Now consider an allele that is fairly transmitted through
   \ref{Eggsperm_2_allele_cartoon}). Such an allele can only invade in
   the region of parameter space colored orange, and it fixes over all
   of this parameter region. The approximate criteria for this allele
-  to fix is given by $s < (2d- 1)/(4d)$. 
+  to fix is given by the dashed line showing $s < (2d- 1)/(4d)$. 
  {\bf B.} In the inset we show trajectories of sperm-dependent female drive
  alleles that can invade the population, each allele has $s =0.1$ against the
  homozygotes and $d =0.6$, $0.7$, $0.8$ shown in yellow, blue, and red. 
