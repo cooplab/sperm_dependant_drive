@@ -178,12 +178,25 @@ if(FALSE){
 	
 	save(file=paste(directory,"bistable_invasion_grid.Robj",sep=""),my.x.bistable,my.s)
 }
-load(file=paste(directory,"bistable_invasion_grid.Robj",sep=""))
-plot(range(d.range),c(10^(-6),1),type="n",log="y",xlab="d",ylab="x bistable cutoff freq.")
+show(load(file=paste(directory,"bistable_invasion_grid.Robj",sep="")))
+par(mar=c(3,3,1,1))
+plot(range(d.range),c(10^(-6),1),type="n",log="y",xlab="",ylab="")
+mtext(side=1,line=2,"Drive coefficient, d")
+mtext(side=2,line=2,"Unstable equilibrium frequency")
+	my.cols<-brewer.pal(length(my.s),name="Dark2")
+
 for(i in 1:length(my.s)){
 	lines(d.range,my.x.bistable[i,],col=my.cols[i],lwd=2)
-	my.cols<-brewer.pal(length(my.s),name="Dark2")
+	
+	sh<-my.s[i]
+	s<-my.s[i]*2
+	a1<-1-2*d.range*sh+4*d.range*s-2*d.range-3*sh;
+	a2<-2*(s-sh)*(2*d.range-1)
+
+	f.HWE.bistab<- a1+sqrt(a1^2+8*sh*a2)/(2*a2)
+	lines(d.range,f.HWE.bistab,col=my.cols[i],lwd=2,lty=2)
 }
+
 
 legend(x="bottomleft",legend=paste("s=",my.s),col=my.cols,lty=1,lwd=2)
 
@@ -298,19 +311,21 @@ my.x.bistable<-cbind(my.x.bistable,matrix(nrow=200,ncol=67)) ##fill out rest of 
 image(d.range,s3.range,my.x.bistable,xlab="",ylab="")
 lines(d.range,(2*d.range- 1)/2,col="black",lwd=3,lty=1) ##simple driver fixes below this line
 lines(d.range,(2*d.range- 1)/(4*d.range),col="black",lwd=3,lty=2) ##self prom. fixes below this line
+mtext("Bistability of invasion w. self promoter w. homozyg. cost",side=3,line=0)
 mtext("Drive coefficient, d",side=1,line=2)
-mtext("selection against homozygotes, s",side=2,line=2)
+mtext("Selection against homozygotes, s",side=2,line=2)
 contour(d.range,s3.range,my.x.bistable,add=TRUE,lty=2)
 text(0.8,0.6,"Self promoter cannot invade\n no matter what freq.")
-text(0.85,0.1,"Self promoter driver can\n invade & fix when rare",col="white",cex=0.8)
+text(0.85,0.1,"Self promoter driver can\n invade & fix when rare",col="white")
 ##HWE
 approx.bistable.freq<-outer(d.range,s3.range,function(d,s){(1-2*d+4*d*s)/(2*s*(2*d-1))})
 approx.bistable.freq<-apply(approx.bistable.freq,1,function(x){x[x>=1]<-NA;x[x<=0]<-0;x})
 image(d.range,s3.range,t(approx.bistable.freq),xlab="",ylab="")
 lines(d.range,(2*d.range- 1)/2,col="black",lwd=3,lty=1) ##simple driver fixes below this line
 lines(d.range,(2*d.range- 1)/(4*d.range),col="black",lwd=3,lty=2) ##self prom. fixes below this line
+mtext("Approximation to region of bistability",side=3,line=0)
 mtext("Drive coefficient, d",side=1,line=2)
-mtext("selection against homozygotes, s",side=2,line=2)
+mtext("Selection against homozygotes, s",side=2,line=2)
 contour(d.range,s3.range,t(approx.bistable.freq),add=TRUE,lty=2)
 text(0.8,0.6,"Self promoter cannot invade\n no matter what freq.")
 text(0.85,0.1,"Self promoter driver can\n invade & fix when rare",col="white")

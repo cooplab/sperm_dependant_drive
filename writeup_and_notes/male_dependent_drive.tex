@@ -175,20 +175,32 @@ This lack of a balanced polymorphism (Figure \ref{Invasion_space}) precludes the
 
 The positive frequency dependence of a self-promoting driver can
 induce bistability in its spread, i.e. there is a critical frequency
-above which it can spread and below which it moves towards loss. 
-Compared to the invasion criteria, the parameter space
-allowing the fixation of the allele if it is above a cutoff frequency is much broader -- 
-	a common, recessive, self-promoting driver fixes if
-        $s<(2d-1)/2$ approximately. 
-Therefore, when $(2 d - 1)/(4 d)<s<(2d-1)/(2)$, 
-	a recessive, self-promoting driver will deterministically fix if drift, mutation, 
-	or migration pressure bring its frequency above $(1-2d+4ds)/(2s(2d-1))$, 
-	but it will be lost otherwise.
+above which it can spread quickly to fixation and below which it moves towards loss (an
+unstable equilibrium frequency). In 
+the appendix we devlop a simple
+approximation to this bistability 
+This bistability occurs in the region of parameter space in Figure
+\ref{Invasion_space}. In Supplementary Figure
+\ref{Bistab_homozyg_cost_fig} we further explore this bistability and
+show that the unstable equilibrium frequency is high across much of
+this parameter space, and so in practice the self promoting allele
+only invade in the orange space. (In the appendix we develop a simple
+approximation to the unstable equilibrium frequency
+\eqref{bistab_homozy_approx} that is also shown in  Supplementary Figure
+\ref{Bistab_homozyg_cost_fig}).
+% Compared to the invasion criteria, the parameter space
+% allowing the fixation of the allele if it is above a cutoff frequency is much broader -- 
+% 	a common, recessive, self-promoting driver fixes if
+%         $s<(2d-1)/2$ approximately. 
+% Therefore, when $(2 d - 1)/(4 d)<s<(2d-1)/(2)$, 
+% 	a recessive, self-promoting driver will deterministically fix if drift, mutation, 
+% 	or migration pressure bring its frequency above $(1-2d+4ds)/(2s(2d-1))$, 
+% 	but it will be lost otherwise.
 Inclusion of a heterozygous fitness cost (i.e. $w_{AB}=1-h_s$)
-	further constrains the evolution of a self-promoting driver. 
-This case also displays bistability -- with any heterozygous fitness cost, a rare self-promoting driver cannot spread. 
-However, if $s < d - 1/2+s_h(3-2d)/2$, 
-	it will fix deterministically if its 
+strongly constrains the evolution of a self-promoting driver. 
+In fact with any heterozygous fitness cost, a rare self-promoting
+driver cannot spread deterministically. However, this case also displays bistability -- 
+if $s < d - 1/2+s_h(3-2d)/2$ approximately, it will fix deterministically if its 
 	frequency is greater than a threshold, $f_B^*$ [Equation \eqref{thresh2}, and \yb{FIGURES SXX}].
 %	because it pays the  heterozygous fitness cost but drives
  %      ineffectively (see Figure S\ref{bistable_additive})
@@ -237,6 +249,7 @@ female meiotic drive.
   meiosis depend on sperm genotype. 2 allele model}  
 \label{Eggsperm_2_allele_cartoon}
 \end{figure}
+
 
 % (we note that the timing of fertilization relative to female meiosis places another constraint on $d$, for example, when drive takes place druing the second meitoic division
 %	it requires an uneven number of crossovers between the centromere and the drive locus \citep[see ][ for discussion]{Buckler1999}). 
@@ -498,7 +511,7 @@ over time. We can also use this to assess the
 invasion criteria for the allele by starting allele B at very low
 frequency, and seeing if it increases across the generations.
 
-\yb{\paragraph{Recessive fitness cost of self-promoting driver}
+\paragraph{Recessive fitness cost of self-promoting driver}
 When the self-promoting driver has a recessive fitness cost, $s$ genotype frequencies after selection and drive equal
 \begin{equation}	x'_{BB} =\frac{x_{B}^2(1-s)}{\bar{w} }  \Big( F+(1-F)(x_{B}+2x_{A} d) \Big) 	\end{equation}
 \begin{equation}	x'_{AA} =\frac{1}{\bar{w} }  \Big(x_{A}^2\Big) 	\end{equation}
@@ -510,9 +523,25 @@ its change in frequency across generations $\Delta f_B$ is
 \frac{f_A f_B^2}{\bar{w}} \left( [1-F][ d(1-2 f_A s) - f_B s-1/2] - s  F \right)
 \label{deltadriver}
 \end{equation}
-where $F$ is the deviation from Hardy-Weinberg expectations, and $f_A$ is the frequency of the non-driving allele. 
+where $F$ is the deviation from Hardy-Weinberg expectations (HWE), and $f_A$ is the frequency of the non-driving allele. 
 For analytical solutions presented above, we assume that $F$ equals zero. 
-}
+
+We used this HWE approximation to investifgate the bistability of the
+invasion criteria. Under this approximation we find that a common, recessive, self-promoting driver fixes if
+ $s<(2d-1)/2$. Furthermore, when $(2 d - 1)/(4 d)<s<(2d-1)/(2)$, a
+ recessive, self-promoting driver will deterministically fix if drift,
+ mutation, or migration pressure bring its frequency above approximately
+\begin{equation} 
+(1-2d+4ds)/(2s(2d-1)) \label{bistab_homozy_approx}
+\end{equation}
+ but it will be lost if it is introduced below this frequency
+ (i.e. this is an unstable equilibrium point). In Supplementary Figure \ref{Bistab_homozyg_cost_fig} we show
+ this approximation condition for bistability andd how it compared to
+ that obtained using the recursion. This equation
+ \eqref{bistab_homozy_approx} offers a reasonable, but imperfect
+ approximation 
+and seems to serve as a lower bound to the
+true unstable equilibrium frequency. 
 
 \paragraph{cost of driver in heterozygotes}
 We explored a more complex model where the self-promoting driver has a cost, $s_h$ in heterozygotes (so $w_{AB} = 1-h_s$) in addition to the cost $s$, in homozygotes.
@@ -520,15 +549,12 @@ Model construction is similar to that above.
 So long as there is any heterozygous fitness cost (i.e. $s_h > 0$) the self-promoting driver cannot invade when rare;
 	however, as is the case without a heterozygous cost, this system is bistable.
 Assuming no deviation from Hardy-Weinberg a self-promoting driver with a heterozygous fitness cost deterministically fixes if it's frequency exceeds some threshold, $f_B^*$.
-
-
 \begin{equation}
 	f_B^* = \frac{a_1+\sqrt{a_1^2+8 s_h a_2}}{2 a_2}
 	\label{thresh2}
 \end{equation}
 where, $a_1=1-2 ds_h+4 d s-2 d-3 s_h$ and $a_2=2(s-s_h)(2d-1)$.
  
-
  range of other costs to the drive alleles other than a
 simple recessive cost, for example an additive cost. We modified the recursions given in eqn
 \ref{eqn.A1}-\ref{eqn.A3} to feature an additive cost $s$ for each
@@ -545,7 +571,7 @@ allele to spread when common. In Supplementary Figure
 above which the $B$ allele can invade. This equilibrium frequency was found by a simple
 parameter search.  \gc{wonder if a bit of work could find this}
 
-\paragraph{Dominance} In the supplement we also explore a model where
+\paragraph{Dominance} we also explored a model where
 the genotype of the male who produced the fertilizing sperm affects female drive,
 instead of just the allelic type of the sperm.
  We assume a heterozygous female will transmit the $B$ allele 
@@ -609,29 +635,47 @@ x_{B'} = & w_{B'B'}  x_{B'B'} +   w_{BB'} \frac{1}{2} + x_{BB'}+ \frac{1}{2} x_{
 in combination with the transmission probabilities given in Figure
 \ref{Eggsperm_3_allele_cartoon}A.
 
-\gc{Alternatively we could give the table below:}
+% \gc{Alternatively we could give the table below:}
 
-\begin{table}
-\begin{tabular}{lllll}
-\hline 
-  &  \multicolumn{4}{c}{Sperm genotype}   \\
-  &  & A & B & B'  \\
-$\Venus$ geno. & Freq.  & $x_{AA} + \frac{1}{2} x_{AB}+ \frac{1}{2} x_{AB'} $ & $ w_{BB}  x_{BB} +   w_{BB'} \frac{1}{2} x_{BB'}+
-\frac{1}{2} x_{AB}$ & $ w_{B'B'}  x_{B'B'} +   w_{BB'} \frac{1}{2}
-x_{BB'}+ \frac{1}{2} x_{AB'}  $\\
-\hline\\
-AA & $x_{AA}$ &  & & \\
-AB & $x_{AB}$ &  & & \\
-AB' & $x_{AB'}$ &  & & \\
-BB' & $w_{BB'} x_{BB'}$ &  & & \\
-BB & $w_{B'B'} x_{BB}$ &  & & \\
-B'B' & $w_{B'B'} x_{B'B'}$ &  & & \\
-\end{tabular}
-\caption{ALTERNATIVELY I COULD FILL IN THIS MATRIX  with genotype }
-\end{table}
+% \begin{table}
+% \begin{tabular}{lllll}
+% \hline 
+%   &  \multicolumn{4}{c}{Sperm genotype}   \\
+%   &  & A & B & B'  \\
+% $\Venus$ geno. & Freq.  & $x_{AA} + \frac{1}{2} x_{AB}+ \frac{1}{2} x_{AB'} $ & $ w_{BB}  x_{BB} +   w_{BB'} \frac{1}{2} x_{BB'}+
+% \frac{1}{2} x_{AB}$ & $ w_{B'B'}  x_{B'B'} +   w_{BB'} \frac{1}{2}
+% x_{BB'}+ \frac{1}{2} x_{AB'}  $\\
+% \hline\\
+% AA & $x_{AA}$ &  & & \\
+% AB & $x_{AB}$ &  & & \\
+% AB' & $x_{AB'}$ &  & & \\
+% BB' & $w_{BB'} x_{BB'}$ &  & & \\
+% BB & $w_{B'B'} x_{BB}$ &  & & \\
+% B'B' & $w_{B'B'} x_{B'B'}$ &  & & \\
+% \end{tabular}
+% \caption{ALTERNATIVELY I COULD FILL IN THIS MATRIX  with genotype }
+% \end{table}
 \bibliography{refs}
 
 \section*{Supplementary Stuff}
+
+
+\begin{figure}
+	\rotatebox{90}{
+\includegraphics[width = 0.5
+          \textwidth]{Scripts/homozyg_bistability.eps}}
+\caption{Invasion analysis for a self promoting female meiotic drive allele with
+  recessive costs (selection coefficient $s$), showing the region of
+  bistability. The colors, and the thin dashed contours, indicate the
+  frequency the allele must be above to invade the population (note
+  that these alleles reach fixation conditional on invading). In the
+  white area the allele can not invade ($x \geq1$), in the solid red
+  area the allele can invade and fix when rare. In the left panel we
+  show the results obtained by a grid search using the recursion, on
+  the right we show the approximation obtained assuming that HWE
+  holds. }  
+\label{Bistab_homozyg_cost_fig}
+\end{figure}
 
 \begin{figure}
 \includegraphics[width = 0.8 \textwidth]{Figures/bistable_x_vs_d_additive_s.eps} 
@@ -660,49 +704,3 @@ B'B' & $w_{B'B'} x_{B'B'}$ &  & & \\
 
 
 
-\section*{OUTLINE}
-\yb{YB: To me its (1) male enhancement of female drive cannot maintain a stable polymorphisms, and (2) An allele in sperm can evolve to suppress its drive in females.}
-show that such alleles:
-\begin{enumerate}
-\item can't be balanced, \\
-\item and homozygous problems are tested out at low freq.  \\
-\item Any heterozygous problems, leads to a bistable allele\\
-\item If these alleles take off they speed through to fixation\\
-\item If allele has any drive ability in absence of sperm effect that is what allows it to enter the population
-and sperm effect isn't a further cause of conflict. What if anything do we mean by this?\\
-\item PERHAPS HERE WE INTRODUCE A SELF-RESTRAINING ALLELE
-\end{enumerate}
-
-Conclusion, such alleles are unlikely to cause evolution of female supressors, they test hemselves in a homozygous
-state when they enter the population, and sweep quickly (all the way to fixation) if they enter the pop at all.\\
-
-
-\begin{enumerate}
-\item Setup a drive-selection balanced polymorphism in std. drive model. 
-Do this by imagining the sperm-influence allele arising on the background of the driver, 
-so the allele has drive capabilities, and can have had time to evolve new biology. 
-
-Multilocus drivers held together with inversions, may offer a relatively large mutational/functional target.
-
-Evolving on the new background means that the allele suffers the fitness consequences of the 
-driver.  See A in Figure \ref{Eggsperm_3_allele_cartoon} \\
-\item Sperm-based enhancers of drive can't invade (can they in some situations?). \\
-\item Intuition is that the driver has already driven to a frequency 
-where it is held in check by its cost in homozygotes. The sperm allele 
-thus can't really help as it creates zygotes which suffer the homozygous fitness consequences.
-\end{enumerate}
-
-\subsection{So what can evolve?}
-So what can happen?
-\begin{enumerate}
-\item Alleles that arise in linkage with drive systems, which when in sperm switch off drive, 
-can spread. They benefit from drive, but avoid some of the
-consequences ( (Bi) in Figure \ref{Eggsperm_3_allele_cartoon} ). Overall as a side product they are benefiting all in pop.\\
-\item Presumably alleles that actually switch the allele that drives may do even better? As they'd end up in 
-hets. Although they'd not drive, so hard to say. YB: There is evidence that In distorts meiosis in the other direction (they still drive when rare i.e. when not fused with drive supp sperm) \\
-\item Alleles that cause sperm to switch off drive that arise on other background or unlinked to the drive system
-are selected, and spread as fast as female supressors of drive ( (Bii) in Figure \ref{Eggsperm_3_allele_cartoon} )..\\
-\item Alleles that in females facilitate the action of sperm supressors of drive (or vis versa) can spread. Haven't actually checked this.\\
-\end{enumerate}
-
-\section*{Conclusions.}
