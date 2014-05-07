@@ -229,7 +229,7 @@ geno.names<-c("11", "12","13", "22", "23", "33")
 transmitted.allele<-c(1,1,1,2,1,3,2,2,2,3,3,3)
 
 
-figures.of.traj.for.paper(){
+figures.of.traj.for.paper<-function(){
 	layout(t(1:2)); par(mar=c(3,3,1,1))
 	##female driver followed by sperm supressor
 	

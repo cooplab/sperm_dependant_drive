@@ -17,7 +17,7 @@ test.invasion.self.prop<-function(d,s.het,s.hom,x=.001,steps=10,sperm.or.male="s
 	if(sperm.or.male=="sperm"){ female.transmission.probs<-make.sperm.dep.female.transmission.prob(D)}
 	if(sperm.or.male=="male"){ female.transmission.probs<-make.male.geno.dep.female.transmission.prob(D) }
 	old.geno.freqs<-iterate.1.locus.drive(s.array,num.iterations=steps,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(1-x, 0,x))
-recover()
+#recover()
 	invading<-old.geno.freqs[["allele.freqs"]][steps,3]>old.geno.freqs[["allele.freqs"]][1,3]
 	return(invading)
 }
@@ -190,7 +190,7 @@ legend(x="bottomleft",legend=paste("s=",my.s),col=my.cols,lty=1,lwd=2)
 dev.copy2eps(file=paste(directory,"bistable_x_vs_d_additive_s.eps",sep=""))
 #dev.off()
 
-##############Phase diagram figure
+##############Phase diagram figure for the paper!!!!
 if(FALSE){
 	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd allele listed against the 1st.
 	
@@ -230,7 +230,7 @@ text(0.8,0.05,"Simple driver & Self promoter driver can invade & fix",col="white
 lines(d.range,(2*d.range- 1)/2,col="black",lwd=3,lty=1) ##simple driver fixes below this line
 lines(d.range,(2*d.range- 1)/(4*d.range),col="black",lwd=3,lty=2) ##self prom. fixes below this line
 
-text(x=0.95,y=0.95,"A.",cex=2)
+text(x=0.95,y=0.95,"B.",cex=2)
 
 par(fig=c(grconvertX(0.51, from = "user", to = "ndc"), grconvertX(0.75, from = "user", to = "ndc"), grconvertY(0.4, from = "user", to = "ndc"), grconvertY(1, from = "user", to = "ndc")), new = TRUE); 
 par(mar=c(2,2,1,0))
@@ -262,8 +262,33 @@ for(i in 1:3){
 	old.geno.freqs<-iterate.1.locus.drive(s.array=s.array,num.iterations=2000,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(0.99, 0,0.01 ))
 	lines(old.geno.freqs[["allele.freqs"]][,3],col=my.point.cols[i],lwd=2)
 	}
-text(x=50,y=0.95,"B.",cex=1)
+text(x=50,y=0.95,"C.",cex=1)
 dev.copy2eps(file=paste(directory,"invasion_space_recessive_driver.eps",sep=""))
+##############Phase diagram figure showing bistability 
+
+approx.bistable.freq<-(1-2*d+4*d*s)/(2*s*(2*d-1))
+d.range<-seq(0.5,1,length=200)
+s3.range<-seq(0,1,length=200)
+x.range<-seq(0.00001,1,length=100);
+	my.x.bistable<-numeric()
+	my.s=c(0.01,0.02)
+	x.range<-seq(0,1,length=10)
+
+	for(i in 1:length(my.s)){
+		
+		invasion.grid.bistable<-sapply(d.range,function(d){
+			sapply(x.range,function(x){
+				test.invasion.self.prop(d=d,s.het=0,s.hom=my.s[i],x=x,step=10)
+			})
+		})
+		recover()
+		#image(d.range,x.range,invasion.grid.bistable,log="y")
+		invasion.x.lines<-x.range[apply(invasion.grid.bistable,2,function(x){min(which(x))})]
+	#	text(d.range[round(length(d.range)/2)],invasion.x.lines[round(length(d.range)/2)],s,col="red")
+		my.x.bistable<-rbind(my.x.bistable,invasion.x.lines)
+	}
+
+
 
 #######################################################
 #####invasion space for male genotype controlled allele
