@@ -271,21 +271,22 @@ d.range<-seq(0.5,1,length=200)
 s3.range<-seq(0,1,length=200)
 x.range<-seq(0.00001,1,length=100);
 	my.x.bistable<-numeric()
-	my.s=c(0.01,0.02)
-	x.range<-seq(0,1,length=10)
 
-	for(i in 1:length(my.s)){
+
+
+	for(i in 1:length(s3.range)){
 		
 		invasion.grid.bistable<-sapply(d.range,function(d){
 			sapply(x.range,function(x){
-				test.invasion.self.prop(d=d,s.het=0,s.hom=my.s[i],x=x,step=10)
+				test.invasion.self.prop(d=d,s.het=0,s.hom=s3.range[i],x=x,step=10)
 			})
 		})
-		recover()
+		cat(i," ")
 		#image(d.range,x.range,invasion.grid.bistable,log="y")
 		invasion.x.lines<-x.range[apply(invasion.grid.bistable,2,function(x){min(which(x))})]
 	#	text(d.range[round(length(d.range)/2)],invasion.x.lines[round(length(d.range)/2)],s,col="red")
 		my.x.bistable<-rbind(my.x.bistable,invasion.x.lines)
+		save(file="homozyg_bistability.Robj",my.x.bistable)
 	}
 
 
