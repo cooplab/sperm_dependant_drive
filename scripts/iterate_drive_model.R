@@ -441,6 +441,7 @@ examples.for.talk <-function(){
 	
 }
 
+if(FALSE){
 ##
 x=.01;my.x2<-numeric()
 for(i in 1:4000){
@@ -494,4 +495,4 @@ s3=s
  HWEx2<-c(HWEx2,x2)
  HWEx3<-c(HWEx3,x3)
  }
- 
+ }
