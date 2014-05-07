@@ -265,14 +265,14 @@ for(i in 1:3){
 text(x=50,y=0.95,"C.",cex=1)
 dev.copy2eps(file=paste(directory,"invasion_space_recessive_driver.eps",sep=""))
 ##############Phase diagram figure showing bistability 
-
-approx.bistable.freq<-(1-2*d+4*d*s)/(2*s*(2*d-1))
+##done BATCH in homozyg_bistability.R
+#
 d.range<-seq(0.5,1,length=200)
 s3.range<-seq(0,1,length=200)
+if(FALSE){
 x.range<-seq(0.00001,1,length=100);
+
 	my.x.bistable<-numeric()
-
-
 
 	for(i in 1:length(s3.range)){
 		
@@ -288,8 +288,34 @@ x.range<-seq(0.00001,1,length=100);
 		my.x.bistable<-rbind(my.x.bistable,invasion.x.lines)
 		save(file="homozyg_bistability.Robj",my.x.bistable)
 	}
+}
 
+load("homozyg_bistability.Robj")
+layout(t(1:2))
+par(mar=c(3,3,1,1))
+my.x.bistable<-t(my.x.bistable)
+my.x.bistable<-cbind(my.x.bistable,matrix(nrow=200,ncol=67)) ##fill out rest of array 
+image(d.range,s3.range,my.x.bistable,xlab="",ylab="")
+lines(d.range,(2*d.range- 1)/2,col="black",lwd=3,lty=1) ##simple driver fixes below this line
+lines(d.range,(2*d.range- 1)/(4*d.range),col="black",lwd=3,lty=2) ##self prom. fixes below this line
+mtext("Drive coefficient, d",side=1,line=2)
+mtext("selection against homozygotes, s",side=2,line=2)
+contour(d.range,s3.range,my.x.bistable,add=TRUE,lty=2)
+text(0.8,0.6,"Self promoter cannot invade\n no matter what freq.")
+text(0.85,0.1,"Self promoter driver can\n invade & fix when rare",col="white",cex=0.8)
+##HWE
+approx.bistable.freq<-outer(d.range,s3.range,function(d,s){(1-2*d+4*d*s)/(2*s*(2*d-1))})
+approx.bistable.freq<-apply(approx.bistable.freq,1,function(x){x[x>=1]<-NA;x[x<=0]<-0;x})
+image(d.range,s3.range,t(approx.bistable.freq),xlab="",ylab="")
+lines(d.range,(2*d.range- 1)/2,col="black",lwd=3,lty=1) ##simple driver fixes below this line
+lines(d.range,(2*d.range- 1)/(4*d.range),col="black",lwd=3,lty=2) ##self prom. fixes below this line
+mtext("Drive coefficient, d",side=1,line=2)
+mtext("selection against homozygotes, s",side=2,line=2)
+contour(d.range,s3.range,t(approx.bistable.freq),add=TRUE,lty=2)
+text(0.8,0.6,"Self promoter cannot invade\n no matter what freq.")
+text(0.85,0.1,"Self promoter driver can\n invade & fix when rare",col="white")
 
+dev.copy2eps(file="homozyg_bistability.eps")
 
 #######################################################
 #####invasion space for male genotype controlled allele
