@@ -79,16 +79,16 @@ have perhaps evolved to enforce fairness by disrupting meiotic drive \citep{Rice
 
 It is therefore somewhat surprising that despite the intense evolutionary pressure on female meiosis to prevent meiotic drive, 
 it is potentially open to sabotage by a virtual stranger -- a haploid sperm genome.
-That is, in many animal species, female meiosis is competed only after fertilization \citep{Masui_book}, 
+That is, in many animal species, female meiosis is completed only after fertilization \citep{Masui_book}, 
 creating ample opportunity for interaction between the sperm and female meiotic machinery. 
 Therefore, a `green-bearded' \citep{Gardner2010} sperm-acting allele that recognizes and facilitates the meiotic drive of a genetically equivalent allele in female meiosis %(a  heteromorphic dyad), 
      could presumably rapidly spread through a population. 
-At first sight, female meiosis appears primed for exploitation by selfish sperm systems.  
+At first sight, female meiosis appears primed for exploitation by such selfish systems.  
 Why then is the requirement of fertilization to complete female meiosis so ubiquitous? 
 
 It is certainly not the case that animals are mechanistically incapable of circumventing this requirement.
 The stage at which female meiosis requires fertilization varies widely across taxa, and in a few animals, 
-	female meiosis is complete upon ovulation (that is fertilization is not required for female meiosis \citep[see table 1 of ref 
+	female meiosis is complete upon ovulation (that is, fertilization is not required for female meiosis \citep[see table 1 of ref 
 ][]{Masui_book}). 
 
 It is also not the case that sperm is mechanistically incapable of influencing female meiosis.
@@ -128,7 +128,7 @@ In the standard single-locus, biallelic model of female meiotic drive,
 the driving allele is transmitted to the egg  in heterozygotes with
 probability  $d > 1/2$, regardless of sperm genotype. To depict a case
 of a self-promoting meiotic driver,  we modify this standard model such that the driver is only effective when fertilized by a sperm carrying that allele (see Figure
-\ref{Eggsperm_2_allele_cartoon}). 
+\ref{Eggsperm_2_allele_cartoon})
 \footnote{the timing of fertilization relative to female meiosis places another constraint on $d$, for example, if fertilization (and therefore, sperm dependent drive) takes place at MII (as in mammals),
 	female drive requires an uneven number of crossovers between the centromere and the drive locus, 
 	so $d$ is bounded to be $<0.75$? \citep[see ][ for
@@ -146,14 +146,14 @@ will be maintained as a protected polymorphism \citep{Prout1973}. The
         parameter space where the allele can invade but not fix is shown in white
         in Figure \ref{Invasion_space}A., and where it can fix in the green
         and orange areas \ref{Invasion_space}B. When the allele is
-        maintained as a polymorphism it providing an opportunity for the evolution of
+        maintained as a polymorphism, it provides an opportunity for the evolution of
 	drive suppressors, corresponding well to empirical examples of
         female meiotic drive \citep[reviewed in ][]{Burt2006}. 
 
 In contrast to a traditional driver, which drives but pays effectively
 	no fitness cost when rare, 
 	a self-promoting driver specifically creates homozygote
-        zygotes when it drives in heterozygotes. 
+        zygotes when it drives. %in heterozygotes. 
 %, and therefore there is a drive-associated fitness cost even when rare. 
 It must therefore overcome a drive-associated homozygous fitness cost simply to spread when rare. 
 The conditions allowing the invasion of a self-promoting driver
@@ -173,21 +173,37 @@ However, once relatively common, it  rapidly achieves fixation due to its
 This lack of a balanced polymorphism (Figure \ref{Invasion_space}) precludes the evolution of an
 	allele that suppresses this form of meiotic drive in females.
 
+
+%I SUBSTANTIALLY REWROTE THIS
+\yb{
 The positive frequency dependence of a self-promoting driver can
-induce bistability in its spread, i.e. there is a critical frequency
-above which it can spread quickly to fixation and below which it moves towards loss (an
-unstable equilibrium frequency). In 
-the appendix we devlop a simple
-approximation to this bistability 
-This bistability occurs in the region of parameter space in Figure
-\ref{Invasion_space}. In Supplementary Figure
-\ref{Bistab_homozyg_cost_fig} we further explore this bistability and
-show that the unstable equilibrium frequency is high across much of
-this parameter space, and so in practice the self promoting allele
-only invade in the orange space. (In the appendix we develop a simple
-approximation to the unstable equilibrium frequency
-\eqref{bistab_homozy_approx} that is also shown in  Supplementary Figure
-\ref{Bistab_homozyg_cost_fig}).
+induce bistability in its spread.
+%OLD GRAHAM WORDS
+ %, i.e. there is a critical frequency
+%above which it can spread quickly to fixation and below which it moves towards loss (an
+%unstable equilibrium frequency). In 
+%the appendix, we develop a simple
+%approximation to this bistability. 
+When $s$ is too large to allow a rare driver to increase in frequency, but small enough to allow a common driver to fix (the inequality in EQUATION XXX),
+there is  an unstable equilibrium frequency (approximated in EQUATION XXX)  
+	above which it can spread quickly to fixation and below which it moves towards loss 
+	(see Figure \ref{Bistab_homozyg_cost_fig} for exact results).	
+%OLD GRAHAM WORDS
+%This bistability occurs in the region of parameter space in Figure
+%\ref{Invasion_space}. In Supplementary Figure
+%\ref{Bistab_homozyg_cost_fig} we further explore this bistability and
+%show that the unstable equilibrium frequency is high across much of
+%this parameter space, and so in practice the self promoting allele
+%only invade in the orange space. (In the appendix we develop a simple
+%approximation to the unstable equilibrium frequency
+%\eqref{bistab_homozy_approx} that is also shown in  Supplementary Figure
+%\ref{Bistab_homozyg_cost_fig}).
+This unstable equilibrium frequency is high across much of
+	parameter space, likely too high to be reached by drift, 
+	and therefore the more restrictive invasion criteria rather than the fixation criteria, will  likely determine the fate of self promoting drivers. 
+}
+
+%OLD YANIV WORDS
 % Compared to the invasion criteria, the parameter space
 % allowing the fixation of the allele if it is above a cutoff frequency is much broader -- 
 % 	a common, recessive, self-promoting driver fixes if
@@ -197,9 +213,10 @@ approximation to the unstable equilibrium frequency
 % 	or migration pressure bring its frequency above $(1-2d+4ds)/(2s(2d-1))$, 
 % 	but it will be lost otherwise.
 Inclusion of a heterozygous fitness cost (i.e. $w_{AB}=1-h_s$)
-strongly constrains the evolution of a self-promoting driver. 
-In fact with any heterozygous fitness cost, a rare self-promoting
-driver cannot spread deterministically. However, this case also displays bistability -- 
+further constrains the evolution of a self-promoting driver. 
+In fact, with any heterozygous fitness cost, a rare self-promoting
+driver cannot spread deterministically. 
+However, this case also displays bistability -- 
 if $s < d - 1/2+s_h(3-2d)/2$ approximately, it will fix deterministically if its 
 	frequency is greater than a threshold, $f_B^*$ [Equation \eqref{thresh2}, and \yb{FIGURES SXX}].
 %	because it pays the  heterozygous fitness cost but drives
