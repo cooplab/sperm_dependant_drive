@@ -193,12 +193,12 @@ for(i in 1:length(my.s)){
 	a1<-1-2*d.range*sh+4*d.range*s-2*d.range-3*sh;
 	a2<-2*(s-sh)*(2*d.range-1)
 
-	f.HWE.bistab<- a1+sqrt(a1^2+8*sh*a2)/(2*a2)
-	lines(d.range,f.HWE.bistab,col=my.cols[i],lwd=2,lty=2)
+	f.HWE.bistab<- (a1+sqrt(a1^2+8*sh*a2))/(2*a2)
+	points(d.range[c(1:4,seq(5,200,by=5))],f.HWE.bistab[c(1:4,seq(5,200,by=5))],col=my.cols[i],lwd=2,lty=2,pch=19,cex=1)
 }
 
 
-legend(x="bottomleft",legend=paste("s=",my.s),col=my.cols,lty=1,lwd=2)
+legend(x="bottomleft",legend=paste("s=",2*my.s),col=my.cols,lty=1,lwd=2)
 
 dev.copy2eps(file=paste(directory,"bistable_x_vs_d_additive_s.eps",sep=""))
 #dev.off()
@@ -393,13 +393,28 @@ dev.off()
 save(file=paste(directory,"effect_of_dominance_male_control.Robj",sep=""),invasion.w.dom,fixation.w.dom)
 }
 load(file=paste(directory,"effect_of_dominance_male_control.Robj",sep=""))
-
 my.cols<-brewer.pal(nrow(invasion.w.dom),name="Dark2")
 plot(c(0.5,1),c(0,0.5),type="n",,xlab="Drive coefficient",ylab="selection coeff against homozygotes")
 sapply(1:nrow(invasion.w.dom),function(i){lines(d.range,invasion.w.dom[i,],lty=1,col=my.cols[i])})
 sapply(1:nrow(invasion.w.dom),function(i){lines(d.range,fixation.w.dom[i,],lty=2,col=my.cols[i])})
 legend("topleft",lty=c(1,2,rep(NA,nrow(invasion.w.dom))),pch=c(NA,NA,rep(19,nrow(invasion.w.dom))),col=c(rep("black",2),my.cols),legend=c("invasion line","fixation line",paste("dominance = ",seq(0,1,length=5))))
 dev.copy2eps(file=paste(directory,"effect_of_dominance_on_invasion_space_one_graph.eps",sep=""))
+
+layout(t(1:5))
+par(mar=c(3,3,1,0.1))
+for(i in 1:5){
+	plot(c(0.5,1),c(0,0.5),type="n",,,ylab="selection coeff against homozygotes")
+	if(i==4) text(0.67,0.185,"polymorphic",srt=50,col="black")
+	if(i==5) text(0.75,0.3,"polymorphic",srt=50,col="black")
+	mtext(side=1,line=2,xlab="Drive coefficient,d")
+	lines(d.range,invasion.w.dom[i,],lty=1,col=my.cols[i])
+	lines(d.range,fixation.w.dom[i,],lty=2,col=my.cols[i])
+	if(i=1){ 
+		legend("topleft",lty=c(1,2),legend=c("invasion line","fixation line")); 	
+		mtext(side=2,line=2,xlab="selection coeff against homozygotes, s")
+
+	
+}
 
 
 s.array<-rep(0,6)
