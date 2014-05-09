@@ -173,9 +173,7 @@ However, once relatively common, it  rapidly achieves fixation due to its
 This lack of a balanced polymorphism (Figure \ref{Invasion_space}) precludes the evolution of an
 	allele that suppresses this form of meiotic drive in females.
 
-
 %I SUBSTANTIALLY REWROTE THIS
-\yb{
 The positive frequency dependence of a self-promoting driver can
 induce bistability in its spread.
 %OLD GRAHAM WORDS
@@ -201,7 +199,7 @@ there is  an unstable equilibrium frequency (approximated in EQUATION XXX)
 This unstable equilibrium frequency is high across much of
 	parameter space, likely too high to be reached by drift, 
 	and therefore the more restrictive invasion criteria rather than the fixation criteria, will  likely determine the fate of self promoting drivers. 
-}
+
 
 %OLD YANIV WORDS
 % Compared to the invasion criteria, the parameter space
@@ -243,12 +241,21 @@ Although the allelic identity of sperm could plausibly influence the outcome of 
 %	when this dominance is high, a narrow sliver of parameter space sustaining a polymorphism emerges (see Figure S\ref{Effect_of_dominance})
  %presumably because positive frequency dependence diminishes with the dominance of the male effect driver.
 This male-genotype dependent model requires one additional parameter, as we exchange $d$ in the sperm dependent case for $d_{het}$ and $d_{hom}$ which describe the transmission of the drive allele in a heterozygous female mating with males heterozygous and homozygous for the self-promoting drive allele, respectively.  
-When $d_{het}$ is large relative to $d_{hom}$, a narrow sliver of parameter space sustains a polymorphism (see Figure S\ref{Effect_of_dominance}), presumably because positive frequency dependence diminishes with the dominance of the male effect driver. 
+However, when
+the distorting effect of genotype displays strong dominance in its
+effect on female meiosis ($d_{het}$ is close to $d_{hom}$), 
+there is a a narrow sliver of parameter space sustains a polymorphism
+when the cost of the drive is recessive
+(see Figure S\ref{Effect_of_dominance}). 
+Presumably this zone of polymorphism comes about because positive frequency dependence diminishes with the dominance of the male effect driver. 
 As an analytical example, consider the case of male-genotype dependent deleterious recessive female driver 
 	(assuming, as above, $w_{BB}=1-s$, and $w_{AA}=w_{AB}=1$). 
-Here, a rare driver invades when $s$ is less than $(d_{het}-1/2)/d_{het}$, and fixes when $s$ is less than $d_{hom} - 1/2$. 
+Here, a rare driver invades when $s$ is less than $(d_{het}-1/2)/d_{het}$, and fixes when $s$ is less than $d_{hom} - 1/2$.
 Intermediate values of $s$, which represent a small proportion of parameter space can maintain a polymorphism. 
-
+However, it does not seem particularly realistic to think that the
+effect of the drive allele would be dominant in its action through the
+male genotype, while the cost would be recessive. Thus we regard this
+case as interesting but not very general.
 
 %\gc{Add short paragraph about sex chromosomes here? XY systems don't care. ZW systems (males ZZ, females ZW). If there is
 %sex ratio distortion how could this play out?}
@@ -330,7 +337,6 @@ $d'<d$). In the right panel we depict the transmission probabilities for
 %%%%%%%%%%%%%%%%%%%%%%%%%
 % TWO LOCUS MODEL [modify (general) / facilitate (helps ) / prevent (stops)] 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\yb{********* DO WE NEED TO DO THE MALE GENOTYPE THING HERE TOO? *********}
 
 Above, we explored a model were a driver that drove in females when signaled by a complementary allele in sperm.  
 We complement this single locus model of an allele with pleiotropic effects in both sexes, 
@@ -624,8 +630,7 @@ by sperm from heterozygote males, where the sperm do not themselves
 carry the allele. But as the B allele becomes common it will frequently be
 present in the homozygous state in males, and so will be unable to
 avoid the production of unfit homozygote zygotes leaving it trapped in
-the population. \gc{Perhaps we should show the equil. freq. in the
-  fig, as I'm guessing it might be rare}
+the population. 
 
 \paragraph{three allele system}
 %$x_{AA}$, $x_{AB}$,$x_{AB'}$, $w_{BB'} x_{BB'}$, $w_{B'B'} x_{BB}$, $w_{B'B'} x_{B'B'}$
@@ -715,7 +720,9 @@ In the parameter space below the invasion (solid) line the self promotor
  allele can be maintained as a polymorphism in that thin slice of
  parameter space between the two lines. These results were 
   obtained using the recursion. In the final panel we show the
-  fixation line (small dashes) as predicted by our HWE approximation.
+  fixation line (small dashes) as predicted by our HWE approximation
+  ($(d_{het}-1/2)/d_{het}$), see the `dominance' section of the
+  Appendix for more details.
 }  \label{Effect_of_dominance}
 \end{figure}
 
