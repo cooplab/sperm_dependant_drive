@@ -400,21 +400,45 @@ sapply(1:nrow(invasion.w.dom),function(i){lines(d.range,fixation.w.dom[i,],lty=2
 legend("topleft",lty=c(1,2,rep(NA,nrow(invasion.w.dom))),pch=c(NA,NA,rep(19,nrow(invasion.w.dom))),col=c(rep("black",2),my.cols),legend=c("invasion line","fixation line",paste("dominance = ",seq(0,1,length=5))))
 dev.copy2eps(file=paste(directory,"effect_of_dominance_on_invasion_space_one_graph.eps",sep=""))
 
-layout(t(1:5))
-par(mar=c(3,3,1,0.1))
-for(i in 1:5){
-	plot(c(0.5,1),c(0,0.5),type="n",,,ylab="selection coeff against homozygotes")
-	if(i==4) text(0.67,0.185,"polymorphic",srt=50,col="black")
-	if(i==5) text(0.75,0.3,"polymorphic",srt=50,col="black")
-	mtext(side=1,line=2,xlab="Drive coefficient,d")
+text(0.6,0.45,expression(d[h]== 0))
+
+layout(matrix(1:4,nrow=2,byrow=TRUE))
+par(mar=c(3,3,1.5,0.1))
+for(i in c(1,3,4,5)){
+	plot(c(0.5,1),c(0,0.5),type="n",ylab="",xlab="")
 	lines(d.range,invasion.w.dom[i,],lty=1,col=my.cols[i])
 	lines(d.range,fixation.w.dom[i,],lty=2,col=my.cols[i])
-	if(i=1){ 
-		legend("topleft",lty=c(1,2),legend=c("invasion line","fixation line")); 	
-		mtext(side=2,line=2,xlab="selection coeff against homozygotes, s")
+	if(i==3){ 
+		legend("bottomright",lty=c(1,2),legend=c("invasion line","fixation line")); 
+		mtext(side=3,line=0,"h=0.5")))
 
-	
+		#text(0.6,0.45,expression(paste(d[h],"=0.5d")))
+
+		}	
+	if(i==1){	
+		mtext(side=2,line=2,"selection coeff against homozygotes, s",cex=0.8)
+		mtext(side=3,line=0,"h=0")
+		#text(0.6,0.45,expression(paste(d[h],"=0")))
+		}
+	if(i==4){
+		mtext(side=2,line=2,"selection coeff against homozygotes, s",cex=0.8)
+		text(0.67,0.185,"polymorphic",srt=50,col="black")
+		mtext(side=3,line=0,"h=0.75")
+		#text(0.6,0.45,expression(paste(d[h],"=0.75d")))
+		mtext(side=1,line=2,"Drive coefficient,d",cex=0.8)
+
+		}
+	if(i==5){
+		text(0.78,0.3,"polymorphic",srt=50,col="black",cex=1)
+#		text(0.6,0.45,expression(d[h]== d))
+		mtext(side=3,line=0,"h=1")		
+		mtext(side=1,line=2,"Drive coefficient,d",cex=0.8)
+
+	}
 }
+lines(d.range, (2*d.range-1)/(2*d.range),col=my.cols[i],lty=3)
+legend("bottomright",lty=3,legend=c("HWE fixation line"),col=my.cols[i]); 
+dev.copy2eps(file=paste(directory,"effect_of_dominance_on_invasion_space_four_graph.eps",sep=""))
 
 
 s.array<-rep(0,6)

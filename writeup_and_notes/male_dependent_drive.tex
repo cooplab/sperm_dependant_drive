@@ -627,8 +627,6 @@ avoid the production of unfit homozygote zygotes leaving it trapped in
 the population. \gc{Perhaps we should show the equil. freq. in the
   fig, as I'm guessing it might be rare}
 
-
-
 \paragraph{three allele system}
 %$x_{AA}$, $x_{AB}$,$x_{AB'}$, $w_{BB'} x_{BB'}$, $w_{B'B'} x_{BB}$, $w_{B'B'} x_{B'B'}$
 We denote the frequency of the three genotypes in the population at birth are
@@ -703,18 +701,22 @@ in combination with the transmission probabilities given in Figure
 \end{figure}
 
 \begin{figure}
-\includegraphics[width = 0.8 \textwidth]{Figures/effect_of_dominance_on_invasion_space_one_graph.eps} 
+\includegraphics[width = 0.8 \textwidth]{../Scripts/effect_of_dominance_on_invasion_space_four_graph.eps} 
 \caption{Invasion analysis of an allele whose effect
  on female meoisis is mediated by the genotype of the fertilizing
- male. The area below the solid/dotted line is the parameter region
- where the allele can invade/fix (from $1/1000$ and $999/1000$
- \gc{maybe should lower this}). Note
- that all of the fixation lines are on top of each other as dominance
- parameter makes little difference here. The allele will be
- polymorphic in the parameter space where the solid (invasion) line
- falls above the dotted (fixation) line. Note that this is a very
- narrow parameter range, and only exists if the allele has a
- reasonable degree on dominance}  \label{Effect_of_dominance}
+ male.  As above wee assume a heterozygous female will transmit the $B$ allele 
+  with probabilities  $\frac{1}{2}$,  $\frac{1}{2} + h(d-\frac{1}{2}) $ or $d$, 
+ if she mated with a n $AA$, $AB$, or $BB$ male,  respectively.  The allele suffers a recessive fitness cost $s$.  
+ The four panels correspond to different dominance relationships.
+In the parameter space below the invasion (solid) line the self promotor
+ driver can invade. In the parameter space below the fixation (long
+ dash) line the self promotor can fix in the population. In the last
+ two panels the invasion line is above the fixation line and so the
+ allele can be maintained as a polymorphism in that thin slice of
+ parameter space between the two lines. These results were 
+  obtained using the recursion. In the final panel we show the
+  fixation line (small dashes) as predicted by our HWE approximation.
+}  \label{Effect_of_dominance}
 \end{figure}
 
 \end{document}
