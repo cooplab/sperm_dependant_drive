@@ -42,6 +42,13 @@
 \textsc{Burt, A.} and \textsc{R.~Trivers}, 2006\ \ {\em {Genes in conflict.}}
 \newblock Cambridge: Belknap Press.
 
+\bibitem[\protect\citeauthoryear{Charlesworth and Hartl}{\textsc{Charlesworth}
+  and \textsc{Hartl}}{1978}]{Charlesworth1978}
+\textsc{Charlesworth, B.} and \textsc{D.~L. Hartl}, 1978\ \ {Population
+  dynamics of the Segregation Distorter polymorphism of {\it Drosophila
+  melanogaster}.}
+\newblock Genetics~{\em 89\/}(1)\textbf{:}\ 171--192.
+
 \bibitem[\protect\citeauthoryear{Dawe and Cande}{\textsc{Dawe} and
   \textsc{Cande}}{1996}]{Dawe1996}
 \textsc{Dawe, R.~K.} and \textsc{W.~Z. Cande}, 1996\ \ {Induction of
@@ -147,6 +154,13 @@
 \textsc{Sandler, L.} and \textsc{E.~Novitski}, 1957\ \ {Meiotic drive as an
   evolutionary force}.
 \newblock The American Naturalist~{\em 91\/}(857)\textbf{:}\ 105--110.
+
+\bibitem[\protect\citeauthoryear{Thomson and Feldman}{\textsc{Thomson} and
+  \textsc{Feldman}}{1974}]{Thomson1974}
+\textsc{Thomson, G.~J.} and \textsc{M.~W. Feldman}, 1974\ \ {Population
+  genetics of modifiers of meiotic drive. II. Linkage modification in the
+  segregation distortion system.}
+\newblock Theoretical Population Biology~{\em 5\/}(2)\textbf{:}\ 155--162.
 
 \bibitem[\protect\citeauthoryear{Ubeda and Haig}{\textsc{Ubeda} and
   \textsc{Haig}}{2004}]{Ubeda2004}
