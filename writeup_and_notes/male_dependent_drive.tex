@@ -146,7 +146,8 @@ of a self-promoting meiotic driver,  we modify this standard model such
 We then identify the conditions allowing for the spread of this self-promoting driver, 
 	and evaluate whether a driver of this form could generate a sustained conflict favoring the evolution of suppressors. 
 
-For comparative purposes, we present the standard drive model in equations \ref{eqn.A1}-\ref{eqn.A3}, 
+For comparative purposes, we present the standard drive model as Model 1 in the Appendix, 
+%equations \ref{eqn.A1}-\ref{eqn.A3}, 
 	and refer readers to the previous literature on this model \citep[e.g. ][]{Prout1973,Ubeda2004} for additional results. 
 In this case, assuming the driving allele is deleterious in both sexes but fully recessive 
 	(i.e. the fitness of drive homozygotes equals $w_{BB}=1-s$ and other genotypic fitnesses equal $w_{AA}=w_{AB}=1$), 
@@ -180,7 +181,8 @@ When a self-promoting driver does spread,
 	because the paucity of complimentary sperm compromises its ability to drive. 
 However, once relatively common, it  rapidly achieves fixation due to its
 	positive frequency dependent behavior (Inset in Figure \ref{Invasion_space}).  
-This lack of a balanced polymorphism (Figure \ref{Invasion_space}) precludes the evolution of an
+This lack of a balanced polymorphism %(Figure \ref{Invasion_space}) 
+	precludes the evolution of an
 	allele that suppresses this form of meiotic drive in females.
 
 %I SUBSTANTIALLY REWROTE THIS
@@ -192,10 +194,11 @@ induce bistability in its spread.
 %unstable equilibrium frequency). In 
 %the appendix, we develop a simple
 %approximation to this bistability. 
-When $s$ is too large to allow a rare driver to increase in frequency, but small enough to allow a common driver to fix (the inequality in EQUATION XXX),
-there is  an unstable equilibrium frequency (approximated in EQUATION XXX)  
+When $s$ is too large to allow a rare driver to increase in frequency, but small enough to allow a common driver to fix (the inequality in Equation \ref{ineqA}),
+there is  an unstable equilibrium frequency, $f^*_{B\text{ recessive}}$  
 	above which it can spread quickly to fixation and below which it moves towards loss 
-	(see Figure \ref{Bistab_homozyg_cost_fig} for exact results).	
+	($f^*_{B\text{ recessive}}$ is approximated in Equation \ref{bistab_homozy_approx}.  
+	We compare this approximation to the exact result in Figure \ref{Bistab_homozyg_cost_fig}).	
 %OLD GRAHAM WORDS
 %This bistability occurs in the region of parameter space in Figure
 %\ref{Invasion_space}. In Supplementary Figure
@@ -221,7 +224,7 @@ This unstable equilibrium frequency is high across much of
 % 	a recessive, self-promoting driver will deterministically fix if drift, mutation, 
 % 	or migration pressure bring its frequency above $(1-2d+4ds)/(2s(2d-1))$, 
 % 	but it will be lost otherwise.
-Inclusion of a heterozygous fitness cost (i.e. $w_{AB}=1-h_s$)
+Inclusion of a heterozygous fitness cost (i.e. $w_{AB}=1-s_h$)
 further constrains the evolution of a self-promoting driver. 
 In fact, with any heterozygous fitness cost, a rare self-promoting
 driver cannot spread deterministically. 
@@ -324,7 +327,7 @@ Now consider an allele that is fairly transmitted through
 {\bf (A) } The sperm-dependent transmission probabilities of alleles through
 female meiosis (female germ cells depicted as circles, sperm indicated by wiggly
 tails). In each case the top and bottom entry in each cell give the
-transmisson probability of the left and right allele in the female
+transmission probability of the left and right allele in the female
 being transmitted to the egg. In the left panel we show the transmission probabilities for
   A, B, and B'. Where B' is a driver allele which is either promotes
   itself through through female meiosis when sperm (a B$^+$ allele,
@@ -499,109 +502,144 @@ In light of that it is interesting to consider whether the phylogenetic variatio
 %disrupting other copies of themselves from gaining a 
 %transmission advantage through female meiosis.
   \appendix
+
+
 \section*{Appendix}
-In our first scenerio allele $A$ is the ancestral allele and allele
-$B$ is our sperm dependent drive allele.
-The sperm dependence of the drive is a form of assortative
-transmission (mating), and so we have to keep track of the genotype frequencies.
-Our genotype frequencies at birth are $x_{AA},~x_{AB},$ and
-$x_{BB}$. These three genotypes have fitnesses $w_{AA},~w_{AB},$ and
-$w_{BB}$, which are identical between males and females. Because 
-fitnesses are equivalent in both sexes, genotypic frequencies
-are identical in males and females, but in the following
-equations they are marked with $\Mars$ and $\Venus$ respectively to
-allow the reader to more easily follow the logic. 
-The frequency of the three genotypes at birth in the next generation is:
-\begin{equation}
-x'_{BB} =\frac{1}{\bar{w} } \Big( w_{BB} x_{BB}^{\Venus} (w_{BB} x_{BB}^{\Mars} +\frac{1}{2}
-  w_{AB} x_{AB}^{\Mars} ) + w_{AB} x_{AB}^{\Venus} (d w_{BB}
-  x_{BB}^{\Mars} +\frac{1}{2} d
-w_{AB} x_{AB}^{\Mars} ) \Big),  \label{eqn.A1}
-\end{equation}
-\begin{equation}
-x'_{AA} =\frac{1}{\bar{w} } \Big(  w_{AA} x_{AA}^{\Venus} (w_{AA} x_{AA}^{\Mars} + \frac{1}{2}
-   w_{AB} x_{AB}^{\Mars}) + w_{AB} x_{AB}^{\Venus}(\frac{1}{2} w_{AA} x_{AA}^{\Mars}+ \frac{1}{2} 
-  w_{AB} x_{AB}^{\Mars}) \Big),  \label{eqn.A2}
-\end{equation}
-and
-\begin{eqnarray}
-x'_{AB} = & \frac{1}{\bar{w} } \Big( w_{AA} x_{AA}^{\Venus}  ( w_{BB}  x_{BB}^{\Mars} + \frac{1}{2}
-  w_{AB}  x_{AB}^{\Mars} ) +w_{BB} x_{BB}^{\Venus} ( w_{AA}  x_{AA}^{\Mars} + \frac{1}{2}
-  w_{AB}  x_{AB}^{\Mars} )  \nonumber \\
-& + x_{AB}^{\Venus}(\frac{1}{2}  w_{AA}  x_{AA}^{\Mars}+\frac{1}{2} (1-d)
- w_{AB}  x_{AB}^{\Mars} + \frac{1}{4}  w_{AB}
- x_{AB}^{\Mars} + (1-d)  w_{BB}  x_{BB}^{\Mars} ) \Big) \label{eqn.A3}
-\end{eqnarray}
-where the mean fitness of the population is
-\begin{equation}
-\bar{w} = w_{AA} x_{AA}+w_{AB}  x_{AB} +w_{BB}  x_{BB}.
-\end{equation}
-We can then iterate this recursion over generations, for
-example to produce the frequency trajectories shown in the inset
+Below, we highlight some of our derivations and analytical results. 
+The fitness of genotype, $i$ is $w_g$ and its frequency before drive, after drive, and after drive and selection are $f_g$, $f_g'$ and $f_g''$, respectively, and population mean fitness,  $\bar{w}$ equals  $\Sigma f_g'w_g$. Genotypic fitnesses are $w_{AA} = 1$, $w_{AB} = 1-s_h$, and $w_{BB}=1-s$, and are sex-independent. 
+All models include a balletic locus with non-driving and driving alleles in frequencies $f_A$ and $f_B$, respectively, while more complex models include more loci and/or alleles.  
+Because many of our analyses assume Hardy Weinberg Equilibrium (HWE), we note which analytical results are approximations. 
+We verify these approximations with exact numerical iterations in supplementary figures and scripts, and detail the derivation and details of these results in our mathematical supplement. 
+
+
+\subsection*{Model 1. Traditional driver}
+In the standard drive model meiosis in males is fair such that $A/B$ heterozygotes contribute $A$ and $B$ alleles with equal probabilities; however, $A/B$ females transmit the $B$ allele with probability $d>1/2$. 
+After drive and random mating genotype frequencies are 
+	$f_{AA}'=f_A (f_{AA }+ f_{AB} (1 - d))$, 
+	$f_{AB}'=f_A (f_{BB} + f_{ABd}) + f_B (f_{AA} + f_{AB} (1 - d))$,
+	and $f_{BB}= f_B (f_{AB} d + f_{BB})$. 
+%Assuming fitnesses $w_{AA}=1$, $w_{AB}-1 s_h$ and $w_{BB}=1-s$, 
+Frequencies of genotype, $i$, after drive and selection are 
+	\begin{equation} f_i''= f_i'w_i/\bar{w}\end{equation}
+	where $w_i$ is genotypic fitness, and mean fitness, $\bar{w} = \Sigma f_i'w_i$. 
+	Mathematical approximations assuming HWE show that a rare driver will spread when $s_h <(2d-1)/(1+2d)$, and will fix when $s< d -1/2 + 3 s_h /2- d s_h$. This later inequality reduces to $s<(2d-1)/2$ when the cost of drive is fully recessive. 
+	
+\subsection*{Model 2. Single locus, sperm-dependent drive.}
+Our single-locus model of sperm dependent drive resembles the traditional driver with the caveat that the $B$ allele drives in heterozygous females only when fertilized by $B$ bearing sperm. 
+Therefore, genotype frequencies after drive are 
+	$f_{AA}'=f_A^2$, 
+	$f_{AB}'=f_A f_B+f_B (f_{AA} + f_{AB}(1 - d)) $,
+	and $f_{BB}'= f_B (f_{AB} d + f_{BB} )$. 
+As above, exact frequencies after drive, random mating and selection are $f_i''= f_i'w_i/\bar{w}$. 
+We iterate this recursion over generations, to produce the frequency trajectories shown in the inset
 Figure \ref{Invasion_space} by plotting $x_{BB}+ \frac{1}{2}x_{AB}$
-over time. We can also use this to assess the
-invasion criteria for the allele by starting allele B at very low
-frequency, and seeing if it increases across the generations.
+over time, and to assess the analytical approximations, below.
 
-\paragraph{Recessive fitness cost of self-promoting driver}
-When the self-promoting driver has a recessive fitness cost, $s$ genotype frequencies after selection and drive equal
-\begin{equation}	x'_{BB} =\frac{x_{B}^2(1-s)}{\bar{w} }  \Big( F+(1-F)(x_{B}+2x_{A} d) \Big) 	\end{equation}
-\begin{equation}	x'_{AA} =\frac{1}{\bar{w} }  \Big(x_{A}^2\Big) 	\end{equation}
-and
-\begin{equation}	x'_{AB} =\frac{2 x_{A}x_{B} }{\bar{w} }  \Big(1-x_{B}(d-1/2)(1-F) \Big)	\end{equation}
+% the $B$ allele In our first scenerio allele $A$ is the ancestral allele and allele
+%$B$ is our sperm dependent drive allele.
+%The sperm dependence of the drive is a form of assortative
+%transmission (mating), and so we have to keep track of the genotype frequencies.
+%Our genotype frequencies at birth are $x_{AA},~x_{AB},$ and
+%$x_{BB}$. These three genotypes have fitnesses $w_{AA},~w_{AB},$ and
+%$w_{BB}$, which are identical between males and females. Because 
+%fitnesses are equivalent in both sexes, genotypic frequencies
+%are identical in males and females, but in the following
+%equations they are marked with $\Mars$ and $\Venus$ respectively to
+%allow the reader to more easily follow the logic. 
+%The frequency of the three genotypes at birth in the next generation is:
+%\begin{equation}
+%x'_{BB} =\frac{1}{\bar{w} } \Big( w_{BB} x_{BB}^{\Venus} (w_{BB} x_{BB}^{\Mars} +\frac{1}{2}
+%  w_{AB} x_{AB}^{\Mars} ) + w_{AB} x_{AB}^{\Venus} (d w_{BB}
+%  x_{BB}^{\Mars} +\frac{1}{2} d
+%w_{AB} x_{AB}^{\Mars} ) \Big),  \label{eqn.A1}
+%\end{equation}
+%\begin{equation}
+%x'_{AA} =\frac{1}{\bar{w} } \Big(  w_{AA} x_{AA}^{\Venus} (w_{AA} x_{AA}^{\Mars} + \frac{1}{2}
+%   w_{AB} x_{AB}^{\Mars}) + w_{AB} x_{AB}^{\Venus}(\frac{1}{2} w_{AA} x_{AA}^{\Mars}+ \frac{1}{2} 
+%  w_{AB} x_{AB}^{\Mars}) \Big),  \label{eqn.A2}
+%\end{equation}
+%and
+%\begin{eqnarray}
+%x'_{AB} = & \frac{1}{\bar{w} } \Big( w_{AA} x_{AA}^{\Venus}  ( w_{BB}  x_{BB}^{\Mars} + \frac{1}{2}
+%  w_{AB}  x_{AB}^{\Mars} ) +w_{BB} x_{BB}^{\Venus} ( w_{AA}  x_{AA}^{\Mars} + \frac{1}{2}
+%  w_{AB}  x_{AB}^{\Mars} )  \nonumber \\
+%& + x_{AB}^{\Venus}(\frac{1}{2}  w_{AA}  x_{AA}^{\Mars}+\frac{1}{2} (1-d)
+% w_{AB}  x_{AB}^{\Mars} + \frac{1}{4}  w_{AB}
+ %x_{AB}^{\Mars} + (1-d)  w_{BB}  x_{BB}^{\Mars} ) \Big) \label{eqn.A3}
+%\end{eqnarray}
+%where the mean fitness of the population is
+%\begin{equation}
+%\bar{w} = w_{AA} x_{AA}+w_{AB}  x_{AB} +w_{BB}  x_{BB}.
+%\end{equation}
+%We can then iterate this recursion over generations, for
+%example to produce the frequency trajectories shown in the inset
+%Figure \ref{Invasion_space} by plotting $x_{BB}+ \frac{1}{2}x_{AB}$
+%over time. We can also use this to assess the
+%invasion criteria for the allele by starting allele B at very low
+%frequency, and seeing if it increases across the generations.
 
-its change in frequency across generations $\Delta f_B$ is
+\paragraph{Recessive fitness cost of self-promoting driver:} %When the self-promoting driver has a recessive fitness cost, $s$ genotype frequencies after selection and drive equal
+%\begin{equation}	x'_{BB} =\frac{x_{B}^2(1-s)}{\bar{w} }  \Big( F+(1-F)(x_{B}+2x_{A} d) \Big) 	\end{equation}
+%\begin{equation}	x'_{AA} =\frac{1}{\bar{w} }  \Big(x_{A}^2\Big) 	\end{equation}
+%and
+%\begin{equation}	x'_{AB} =\frac{2 x_{A}x_{B} }{\bar{w} }  \Big(1-x_{B}(d-1/2)(1-F) \Big)	%\end{equation}
+When fully recessive, the change in frequency of the self-promoting driver across generations $\Delta f_B$ is exactly 
 \begin{equation}
-\frac{f_A f_B^2}{\bar{w}} \left( [1-F][ d(1-2 f_A s) - f_B s-1/2] - s  F \right)
+f_A f_B^2 \left( [1-F][ d(1-2 f_A s) - f_B s-1/2] - s  F \right)/\bar{w}
 \label{deltadriver}
 \end{equation}
-where $F$ is the deviation from Hardy-Weinberg expectations (HWE), and $f_A$ is the frequency of the non-driving allele. 
-For analytical solutions presented above, we assume that $F$ equals zero. 
-
-We used this HWE approximation to investifgate the bistability of the
-invasion criteria. Under this approximation we find that a common, recessive, self-promoting driver fixes if
- $s<(2d-1)/2$. Furthermore, when $(2 d - 1)/(4 d)<s<(2d-1)/(2)$, a
- recessive, self-promoting driver will deterministically fix if drift,
- mutation, or migration pressure bring its frequency above approximately
+where $F$ is the deviation from Hardy-Weinberg expectations (HWE). 
+%For analytical solutions presented above, we assume that $F$ equals zero. 
+Assuming HWE a common, recessive, self-promoting driver invades if $(2 d - 1)/(4 d)$, and fixes if
+ $s<(2d-1)/2$. 
+ Therefore, when \begin{equation}(2 d - 1)/(4 d)<s<(2d-1)/2\label{ineqA}\end{equation} a
+ 	recessive, self-promoting driver will deterministically fix if drift,
+ 	mutation, or migration pressure bring its frequency above approximately
 \begin{equation} 
-(1-2d+4ds)/(2s(2d-1)) \label{bistab_homozy_approx}
+f^*_{B\text{ recessive}} = (1-2d+4ds)/(2s(2d-1)) \label{bistab_homozy_approx}
 \end{equation}
- but it will be lost if it is introduced below this frequency
- (i.e. this is an unstable equilibrium point). In Supplementary Figure \ref{Bistab_homozyg_cost_fig} we show
- this approximation condition for bistability andd how it compared to
- that obtained using the recursion. This equation
- \eqref{bistab_homozy_approx} offers a reasonable, but imperfect
- approximation 
-and seems to serve as a lower bound to the
-true unstable equilibrium frequency. 
+ but it will be lost if it is introduced below this frequency. 
+ %(i.e. this is an unstable equilibrium point). 
+% In Supplementary Figure \ref{Bistab_homozyg_cost_fig} we show
+% this approximation condition for bistability andd how it compared to
+% that obtained using the recursion. 
+Compared to exact results (Supplementary Figure \ref{Bistab_homozyg_cost_fig}), Equation
+ \eqref{bistab_homozy_approx} offers a reasonable, but imperfect approximation. 
+%s_h and seems to serve as a lower bound to the true unstable equilibrium frequency. 
 
-\paragraph{cost of driver in heterozygotes}
-We explored a more complex model where the self-promoting driver has a cost, $s_h$ in heterozygotes (so $w_{AB} = 1-h_s$) in addition to the cost $s$, in homozygotes.
-Model construction is similar to that above.
-So long as there is any heterozygous fitness cost (i.e. $s_h > 0$) the self-promoting driver cannot invade when rare;
-	however, as is the case without a heterozygous cost, this system is bistable.
-Assuming no deviation from Hardy-Weinberg a self-promoting driver with a heterozygous fitness cost deterministically fixes if it's frequency exceeds some threshold, $f_B^*$.
+\paragraph{Cost of driver in heterozygotes:} %We explored a more complex model where the self-promoting driver has a cost, $s_h$ in heterozygotes (so $w_{AB} = 1-s_h$) in addition to the cost $s$, in homozygotes.
+When the fitness of drive heterozygotes is compromised ($s_h>0$), a rare, self promoting driver cannot invade when rare.
+This results from the fact that
+when the allele is rare ($f_B \ll 1$) sperm carrying it rarely
+encounter heterozygous eggs ($\sim f_B^2$) but the allele still pays a
+cost in heterozygous individuals. 
+%Model construction is similar to that above.
+%So long as there is any heterozygous fitness cost (i.e. $s_h > 0$) the self-promoting driver cannot invade when rare;
+However, this system too, is bistable -- as the driver becomes more frequency it is more often fertilized by a driving sperm and therefore drives more effectively.
+%Assuming no deviation from Hardy-Weinberg a self-promoting driver with a heterozygous fitness cost 
+This allele deterministically fixes if its frequency exceeds some threshold, $f_B^*$.
+Assuming HWE, this threshold equals 
 \begin{equation}
 	f_B^* = \frac{a_1+\sqrt{a_1^2+8 s_h a_2}}{2 a_2}
 	\label{thresh2}
 \end{equation}
 where, $a_1=1-2 ds_h+4 d s-2 d-3 s_h$ and $a_2=2(s-s_h)(2d-1)$.
- 
- range of other costs to the drive alleles other than a
-simple recessive cost, for example an additive cost. We modified the recursions given in eqn
-\ref{eqn.A1}-\ref{eqn.A3} to feature an additive cost $s$ for each
-copy of the $B$ allele. A none recessive cost to the drive allele can
-cause bistability of the drive allele. The B allele is unable to enter
-the population when rare, this results from the fact that
-when the allele is rare ($x_B \ll 1$) sperm carrying it rarely
-encounter heterozygous eggs ($\sim x^2$) but the allele still pays a
-cost in heterozygous individuals.  By contrast, when the B allele is common ($x_B
-\gg 0$) encounters between heterozygous eggs and $B$ allele sperm
-become more common allowing drive to occur this can allow the $B$
-allele to spread when common. In Supplementary Figure
-\ref{bistable_additive} we show the unstable equilibrium frequency
-above which the $B$ allele can invade. This equilibrium frequency was found by a simple
-parameter search.  \gc{wonder if a bit of work could find this}
+\yb{We compare this analytical approximation to exact results obtained by a simple parameter search in Supplementary Figure \ref{bistable_additive}. }
+ %range of other costs to the drive alleles other than a
+%simple recessive cost, for example an additive cost. We modified the recursions given in eqn
+%\ref{eqn.A1}-\ref{eqn.A3} to feature an additive cost $s$ for each
+%copy of the $B$ allele. A none recessive cost to the drive allele can
+%cause bistability of the drive allele. The B allele is unable to enter
+%the population when rare, this results from the fact that
+%when the allele is rare ($x_B \ll 1$) sperm carrying it rarely
+%encounter heterozygous eggs ($\sim x^2$) but the allele still pays a
+%cost in heterozygous individuals.  By contrast, when the B allele is common ($x_B
+%\gg 0$) encounters between heterozygous eggs and $B$ allele sperm
+%become more common allowing drive to occur this can allow the $B$
+%allele to spread when common. In Supplementary Figure
+%\ref{bistable_additive} we show the unstable equilibrium frequency
+%above which the $B$ allele can invade. This equilibrium frequency was found by a simple
+%parameter search.  \gc{wonder if a bit of work could find this}
 
 \paragraph{Dominance} we also explored a model where
 the genotype of the male who produced the fertilizing sperm affects female drive,
