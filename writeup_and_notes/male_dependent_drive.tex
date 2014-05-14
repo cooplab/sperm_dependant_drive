@@ -397,7 +397,7 @@ While  sperm enhancement of a female drive cannot displace a polymorphic female 
 If a sperm-acting allele that restores fairness to female meiosis arises on
 	the non-driving $A$ background (creating a third allele $A^{-}$), 
 	or is unlinked to the drive locus, it readily invades a population segregating
-	for the drive system ($AB$, see Figure and Equations XXX). 
+	for the drive system ($AB$, see Figure and \yb{Equations \ref{A-}).} %still coming together 
 This allele lowers the frequency of the original drive system (perhaps to zero),
 	and spreads to fixation if it does not carry strong fitness costs
 	(Figure \ref{Eggsperm_3_allele_cartoon} and \ref{Trajectories_of_supressors}A). 
@@ -727,11 +727,16 @@ This result is supported by exact numerical iterations, as well \yb{FIG?}.
 
 \subsubsection*{Model 5. Drive-modifier in repulsion phase:}
 When the $C$ allele is tightly linked to and on a different background than the driver, 
-	genotypic fitnesses equal $w_{AC}=w_{CC}=w_{AA}=1$, and $w_{BC}=1-s_h$. 
+	genotypic fitnesses equal $w_{CC}=w_{AC}=w_{AA}=1$, and $w_{BC}=1-s_h$. 
+Assuming HWE, a recessive fitness cost to drive, and assuming that the $A/B$ locus is at its equilibrium frequency, the change in frequency of a rare drive modifier is
+\begin{equation}
+	\Delta C^- \approx -\epsilon f_{C^-}^2 \frac{ \left(2 d_0 s-\sqrt{2} \sqrt{s (2 d_0 (d_0 (s-2)+2)-1)}\right)}{2\bar{w}s (2 d_0 -1) }. \label{A-}
+\end{equation}
+For all values of interest ($0<s<1$, $0.5<d_0<1$), the change in frequency a rare $C$ is positive when it decreases drive (i.e. $\epsilon <0$, corresponding to the $A^-$ model, above), a result which hold qualitatively for a common $C$ allele, as well (Mathematical Supplement). 
 %We address two questions concerning the $C$ allele - can it invade when rare  and can it fix when common?
-Again, while simple inequalities are lacking, 
-	graphical exploration of our analytical results, and exact numerical iteration \yb{FIG?} shows that this modifier only spreads from rarity to fixation when it suppresses drive ($\epsilon<0$ - the $A^-$ allele, above). 
-Somewhat counterintuitively, the spread of the $A^-$ allele is substantially slower than that of the $B^-$ allele (it is on the order of $C^2$ rather than $C$). 
+%Again, while simple inequalities are lacking, 
+%	graphical exploration of our analytical results, and exact numerical iteration \yb{FIG?} shows that this modifier only spreads from rarity to fixation when it suppresses drive ($\epsilon<0$ - the $A^-$ allele, above). 
+Somewhat counterintuitively, the spread of the $A^-$ allele is substantially slower than that of the $B^-$ allele (it is on the order of $C^{2}$ rather than $C$). 
 This is because the $A^-$ allele will never occur in drive-homozygotes and therefore only spreads by preventing itself from the cheating of the driver.
 
 \subsubsection*{Model 6. Unlinked drive-modifier:}
