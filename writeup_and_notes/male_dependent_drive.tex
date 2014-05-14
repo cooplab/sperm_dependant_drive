@@ -506,15 +506,21 @@ In light of that it is interesting to consider whether the phylogenetic variatio
 
 \section*{Appendix}
 Below, we highlight some of our derivations and analytical results. 
-The fitness of genotype, $i$ is $w_g$ and its frequency before drive, after drive, and after drive and selection are $f_g$, $f_g'$ and $f_g''$, respectively, and population mean fitness,  $\bar{w}$ equals  $\Sigma f_g'w_g$. Genotypic fitnesses are $w_{AA} = 1$, $w_{AB} = 1-s_h$, and $w_{BB}=1-s$, and are sex-independent. 
-All models include a balletic locus with non-driving and driving alleles in frequencies $f_A$ and $f_B$, respectively, while more complex models include more loci and/or alleles.  
-Transmission rules describing the outcomes of all matings in each models are presented in a \yb{Supplementary Worksheet}.  
+The fitness of genotype, $i$ is $w_g$ independent of its sex. 
+We denote its frequency in adults in the current generation is $f_g$. In the next generation of
+zygotes (accounting for drive) but before selection
+the frequency is $f_g'$, and in the adults after selection the
+frequency is $f_g''$ and population mean fitness,  $\bar{w}=\Sigma f_g'w_g$. Genotypic fitnesses are $w_{AA} = 1$, $w_{AB} = 1-s_h$, and $w_{BB}=1-s$, and are sex-independent. 
+All models include a biallelic locus with non-driving and driving alleles in frequencies $f_A$ and $f_B$, respectively, while more complex models include more loci and/or alleles.  
+Transmission rules describing the outcomes of all matings in each
+models are presented in a \yb{Supplementary Worksheet}, and  our
+\gc{Mathematical supplement} for our analytical approximations work.  
 Because many of our analyses assume Hardy Weinberg Equilibrium (HWE), we note which analytical results are approximations. 
 We verify these approximations with exact numerical iterations in supplementary figures and scripts, and detail the derivation and details of these results in our mathematical supplement. 
 
 \subsection*{Models 1-3. Single-locus drive}
 \subsubsection*{Model 1. Traditional driver}
-In the standard drive model meiosis in males is fair such that $A/B$ heterozygotes contribute $A$ and $B$ alleles with equal probabilities; however, $A/B$ females transmit the $B$ allele with probability $d>1/2$. 
+In the standard female drive model meiosis in males is fair such that $A/B$ heterozygotes contribute $A$ and $B$ alleles with equal probabilities; however, $A/B$ females transmit the $B$ allele with probability $d>1/2$. 
 After drive and random mating genotype frequencies are 
 	$f_{AA}'=f_A (f_{AA }+ f_{AB} (1 - d))$, 
 	$f_{AB}'=f_A (f_{BB} + f_{ABd}) + f_B (f_{AA} + f_{AB} (1 - d))$,
@@ -523,7 +529,11 @@ After drive and random mating genotype frequencies are
 Frequencies of genotype, $i$, after drive and selection are 
 	\begin{equation} f_i''= f_i'w_i/\bar{w}\end{equation}
 	where $w_i$ is genotypic fitness, and mean fitness, $\bar{w} = \Sigma f_i'w_i$. 
-	Assuming HWE, a rare driver will spread when $s_h \lesssim(2d-1)/(1+2d)$, and will fix when $s\lesssim d -1/2 + 3 s_h /2- d s_h$. This later inequality reduces to $s\lesssim(2d-1)/2$ when the cost of drive is fully recessive. 
+	Assuming HWE, a rare driver will spread when $s_h
+        \lesssim(2d-1)/(1+2d)$, and will fix when $s\lesssim d -1/2 +
+        3 s_h /2- d s_h$. This later inequality reduces to
+        $s\lesssim(2d-1)/2$ when the cost of drive is fully
+        recessive. \gc{isn't this last expression exact?}
 	
 \subsubsection*{Model 2. Single locus, sperm-dependent drive.}
 Our single-locus model of sperm dependent drive resembles the traditional driver with the caveat that the $B$ allele drives in heterozygous females only when fertilized by $B$ bearing sperm. 
@@ -533,8 +543,10 @@ Therefore, genotype frequencies after drive are
 	and $f_{BB}'= f_B (f_{AB} d + f_{BB} )$. 
 As above, exact frequencies after drive, random mating and selection are $f_i''= f_i'w_i/\bar{w}$. 
 We iterate this recursion over generations, to produce the frequency trajectories shown in the inset
-Figure \ref{Invasion_space} by plotting $x_{BB}+ \frac{1}{2}x_{AB}$
-over time, and to assess the analytical approximations, below.
+Figure \ref{Invasion_space} by plotting \gc{$f_B=f_{BB}+ \frac{1}{2}g_{AB}$}
+over time, and to assess the analytical approximations, below. \gc{To
+assess invasion or fixation criteria we iterate this system and
+testing whether $f_B$ increases over a grid of parameters. }
 
 % the $B$ allele In our first scenerio allele $A$ is the ancestral allele and allele
 %$B$ is our sperm dependent drive allele.
@@ -589,12 +601,15 @@ When fully recessive, the change in frequency of the self-promoting driver acros
 \Delta f_B=f_A f_B^2 \left( [1-F][ d(1-2 f_A s) - f_B s-1/2] - s  F \right)/\bar{w}
 \label{deltadriver}
 \end{equation}
-where $F$ is the deviation from HWE. 
+where $F$ is the deviation from \gc{Hardy Weinberg Expectations} (HWE). 
 %For analytical solutions presented above, we assume that $F$ equals zero. 
-Assuming HWE a common, recessive, self-promoting driver invades if $s\lesssim(2 d - 1)/(4 d)$, and fixes if
+Assuming HWE \gc{($F=0$)} a common, recessive, self-promoting driver invades if $s\lesssim(2 d - 1)/(4 d)$, and fixes if
  $s\lesssim(2d-1)/2$. 
- Therefore, when \begin{equation}(2 d - 1)/(4 d)  \lesssim  s  \lesssim  (2d-1)/2\label{ineqA}\end{equation} a
- 	recessive, self-promoting driver will deterministically fix if drift,
+ Therefore, when 
+\begin{equation}
+(2 d - 1)/(4 d)  \lesssim  s  \lesssim  (2d-1)/2\label{ineqA}
+\end{equation} 
+a recessive, self-promoting driver will deterministically fix if drift,
  	mutation, or migration pressure bring its frequency above
 \begin{equation} 
 f^*_{B\text{ recessive}} \approx (1-2d+4ds)/(2s(2d-1)) \label{bistab_homozy_approx}
@@ -604,8 +619,8 @@ f^*_{B\text{ recessive}} \approx (1-2d+4ds)/(2s(2d-1)) \label{bistab_homozy_appr
 % In Supplementary Figure \ref{Bistab_homozyg_cost_fig} we show
 % this approximation condition for bistability andd how it compared to
 % that obtained using the recursion. 
-Compared to exact results (Supplementary Figure \ref{Bistab_homozyg_cost_fig}), Equation
- \eqref{bistab_homozy_approx} offers a reasonable, but imperfect approximation. 
+Compared to exact results (Supplementary Figure \ref{Bistab_homozyg_cost_fig}), Equations
+ \gc{\eqref{ineqA} and} \eqref{bistab_homozy_approx} offers a reasonable, but imperfect approximation. 
 %s_h and seems to serve as a lower bound to the true unstable equilibrium frequency. 
 
 \paragraph{Cost of driver in heterozygotes:} %We explored a more complex model where the self-promoting driver has a cost, $s_h$ in heterozygotes (so $w_{AB} = 1-s_h$) in addition to the cost $s$, in homozygotes.
@@ -626,7 +641,10 @@ Assuming HWE, this threshold equals
 	\label{thresh2}
 \end{equation}
 where, $a_1=1-2 ds_h+4 d s-2 d-3 s_h$ and $a_2=2(s-s_h)(2d-1)$.
-\yb{Comparison of Equation \ref{thresh2} to exact results obtained by a simple parameter search (Supplementary Figure \ref{bistable_additive}) show that this approximation is qualitatively reasonable, but quantitatively imperfect. }
+Comparison of Equation \ref{thresh2} to exact results obtained by a
+simple parameter search (Supplementary Figure \ref{bistable_additive})
+show that this approximation is reasonablely correct \gc{for small
+parameter values. }
  %range of other costs to the drive alleles other than a
 %simple recessive cost, for example an additive cost. We modified the recursions given in eqn
 %\ref{eqn.A1}-\ref{eqn.A3} to feature an additive cost $s$ for each
@@ -644,7 +662,7 @@ where, $a_1=1-2 ds_h+4 d s-2 d-3 s_h$ and $a_2=2(s-s_h)(2d-1)$.
 %parameter search.  \gc{wonder if a bit of work could find this}
 
 \subsubsection*{Model 3. Single locus, paternal genotype dependent drive:}
-When female meiotic drive depends on paternal genotype
+\gc{We now turn to the case when} female meiotic drive depends on paternal genotype.
 %\paragraph{Dominance} we also explored a model where
 %the genotype of the male who produced the fertilizing sperm affects female drive,
 %instead of just the allelic type of the sperm.
@@ -712,7 +730,10 @@ By contrast, when $d_{het} \lesssim 1/(3-2d_{hom})$ the case is reversed, and th
 
 \subsection*{Models 4-6. Two-locus, sperm-dependent drive.} 
 Assuming that a traditional driver segregates at its equilibrium frequency (Model 1), we investigate the evolution of tightly linked (Models 4 and 5), and unlinked sperm-dependent modifiers of drive. 
-In models 4 and 5, we treat this two loci system as if it consists of three alleles: $A$, $B$ and $C$, which is appropriate if these lowly are tightly linked, such that recombination is unexpected. 
+In models 4 and 5, we treat this two loci system as if it consists of
+three alleles: $A$, $B$ and $C$, corresponding to the case \gc{when the
+sperm-modifier arises once, tightly linked to one or other of the
+alleles (such that recombination is unexpected). }
 In all cases, fitness is independent of the drive modifier, so, $w_{AA}=1$, $w_{AB}=1-s_h$, and $w_{BB}$ = 1-s. 
 We assume the traditional driver is transmitted to $d_0$ of gametes from female heterozygotes  when fertilized by wild-type sperm, and $d_1=d_0+\epsilon$ when fertilized by a sperm acting drive modifier.
 
@@ -720,7 +741,7 @@ We assume the traditional driver is transmitted to $d_0$ of gametes from female 
 When the $C$ allele is tightly linked to and on the same genetic background as the driver, 
 	genotypic fitnesses equal $w_{AC}=w_{AB}=1-s_h$, and $w_{BC}=w_{CC}=w_{BB}=1-s$. 
 %We address two questions concerning the $C$ allele - can it invade when rare  and can it fix when common?
-Although analytical approximation do not reveal simple inequalities like those above,
+Although our analytical approximations (see our \gc{Mathematical supplement}) do not reveal simple inequalities like those above,
 	graphical exploration of analytical results show that this mutant is lost when it enhances drive ($\epsilon>0$ - the $B^+$ allele, above),
 	and spreads from rarity to fixation when it suppresses drive ($\epsilon<0$ - the $B^-$ allele, above).	
 This result is supported by exact numerical iterations, as well \yb{FIG?}. 
