@@ -676,7 +676,7 @@ parameter values; \yb{however, this approximation underestimates $f_B^*$ for lar
 %parameter search.  \gc{wonder if a bit of work could find this}
 
 \subsubsection*{Model 3. Single locus, paternal genotype dependent drive:}
-\gc{We now turn to the case when} female meiotic drive depends on paternal genotype.
+We now turn to the case when female meiotic drive depends on paternal genotype.
 %\paragraph{Dominance} we also explored a model where
 %the genotype of the male who produced the fertilizing sperm affects female drive,
 %instead of just the allelic type of the sperm.
@@ -754,19 +754,28 @@ We assume the traditional driver is transmitted to $d_0$ of gametes from female 
 \subsubsection*{Model 4. Drive-modifier in coupling phase:}
 When the $C$ allele is tightly linked to the driver allele, 
 	genotypic fitnesses equal $w_{AC}=w_{AB}=1-s_h$, and $w_{BC}=w_{CC}=w_{BB}=1-s$. 
+Assuming HWE, a recessive fitness cost to drive, and assuming that the $A/B$ locus is at its equilibrium frequency, the change in frequency of a rare drive modifier is
+\begin{equation}
+	\Delta C\approx -\epsilon f_C \frac{ 1-2 d_0 (-2 d_0+s+2)+\sqrt{2} \sqrt{s (2 d_0 (d_0(s-2)+2)-1)}}{2 \bar{w}(1-2 d_0)^2}
+\end{equation}
+%YB Considered this ugly math more impressive.
+For all parameters sustaining a polymorphism at the drive locus ($s>d_0-1/2$), this corresponds to a decrease in frequency of the $C$ allele when it enhances drive ($\epsilon >0$ -- the $B^+$ model, above), 
+	and a decrease in frequency of the $C$ allele when it suppresses drive ($\epsilon <0$ -- the $B^-$ model, above). 
+More generally even when the cost of drive is not fully recessive, the $B^-$ allele will invade and fix under all parameters sustaining a previous polymorphism at the drive locus (see Mathematical Supplement). 
+%When the C allele acts to suppress drive for all parameters sustaining a polymorphism at the drive locus ($s>d_0-1/2$)
 %We address two questions concerning the $C$ allele - can it invade when rare  and can it fix when common?
-Although our analytical approximations (see our \gc{Mathematical supplement}) do not reveal simple inequalities like those above,
-	graphical exploration of analytical results show that this mutant is lost when it enhances drive ($\epsilon>0$ - the $B^+$ allele, above),
-	and spreads from rarity to fixation when it suppresses drive ($\epsilon<0$ - the $B^-$ allele, above).	
-This result is supported by exact numerical iterations, as well
-\yb{FIG?}. \gc{Lets not bother}
+%Although our analytical approximations (see our \gc{Mathematical supplement}) do not reveal simple inequalities like those above,
+%	graphical exploration of analytical results show that this mutant is lost when it enhances drive ($\epsilon>0$ - the $B^+$ allele, above),
+%	and spreads from rarity to fixation when it suppresses drive ($\epsilon<0$ - the $B^-$ allele, above).	
+%This result is supported by exact numerical iterations, as well
+%\yb{FIG?}. \gc{Lets not bother}
 
 \subsubsection*{Model 5. Drive-modifier in repulsion phase:}
 When the $C$ allele is tightly linked to the non-driver, 
 	genotypic fitnesses equal $w_{CC}=w_{AC}=w_{AA}=1$, and $w_{BC}=1-s_h$. 
 Assuming HWE, a recessive fitness cost to drive, and assuming that the $A/B$ locus is at its equilibrium frequency, the change in frequency of a rare drive modifier is
 \begin{equation}
-	\Delta C^- \approx -\epsilon f_{C^-}^2 \frac{ \left(2 d_0 s-\sqrt{2} \sqrt{s (2 d_0 (d_0 (s-2)+2)-1)}\right)}{2\bar{w}s (2 d_0 -1) }. \label{A-}
+	\Delta C \approx -\epsilon f_{C^-}^2 \frac{ \left(2 d_0 s-\sqrt{2} \sqrt{s (2 d_0 (d_0 (s-2)+2)-1)}\right)}{2\bar{w}s (2 d_0 -1) }. \label{A-}
 \end{equation}
 For all values of interest ($0<s<1$, $0.5<d_0<1$), the change in frequency a rare $C$ is positive when it decreases drive (i.e. $\epsilon <0$, corresponding to the $A^-$ model, above), a result which hold qualitatively for a common $C$ allele, as well (Mathematical Supplement). 
 %We address two questions concerning the $C$ allele - can it invade when rare  and can it fix when common?
@@ -776,11 +785,11 @@ Somewhat counterintuitively, the spread of the $A^-$ allele is substantially slo
 This is because the $A^-$ allele will never occur in drive-homozygotes and therefore only spreads by preventing itself from the cheating of the driver.
 
 \subsubsection*{Model 6. Unlinked drive-modifier:}
-\gc{Can we use something other than F, as that was HWE deviation}
-For the unlinked, model we introduce another locus where drive is modified in A/B females fertilized by $F$ allele, 
-	while the wild-type $E$ does not influence drive. 
+%\gc{Can we use something other than F, as that was HWE deviation}
+For the unlinked, model we introduce another locus where drive is modified in A/B females fertilized by $M$ allele, 
+	while the wild-type $L$ does not influence drive. 
 Assuming HWE and linkage equilibrium, the change in frequency of a rare unlinked, sperm-acting drive modifier is 
-\begin{equation} \Delta F =-\epsilon f_A f_B (f_B s + s_h (fA - fB) ) \frac{f_F}{\bar{w}}  \label{unlinked} \end{equation}
+\begin{equation} \Delta M =-\epsilon f_A f_B (f_B s + s_h (fA - fB) ) \frac{f_M}{\bar{w}}  \label{unlinked} \end{equation}
 % an $F$ allele increases in frequency when 
 %	$-\epsilon f_A f_B (f_B s + s_h (fA - fB) ) >0$, corresponding to any level of drive suppression ($\epsilon<0$) 
 Thus, a rare drive suppressor ($\epsilon<0$) will spread so long as  the fitness cost of the driver does not display over- or under-dominance. 
