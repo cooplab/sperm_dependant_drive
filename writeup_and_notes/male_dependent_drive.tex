@@ -505,41 +505,48 @@ In light of that it is interesting to consider whether the phylogenetic variatio
 
 
 \section*{Appendix}
-\gc{Our appendix covers standard female meiotic drive model (1); a sperm
-dependent female meiotic drive model (2); a male genotype dependent
-female meiotic drive model (3); and more complex two locus sperm
-dependent drive models (4-6). }
+Our appendix highlights some of our derivations and analytical results from: 
+	the standard female meiotic drive (Model 1); a sperm
+	dependent female meiotic drive (Model 2); a male genotype dependent
+female meiotic drive (Model 3); and more complex two locus sperm
+dependent drive (Models 4-6). %changed this to minimize confusion with refs, figs, equations, etc.
 
-Below, we highlight some of our derivations and analytical results. 
-The fitness of genotype, $i$ is $w_g$ independent of its sex. 
-We denote its frequency in adults in the current generation is $f_g$. In the next generation of
-zygotes (accounting for drive) but before selection
-the frequency is $f_g'$, and in the adults after selection the
-frequency is $f_g''$ and population mean fitness,  $\bar{w}=\Sigma f_g'w_g$. Genotypic fitnesses are $w_{AA} = 1$, $w_{AB} = 1-s_h$, and $w_{BB}=1-s$, and are sex-independent. 
-All models include a biallelic locus with non-driving and driving alleles in frequencies $f_A$ and $f_B$, respectively, while more complex models include more loci and/or alleles.  
+%Below, we highlight some of our derivations and analytical results. 
+%The fitness of genotype, $g$ is $w_g$ independent of its sex, and its 
+All models include a biallelic locus with non-driving and driving alleles in frequencies $f_A$ and $f_B$, 
+	respectively, while more complex models include more loci and/or alleles.  
 Transmission rules describing the outcomes of all matings in each
-models are presented in a \yb{Supplementary Worksheet}, and  our
-\gc{Mathematical supplement} for our analytical approximations work.  
+	models are presented in a \yb{Supplementary Worksheet}. 
+The fitness of genotype, $g$ is sex-independent and equals $1$, $1-h_s$, and $1-s$ for genotypes $AA$, $AB$, and $BB$, respectively. %  and  $w_{AA} = 1$, $w_{AB} = 1-s_h$, and $w_{BB}=1-s$. 
+Genotypic frequencies  equal  $f_g$ for adults in the current generation, 
+	$f_g'$ in the next generation of zygotes (i.e. after recombination, random mating, drive, and syngamy, but before selection)
+	and $f_g''$ in adults after selection. 
+After a complete generation $f_g'' = f_g' w_g/\bar{w}$, where $\bar{w}$ is the population mean fitness and equals $\Sigma w_g f_g'$. 
+%All models include a biallelic locus with non-driving and driving alleles in frequencies $f_A$ and $f_B$, respectively, while more complex models include more loci and/or alleles.  
+%Transmission rules describing the outcomes of all matings in each
+%models are presented in a \yb{Supplementary Worksheet}, and complete derivations of our analytical approximations are in the
+%\gc{Mathematical Supplement}.  
 Because many of our analyses assume Hardy Weinberg Equilibrium (HWE), we note which analytical results are approximations. 
-We verify these approximations with exact numerical iterations in supplementary figures and scripts, and detail the derivation and details of these results in our mathematical supplement. 
+We verify these approximations with exact numerical iterations in Supplementary Figures and Supplementary Scripts, and detail the derivation of these approximations in our Mathematical Supplement. 
 
 
 
 \subsection*{Models 1-3. Single-locus drive}
 \subsubsection*{Model 1. Traditional driver}
-In the standard female drive model meiosis in males is fair such that $A/B$ heterozygotes contribute $A$ and $B$ alleles with equal probabilities; however, $A/B$ females transmit the $B$ allele with probability $d>1/2$. 
-After drive and random mating genotype frequencies are 
+In the standard female drive model, meiosis in males is fair such that $A/B$ heterozygotes contribute $A$ and $B$ alleles with equal probabilities; however, $A/B$ females transmit the $B$ allele with probability $d>1/2$. 
+After drive and random mating, genotype frequencies are 
 	$f_{AA}'=f_A (f_{AA }+ f_{AB} (1 - d))$, 
 	$f_{AB}'=f_A (f_{BB} + f_{ABd}) + f_B (f_{AA} + f_{AB} (1 - d))$,
 	and $f_{BB}= f_B (f_{AB} d + f_{BB})$. 
 %Assuming fitnesses $w_{AA}=1$, $w_{AB}-1 s_h$ and $w_{BB}=1-s$, 
-Frequencies of genotype, $i$, after drive and selection are 
-	\begin{equation} f_i''= f_i'w_i/\bar{w}\end{equation}
-	where $w_i$ is genotypic fitness, and mean fitness, $\bar{w} = \Sigma f_i'w_i$. 
-	Assuming HWE, a rare driver will spread when $s_h
-        \lesssim(2d-1)/(1+2d)$, and will fix when $s\lesssim d -1/2 +
+%Frequencies of genotype, $i$, after drive and selection are 
+%	\begin{equation} f_i''= f_i'w_i/\bar{w}\end{equation}
+%	where $w_i$ is genotypic fitness, and mean fitness, $\bar{w} = \Sigma f_i'w_i$. 
+As detailed above, exact frequencies after drive, random mating and selection are $f_g''= f_g'w_g/\bar{w}$. 
+Assuming HWE, a rare driver will spread when $s_h
+        \lessapprox(2d-1)/(1+2d)$, and will fix when $s\lessapprox d -1/2 +
         3 s_h /2- d s_h$. This later inequality reduces to
-        $s\lesssim(2d-1)/2$ when the cost of drive is fully
+        $s\lessapprox(2d-1)/2$ when the cost of drive is fully
         recessive. \gc{isn't this last expression exact?}
 	
 \subsubsection*{Model 2. Single locus, sperm-dependent drive.}
@@ -548,11 +555,11 @@ Therefore, genotype frequencies after drive are
 	$f_{AA}'=f_A^2$, 
 	$f_{AB}'=f_A f_B+f_B (f_{AA} + f_{AB}(1 - d)) $,
 	and $f_{BB}'= f_B (f_{AB} d + f_{BB} )$. 
-As above, exact frequencies after drive, random mating and selection are $f_i''= f_i'w_i/\bar{w}$. 
-We iterate this recursion over generations, to produce the frequency trajectories shown in the inset
-Figure \ref{Invasion_space} by plotting \gc{$f_B=f_{BB}+ \frac{1}{2}g_{AB}$}
-over time, and to assess the analytical approximations, below. \gc{To
-assess invasion or fixation criteria we iterate this system and
+%As above, exact frequencies after drive, random mating and selection are $f_i''= f_i'w_i/\bar{w}$. 
+We iterate exact genotype frequency recursions ($f_g''= f_g'w_g/\bar{w}$) over generations to produce the frequency trajectories shown in the inset
+Figure \ref{Invasion_space} by plotting \gc{$f_B=f_{BB}+ \frac{1}{2}f_{AB}$}
+over time. %, and to assess the analytical approximations, below.
+ \gc{To assess invasion or fixation criteria, \yb{as well as bistability points,} we iterate this system and
 testing whether $f_B$ increases over a grid of parameters. }
 
 % the $B$ allele In our first scenerio allele $A$ is the ancestral allele and allele
@@ -608,13 +615,13 @@ When fully recessive, the change in frequency of the self-promoting driver acros
 \Delta f_B=f_A f_B^2 \left( [1-F][ d(1-2 f_A s) - f_B s-1/2] - s  F \right)/\bar{w}
 \label{deltadriver}
 \end{equation}
-where $F$ is the deviation from \gc{Hardy Weinberg Expectations} (HWE). 
+where $F$ is the deviation from genotypic frequencies expected under Hardy-Weinberg. % Trying to clarify some.   \gc{Hardy Weinberg Expectations} (HWE). 
 %For analytical solutions presented above, we assume that $F$ equals zero. 
-Assuming HWE \gc{($F=0$)} a common, recessive, self-promoting driver invades if $s\lesssim(2 d - 1)/(4 d)$, and fixes if
- $s\lesssim(2d-1)/2$. 
+Assuming HWE  ($F=0$) a common, recessive, self-promoting driver invades if $s\lessapprox(2 d - 1)/(4 d)$, and fixes if
+ $s\lessapprox(2d-1)/2$. 
  Therefore, when 
 \begin{equation}
-(2 d - 1)/(4 d)  \lesssim  s  \lesssim  (2d-1)/2\label{ineqA}
+(2 d - 1)/(4 d)  \lessapprox  s  \lessapprox  (2d-1)/2\label{ineqA}
 \end{equation} 
 a recessive, self-promoting driver will deterministically fix if drift,
  	mutation, or migration pressure bring its frequency above
@@ -627,7 +634,7 @@ f^*_{B\text{ recessive}} \approx (1-2d+4ds)/(2s(2d-1)) \label{bistab_homozy_appr
 % this approximation condition for bistability andd how it compared to
 % that obtained using the recursion. 
 Compared to exact results (Supplementary Figure \ref{Bistab_homozyg_cost_fig}), Equations
- \gc{\eqref{ineqA} and} \eqref{bistab_homozy_approx} offers a reasonable, but imperfect approximation. 
+ \gc{\eqref{ineqA} and} \eqref{bistab_homozy_approx} offer reasonable, but imperfect approximations. 
 %s_h and seems to serve as a lower bound to the true unstable equilibrium frequency. 
 
 \paragraph{Cost of driver in heterozygotes:} %We explored a more complex model where the self-promoting driver has a cost, $s_h$ in heterozygotes (so $w_{AB} = 1-s_h$) in addition to the cost $s$, in homozygotes.
@@ -650,8 +657,8 @@ Assuming HWE, this threshold equals
 where, $a_1=1-2 ds_h+4 d s-2 d-3 s_h$ and $a_2=2(s-s_h)(2d-1)$.
 Comparison of Equation \ref{thresh2} to exact results obtained by a
 simple parameter search (Supplementary Figure \ref{bistable_additive})
-show that this approximation is reasonablely correct \gc{for small
-parameter values. }
+show that this approximation is reasonably correct for small
+parameter values; \yb{however, this approximation underestimates $f_B^*$ for large parameter values, presumably because they result in strong departures from HWE.}
  %range of other costs to the drive alleles other than a
 %simple recessive cost, for example an additive cost. We modified the recursions given in eqn
 %\ref{eqn.A1}-\ref{eqn.A3} to feature an additive cost $s$ for each
@@ -704,10 +711,10 @@ parameter values. }
 
 If the cost of drive is fully recessive (i.e. $s_h=0$), assuming HWE, 
 	a rare paternal genotype dependent driver invades when 
-	$s\lesssim (d_{het}-1/2)/(d_{het})$, and a common paternal genotype dependent driver fixes when 
-	$s\lesssim d_{hom}-1/2$, approximations well supported by exact results (Supplementary Figure \ref{Effect_of_dominance}).
+	$s\lessapprox (d_{het}-1/2)/(d_{het})$, and a common paternal genotype dependent driver fixes when 
+	$s\lessapprox d_{hom}-1/2$, approximations well supported by exact results (Supplementary Figure \ref{Effect_of_dominance}).
 Specifically, when drive in heterozygotes is large relative to that in homozygotes, 
-	\begin{equation} d_{het} \gtrsim 1/(3-2d_{hom}) \label{polymale} \end{equation}
+	\begin{equation} d_{het}  \gtrapprox 1/(3-2d_{hom}) \label{polymale} \end{equation}
 	fixation criteria are more stringent than invasion criteria, 
 	and therefore some values of $s$ can maintain a stable polymorphism. 
 Under these parameter values, a rare paternal genotype dependent driver 
@@ -720,7 +727,7 @@ As the frequency of the $B$ allele increases,
 	the population at frequency $f_{B\text{ pat}}^*$. 
 Assuming HWE, a recessive fitness cost ($h_s=0$), and dominance of driver ($d_{het}=d_{hom}$) this equilibrium frequency is
 \begin{equation}f_{B\text{ pat}}^*\approx2 (1 + 2d_{hom}[s - 1])/([2 s - 1][2d_{hom}- 1]) \label{eqmale} \end{equation}
-By contrast, when $d_{het} \lesssim 1/(3-2d_{hom})$ the case is reversed, and the model is bistable.
+By contrast, when $d_{het} \lessapprox 1/(3-2d_{hom})$ the case is reversed, and the model is bistable.
 %In Supplementary Figure \ref{Effect_of_dominance} we show the invasion
 %criteria for both the A and B alleles when they are rare. 
 %We find a narrow parameter range where B 
