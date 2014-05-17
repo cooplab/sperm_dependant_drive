@@ -99,7 +99,7 @@ The threat of meiotic drive to organismal fitness is potentially so
 severe that many basic properties of
 meiosis and o\"{o}genesis, including the initial genome doubling in
 meiosis I \citep{Haig1991}, arrested female meiosis
-\citep{Mira1998}, the structure of centromere machinery \citep{Malik2002a,Malik2009,Malik2009}, and sex differences in the recombination rate \citep{Haig2010,Brandvain2012} 
+\citep{Mira1998}, the structure of centromere machinery \citep{Malik2002a,Malik2009}, and sex differences in the recombination rate \citep{Haig2010,Brandvain2012} 
 have perhaps evolved to enforce fairness by disrupting meiotic drive \citep{Rice2013}.
 
 It is therefore somewhat surprising that despite the intense evolutionary pressure on female meiosis to prevent meiotic drive, 
@@ -157,12 +157,12 @@ Rather, features of o\"{o}genesis  may evolve to facilitate an interaction with 
 
 In the standard single-locus, biallelic model of female meiotic drive,
 the driving allele is transmitted to the egg in heterozygotes with
-probability  $d > 1/2$, regardless of sperm genotype (Model 1) \gc{REF}. The timing of fertilization relative to female meiosis places another constraint on $d$, for example, if fertilization (and therefore, sperm dependent drive) takes place at MII (as in mammals),
+probability  $d > 1/2$, regardless of sperm genotype (Model 1) \cite[e.g. ][]{Ubeda2004}. The timing of fertilization relative to female meiosis places another constraint on $d$, for example, if fertilization (and therefore, sperm dependent drive) takes place at MII (as in mammals),
 	female drive requires an uneven number of crossovers between the centromere and the drive locus, 
 	so $d$ is bounded to be $<0.83$ \citep[see ][ for
         discussion]{Buckler1999}.  To depict a case
 of a self-promoting meiotic driver,  we modify this standard model such 
-	that the driver is only effective when fertilized by a sperm carrying that allele (see Figure \ref{Eggsperm_2_allele_cartoon} and Model 2 in the Supplementary Worksheet)
+	that the driver is only effective when fertilized by a sperm carrying that allele (see Figure \ref{Eggsperm_2_allele_cartoon} and Model 2 in the Supplementary Worksheet). 
 We then identify the conditions allowing for the spread of this self-promoting driver, 
 	and evaluate whether a driver of this form could generate a sustained conflict favoring the evolution of suppressors. 
 We concluded with an analysis of a related model (Model 3) - in which
@@ -212,9 +212,9 @@ The positive frequency dependence of a self-promoting driver can also
 	induce bistability in its spread -- some values of $s$ 
 	allow the fixation of this driver when common, but 
 	preclude its invasion when rare (Equation \ref{ineqA}). 
-In this case, the driver will be fixed if it reaches a frequency greater than some threshold, 
-	approximated in Equation \ref{bistab_homozy_approx} and  presented exactly in 
-	Figure \ref{Bistab_homozyg_cost_fig}, and lost otherwise. 
+In this case, the driver will be fixed if it reaches a frequency greater than some threshold 
+	(approximated in Equation \ref{bistab_homozy_approx} and  presented exactly in 
+	Figure \ref{Bistab_homozyg_cost_fig}) and lost otherwise. 
 For most parameters, this threshold is likely too high to be reached by drift, 
 	and therefore  the fate of self-promoting drivers is determined
 	by the more restrictive invasion criteria rather than the fixation criteria. 
@@ -264,7 +264,7 @@ In fact, with any heterozygous fitness cost, a rare self-promoting
 	driver is always selected against. 
 However, this case also displays bistability -- 
 	when $s$ is sufficiently small (Equation \ref{sForHetFix}) this allele fixes deterministically if its 
-	frequency exceeds some threshold,  (Equation \ref{thresh2}, exact results in 
+	frequency exceeds some threshold  (Equation \ref{thresh2}, exact results in 
 	Figure \ref{bistable_additive}).
 %	$f_B^*$
 %	because it pays the  heterozygous fitness cost but drives
@@ -287,7 +287,7 @@ This lack of a balanced polymorphism %(Figure \ref{Invasion_space})
 
 Although the allelic identity of sperm could plausibly influence the outcome of female meiosis, 
 	limited gene expression in sperm \citep[e.g.][]{Joseph2004}
-	suggest a model where sperm influence female meiosis via expression of the fertilizing male's
+	suggests a model where sperm influence female meiosis via expression of the fertilizing male's
 	diploid genotype (perhaps due to proteins and RNAs packaged into the sperm), rather than sperm haplotype.
 This paternal-genotype dependent model (Model 3) requires one additional parameter, as we exchange $d$ in the sperm dependent case for $d_{het}$ and $d_{hom}$ which describe the transmission of the drive allele in a heterozygous female mating with males heterozygous and homozygous for the self-promoting drive allele, respectively.  
 Here, a rare driver invades when $s$ is less than $(d_{het}-1/2)/d_{het}$, and usually fixes when it invades.
@@ -391,27 +391,43 @@ $d'<d$). In the right panel we depict the transmission probabilities for
 % TWO LOCUS MODEL [modify (general) / facilitate (helps ) / prevent (stops)] 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-Models 2 and 3, above, explored the dynamics of an allele drove in females when signaled by a complementary signal in sperm.   
+Models 2 and 3, above, explored the dynamics of an allele that drove in females when signaled by a complementary signal in sperm.   
 We complement this single-locus approach %of an allele with pleiotropic effects in both sexes, 
-	with alternative models of two linked loci - one a female driver, 
+	with alternative models of two loci - one a female driver, 
 	and the other, a sperm allele which modifies the effect of drive upon fertilization. 
 In this model, a female meiotic driver with no sperm-dependency 
 	initially reaches drive-viability equilibrium (with two alleles
 	$A$ and $B$ are the ancestral non-driver and driver alleles). 
-Subsequently, a sperm-acting modifier of female meiotic drive arises tightly
-        linked to this balanced locus (effectively creating a third
-        allele/haplotype at this locus). 
+Subsequently, a sperm-acting modifier of female meiotic drive arises at another lous. 
+
+We first assume that the modifier is tightly
+        linked to the drive locus (effectively creating a third
+        allele/haplotype at this locus) and arises on the drive-background. 
+%We complement this single-locus approach %of an allele with pleiotropic effects in both sexes, 
+%	with alternative models of two linked loci - one a female driver, 
+%	and the other, a sperm allele which modifies the effect of drive upon fertilization. 
+%In this model, a female meiotic driver with no sperm-dependency 
+%	initially reaches drive-viability equilibrium (with two alleles
+%	$A$ and $B$ are the ancestral non-driver and driver alleles). 
+%Subsequently, a sperm-acting modifier of female meiotic drive arises tightly
+ %      linked to this balanced locus (effectively creating a third
+ %       allele/haplotype at this locus). 
 Tight linkage offers the best
         chance for a collaboration to evolve between a driver and
        an enhancer of the drive, as recombination breaks up drive haplotypes \citep{Thomson1974,Charlesworth1978,Haig1991}. 
-Additionally, tight linkage between female driver and sperm modifier is consistent with the nature of well characterized drive systems which are often maintained as polymorphic inversions with numerous linked modifiers \gc{CITE}.
+Additionally, tight linkage between female driver and sperm modifier is consistent with the nature of well characterized drive systems which are often maintained as polymorphic inversions with numerous linked modifiers \cite{Burt2006}. 
+\yb{We conclude by analyzing models with alternative linkage relationship between driver and drive modifier - 
+	in Model 5 the modifier arises tightly linked to the non-driving allele, 
+	and in Model 6 it is unlinked to the driver.} 
 
 %\yb{??In the SUPP we explore the dynamics of a sperm modifier of female drive unlinked to the female driver??} 
 
 %%%sperm-acting facilitator
-We first consider a sperm-acting modifier of
-	female meiotic drive tightly linked to the $B$ background (Model 4).
-We treat this non-recombining drive/modifier haplotype as a third allele, and we label this allele as $B^+$ when it enhances drive. 
+When the modifier of drive is tightly linked to the driver and enhances drive, 
+	we label  this non-recombining drive/modifier haplotype as the $B^+$ allele.  
+%We first consider a sperm-acting modifier of
+%	female meiotic drive tightly linked to the $B$ background (Model 4).
+%We treat this non-recombining drive/modifier haplotype as a third allele, and we label this allele as $B^+$ when it enhances drive. 
 %(i.e. the non-recombining haplotype of a
  %       driver allele and sperm-acting drive modifier)
 %The $B^+$ allele 
@@ -419,7 +435,7 @@ We treat this non-recombining drive/modifier haplotype as a third allele, and we
 %		generating a third `$B^{+}$' allele (i.e. the non-recombining haplotype of a
    %     driver allele and sperm-acting drive modifier). 
 The $B^+$ allele acts in sperm to increase the effectiveness of drive for both
-	the $B$ and  $B^{+}$ alleles in $AB$ and $AB^{+}$ heterozygotes (see Figure \ref{Eggsperm_3_allele_cartoon}). 
+	the $B$ and  $B^{+}$ alleles in $AB$ and $AB^{+}$ heterozygotes (see Figure \ref{Eggsperm_3_allele_cartoon}, and Model 4 in the Supplementary Worksheet). 
 %	for a simple schematic of this drive model.  
 Naively, $B^{+}$ may spread by capitalizing on the additional drive it causes; however,  
 	this is not the case for a few simple reasons. 
@@ -434,11 +450,11 @@ Worse yet, a novel $B^{+}$ haplotype most often helps
 	the $B$  allele drive ($B^+$ sperm meeting $AB$ eggs), because $B$ is initially more common than $B^{+}$. 
 %As $B^{+}$ facilitates $B$ these interactions frequently form 
 %	$BB^{+}$ heterozygotes that suffer the same fitness costs as $BB$. 
-Therefore, a sperm-acting drive facilitator alleles experience a profound disadvantage 
+Therefore, sperm-acting drive facilitator alleles experience a profound disadvantage 
 	in this scenario, even more so than under the previous two allele model. 
 We have found no parameter range of this
 	three allele system that allows the sperm-acting drive facilitator $B^{+}$ to
-	invade the population (eqn. \eqref{coupling}, Appendix Model 4, Mathematical Supplement). 
+	invade the population (Appendix Model 4, eqn. \eqref{coupling}, and Mathematical Supplement). 
 
 %%%sperm-acting drive suppressors
 While  sperm enhancement of a female drive cannot displace a polymorphic female driver, sperm based drive suppressors can. 
@@ -450,7 +466,7 @@ If this sperm-acting drive suppressor arises on
 	the non-driving $A$ background (creating a third allele $A^{-}$, Model 5), 
 	or is unlinked to the drive locus (Model 6), it readily invades a population segregating
 	for the drive system (Figure \ref{Eggsperm_3_allele_cartoon} and eqns \ref{A-} and \ref{unlinked}).  
-This allele lowers the frequency of the original drive system (perhaps to zero),
+This allele lowers the frequency of the original driver (perhaps to zero),
 	and spreads to fixation if it does not carry strong fitness costs
 	(Figure \ref{Eggsperm_3_allele_cartoon} and \ref{Trajectories_of_supressors}A). 
 This result is consistent with previous work showing that drive suppressors unlinked to, or in repulsion phase with drivers usually invade polymorphic drive systems \citep[e.g. ][]{Brandvain2012}.  
