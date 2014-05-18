@@ -410,7 +410,7 @@ for(i in c(1,3,4,5)){
 	lines(d.range,fixation.w.dom[i,],lty=2,col=my.cols[i])
 	if(i==3){ 
 		legend("bottomright",lty=c(1,2),legend=c("invasion line","fixation line")); 
-		mtext(side=3,line=0,"h=0.5")))
+		mtext(side=3,line=0,"h=0.5")
 
 		#text(0.6,0.45,expression(paste(d[h],"=0.5d")))
 
@@ -437,7 +437,7 @@ for(i in c(1,3,4,5)){
 	}
 }
 lines(d.range, (2*d.range-1)/(2*d.range),col=my.cols[i],lty=3)
-legend("bottomright",lty=3,legend=c("HWE fixation line"),col=my.cols[i]); 
+legend("bottomright",lty=3,legend=c("HWE invasion line"),col=my.cols[i]); 
 dev.copy2eps(file=paste(directory,"effect_of_dominance_on_invasion_space_four_graph.eps",sep=""))
 
 
