@@ -163,7 +163,7 @@ probability  $d > 1/2$, regardless of sperm genotype \cite[e.g. ][ and see Model
 	%YB - MOVED THIS TO THE APPENDIX
           To depict a case
 of a self-promoting meiotic driver,  we modify this standard model such 
-	that the driver is only effective when fertilized by a sperm carrying that allele (see Figure \ref{Eggsperm_2_allele_cartoon} and Model 2 in the Supplementary Worksheet). 
+	that the driver is only effective when fertilized by a sperm carrying that allele (see Figure \ref{Eggsperm}A and Model 2 in the Supplementary Worksheet). 
 We then identify the conditions allowing for the spread of this self-promoting driver, 
 	and evaluate whether a driver of this form could generate a sustained conflict favoring the evolution of suppressors. 
 We concluded with an analysis of a related model (Model 3) - in which
@@ -180,7 +180,7 @@ Assuming the driving allele is deleterious in both sexes, but fully recessive
 However, when $s$ is large ($s>(2d-1)/(2)$), a driver cannot fix, and
 will be maintained as a protected polymorphism \citep{Prout1973}. 
 The parameter space where the allele can invade but not fix is shown in white
-        in Figure \ref{Invasion_space}A. %, and it can fix in the colored regions. 
+        in Figure \ref{Eggsperm}B. %, and it can fix in the colored regions. 
 When the allele is maintained as a polymorphism, it provides an opportunity for the evolution of
 	drive suppressors, corresponding well to empirical examples of
         female meiotic drive \citep[reviewed in ][]{Burt2006}. 
@@ -198,14 +198,14 @@ When rare, a fully recessive, self-promoting driver can only invade when $s$
 	%, the selection against the drive homozygote, 
 	is less than $(2 d - 1)/(4 d)$. 
 This analytical approximation, derived from Equation \eqref{deltadriver} assuming Hardy-Weinberg, 
-	closely matches results obtained by exact numerical iteration (Figure \ref{Invasion_space}). 
+	closely matches results obtained by exact numerical iteration (Figure \ref{Eggsperm}B). 
 
 
 When a self-promoting driver does spread, 
 	it spends much time at low frequency, 
 	because the paucity of complimentary sperm compromises its ability to drive. 
 However, once relatively common, it  rapidly achieves fixation due to its
-	positive frequency dependent behavior (Inset in Figure \ref{Invasion_space}).  
+	positive frequency dependent behavior (Figure \ref{Eggsperm}B.1).  
 %This lack of a balanced polymorphism %(Figure \ref{Invasion_space}) 
 %	precludes the evolution of an
 %	allele that suppresses this form of meiotic drive in females.
@@ -317,44 +317,69 @@ which they fix if they do, and the narrow parameter range permitting balanced po
 it seems very unlikely that such alleles could drive the evolution of female suppressors of sperm-enabled
 female meiotic drive.
 
+
+
 \begin{figure}
-	\rotatebox{90}{
-\includegraphics[width = 0.5
-          \textwidth]{Figures/Sperm_egg_cartoon_paper_Fig1.eps}}
-\caption{transmission probabilities for alleles through female
-  meiosis depend on sperm genotype. 2 allele model. \gc{merge with 2,
-    rewrite both captions}}  
-\label{Eggsperm_2_allele_cartoon}
+\includegraphics[width = 0.8 \textwidth]{Figures/selfprom.eps}
+\caption{{\bf{A.}} A visual depiction of our model of 'self-promoting' driver. 
+	Transmission probabilities for alleles through female
+ 	 meiosis depend on sperm genotype. 
+	 The non-driving $A$-allele, and self-promoting $B$-allele
+	 are represented by unfilled and filled circles, respectively. 
+	 {\bf{B.}} Evolution of a self-promoter and standard driver. 
+	 	Assuming that the fitnesses of drive homozygotes and 
+		heterozygotes are $1-s$ and $1$, respectively. 
+	 	\emph{Main figure:} Boundary conditions for the invasion 
+		and fixation of self-promoting and standard meiotic drivers, 
+		with drive coefficient, $d$. Colored regions depict exact results, 
+		while lines  represent analytical approximations. 
+	 \emph{B1:}  Trajectories of sperm-dependent female drive
+		 %alleles that can invade the population, 
+		 each allele has $s =0.1$ against the
+		 homozygotes.  The drive coefficient is denoted by color. 
+ }   
+\label{Eggsperm}
 \end{figure}
+
+
+%\begin{figure}
+%	\rotatebox{90}{
+%\includegraphics[width = 0.5
+   %       \textwidth]{Figures/Sperm_egg_cartoon_paper_Fig1.eps}}
+%\caption{transmission probabilities for alleles through female
+%  meiosis depend on sperm genotype. 2 allele model. \gc{merge with 2,
+%    rewrite both captions}}  
+%\label{Eggsperm_2_allele_cartoon}
+%\end{figure}
 
 
 % (we note that the timing of fertilization relative to female meiosis places another constraint on $d$, for example, when drive takes place druing the second meitoic division
 %	it requires an uneven number of crossovers between the centromere and the drive locus \citep[see ][ for discussion]{Buckler1999}). 
 
-\begin{figure}
-\includegraphics[width = 0.8 \textwidth]{Figures/invasion_space_recessive_driver.eps}
-\caption{{\bf A.} Invasion analysis for a female meiotic drive allele with
-  recessive costs (selection coefficient $s$). First consider a simple female meiotic
-  drive system, where the allele is transmitted a fraction $d>1/2$ of
-  meioses in female heterozygotes, inspective
-  of the allele carried by the fertilizing sperm. 
-Such an allele can invade the population over all of the parameter space, and will be maintained as a
-  protected polymorphism in the white region, and can fix in the
-  population in all of the parameter space colored green or orange. 
-The solid back line marks the criteria for the allele to fix $s< (2d-1)/2$.
-Now consider an allele that is fairly transmitted through
-  female meiosis when fertilized by a sperm carrying a different
-  allele, but at a fraction $d>1/2$ when a heterozygote egg is fertilized
-  by a sperm carrying the allele (as depicted in Figure
-  \ref{Eggsperm_2_allele_cartoon}). Such an allele can only invade in
-  the region of parameter space colored orange, and it fixes over all
-  of this parameter region. The approximate criteria for this allele
-  to fix is given by the dashed line showing $s < (2d- 1)/(4d)$. 
- {\bf B.} In the inset we show trajectories of sperm-dependent female drive
- alleles that can invade the population, each allele has $s =0.1$ against the
- homozygotes and $d =0.6$, $0.7$, $0.8$ shown in yellow, blue, and red. 
- \gc{Likely make this Figure 1B.} } \label{Invasion_space}
-\end{figure}
+%\begin{figure}
+%\includegraphics[width = 0.8 \textwidth]{Figures/invasion_space_recessive_driver.eps}
+%\caption{{\bf A.} Invasion analysis for a female meiotic drive allele with
+%  recessive costs (selection coefficient $s$). First consider a simple female meiotic
+%  drive system, where the allele is transmitted a fraction $d>1/2$ of
+  %meioses in female heterozygotes, inspective
+%  of the allele carried by the fertilizing sperm. 
+%Such an allele can invade the population over all of the parameter space, and will be maintained as a
+%  protected polymorphism in the white region, and can fix in the
+%  population in all of the parameter space colored green or orange. 
+%The solid back line marks the criteria for the allele to fix $s< (2d-1)/2$.
+%Now consider an allele that is fairly transmitted through
+%  female meiosis when fertilized by a sperm carrying a different
+%  allele, but at a fraction $d>1/2$ when a heterozygote egg is fertilized
+%  by a sperm carrying the allele (as depicted in Figure
+%  \ref{Eggsperm_2_allele_cartoon}). Such an allele can only invade in
+%  the region of parameter space colored orange, and it fixes over all
+ % of this parameter region. The approximate criteria for this allele
+%  to fix is given by the dashed line showing $s < (2d- 1)/(4d)$. 
+% {\bf B.} In the inset we show trajectories of sperm-dependent female drive
+ %alleles that can invade the population, each allele has $s =0.1$ against the
+% homozygotes and $d =0.6$, $0.7$, $0.8$ shown in yellow, blue, and red. 
+% \gc{Likely make this Figure 1B.} } \label{Invasion_space}
+%\end{figure}
 
 \subsection*{Two locus models of sperm-dependent female drive}
 
