@@ -930,7 +930,7 @@ Notably, this result holds while assuming complete linkage equilibrium, and ther
   bistability. The colors, and the thin dashed contours, indicate the
   frequency the allele must be above to invade the population (note
   that these alleles reach fixation conditional on invading). In the
-  white area the allele can not invade ($x \geq1$), in the solid red
+  white area the allele cannot invade ($x \geq1$), in the solid red
   area the allele can invade and fix when rare. In the left panel we
   show the results obtained by a grid search using the recursion, on
   the right we show the approximation obtained assuming that HWE
@@ -943,27 +943,28 @@ Notably, this result holds while assuming complete linkage equilibrium, and ther
 \caption{The unstable equilibrium frequency for a self-promoting
   female meiotic drive allele with an additive cost ($s_h=s/2$) as a
   function of the drive parameter. The solid line shows results
-  obtained using the recursion, the dots our approximation given by \eqref{thresh2}/}  \label{bistable_additive}
+  obtained using the recursion, the dots our approximation given by Equation \eqref{thresh2}}  \label{bistable_additive}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width = 0.8 \textwidth]{../Scripts/effect_of_dominance_on_invasion_space_four_graph.eps} 
-\caption{Invasion analysis of an allele whose effect
- on female meoisis is mediated by the genotype of the fertilizing
- male.  As above wee assume a heterozygous female will transmit the $B$ allele 
-  with probabilities  $\frac{1}{2}$,  $\frac{1}{2} + h(d-\frac{1}{2}) $ or $d$, 
- if she mated with a n $AA$, $AB$, or $BB$ male,  respectively.  The allele suffers a recessive fitness cost $s$.  
+\includegraphics[width = 0.7 \textwidth]{../Scripts/effect_of_dominance_on_invasion_space_four_graph.eps} 
+\caption{Exact results of invasion analysis of an allele whose effect
+ on female meiosis is mediated by the genotype of the fertilizing
+ male.  
+ A heterozygous female transmits the $B$ allele 
+  with probabilities  $\frac{1}{2}$,  $d_{het}=\frac{1}{2} + h(d_{hom}-\frac{1}{2}) $ or $d_{hom}$, 
+ if she mated with a n $AA$, $AB$, or $BB$ male,  respectively.  
+ The allele suffers a recessive fitness cost $s$.  
  The four panels correspond to different dominance relationships.
 In the parameter space below the invasion (solid) line the self-promoter
  driver can invade. In the parameter space below the fixation (long
- dash) line the self-promoter can fix in the population. In the last
+ dash) line the self-promoter can fix. In the last
  two panels the invasion line is above the fixation line and so the
  allele can be maintained as a polymorphism in that thin slice of
- parameter space between the two lines. These results were 
-  obtained using the recursion. In the final panel we show the
+ parameter space between the two lines. 
+ In the final panel we show the
   fixation line (small dashes) as predicted by our HWE approximation
-  ($(d_{het}-1/2)/d_{het}$), see the `dominance' section of the
-  Appendix for more details.
+  ($(d_{het}-1/2)/d_{het}$) see the appendix for more details.
 }  \label{Effect_of_dominance}
 \end{figure}
 
