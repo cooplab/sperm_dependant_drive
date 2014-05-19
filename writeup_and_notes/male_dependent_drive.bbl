@@ -1,10 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\citeauthoryear{??}{Mas}{1985}]{Masui_book}
-, 1985\ \ {\em Biology Of Fertilization. Model Systems And Oogenesis, Volume
-  1}, Chapter Meiotic arrest in animal oocytes.
-\newblock Elsevier.
-
 \bibitem[\protect\citeauthoryear{Agulnik, Agulnik, and
   Ruvinsky}{\textsc{Agulnik} {\em et~al.\@}}{1990}]{Agulnik1990}
 \textsc{Agulnik, S.~I.}, \textsc{A.~I. Agulnik}, and \textsc{A.~O. Ruvinsky},
@@ -102,6 +97,12 @@
 \textsc{Malik, H.~S.} and \textsc{S.~Henikoff}, 2009\ \ {Major evolutionary
   transitions in centromere complexity.}
 \newblock Cell~{\em 138\/}(6)\textbf{:}\ 1067--1082.
+
+\bibitem[\protect\citeauthoryear{Masui}{\textsc{Masui}}{1985}]{Masui_book}
+\textsc{Masui, Y.}, 1985\ \ {\em Biology Of Fertilization. Model Systems And
+  Oogenesis.}, Volume~1, Chapter Meiotic arrest in animal oocytes, pp.\
+  189--213.
+\newblock Elsevier.
 
 \bibitem[\protect\citeauthoryear{McNally, Fabritius, Ellefson, Flynn, Milan,
   and McNally}{\textsc{McNally} {\em et~al.\@}}{2012}]{McNally2012}
