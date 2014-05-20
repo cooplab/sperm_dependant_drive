@@ -208,6 +208,28 @@ When rare, a fully recessive, self-promoting driver can only invade when $s$
 This analytical approximation, derived from Equation \eqref{deltadriver} assuming Hardy-Weinberg, 
 	closely matches results obtained by exact numerical iteration (Figure \ref{Eggsperm}B). 
 
+\begin{figure}
+\includegraphics[width = 1 \textwidth]{Figures/selfprom.eps}
+\caption{{\bf{A.}} A visual depiction of our model of `self-promoting' driver. 
+	Transmission probabilities for alleles through female
+ 	 meiosis depend on sperm genotype. 
+	 The non-driving $A$-allele, and self-promoting $B$-allele
+	 are represented by unfilled and filled circles, respectively. 
+	 {\bf{B.}} Evolution of a self-promoter and standard driver. 
+	 	Assuming that the fitnesses of drive homozygotes and 
+		heterozygotes are $1-s$ and $1$, respectively. 
+	 	\emph{Main figure:} Boundary conditions for the invasion 
+		and fixation of self-promoting and standard meiotic drivers, 
+		with drive coefficient, $d$. Colored regions depict exact results, 
+		while lines  represent analytical approximations. 
+	 \emph{B1:}  Trajectories of sperm-dependent female drive
+		 %alleles that can invade the population, 
+		 each allele has $s =0.1$ against the
+		 homozygotes.  The drive coefficient is denoted by color. 
+ }   
+\label{Eggsperm}
+\end{figure}
+
 
 When a self-promoting driver does spread, 
 	it spends much time at low frequency, 
@@ -327,27 +349,6 @@ female meiotic drive.
 
 
 
-\begin{figure}
-\includegraphics[width = 0.8 \textwidth]{Figures/selfprom.eps}
-\caption{{\bf{A.}} A visual depiction of our model of 'self-promoting' driver. 
-	Transmission probabilities for alleles through female
- 	 meiosis depend on sperm genotype. 
-	 The non-driving $A$-allele, and self-promoting $B$-allele
-	 are represented by unfilled and filled circles, respectively. 
-	 {\bf{B.}} Evolution of a self-promoter and standard driver. 
-	 	Assuming that the fitnesses of drive homozygotes and 
-		heterozygotes are $1-s$ and $1$, respectively. 
-	 	\emph{Main figure:} Boundary conditions for the invasion 
-		and fixation of self-promoting and standard meiotic drivers, 
-		with drive coefficient, $d$. Colored regions depict exact results, 
-		while lines  represent analytical approximations. 
-	 \emph{B1:}  Trajectories of sperm-dependent female drive
-		 %alleles that can invade the population, 
-		 each allele has $s =0.1$ against the
-		 homozygotes.  The drive coefficient is denoted by color. 
- }   
-\label{Eggsperm}
-\end{figure}
 
 
 %\begin{figure}
@@ -392,26 +393,6 @@ female meiotic drive.
 \subsection*{Two locus models of sperm-dependent female drive}
 
 %\subsection*{ sperm-egg haplotype balanced drive systems}
-
-\begin{figure}
-	\rotatebox{90}{\includegraphics[width = 0.8
-          \textwidth]{Figures/Sperm_egg_cartoon_paper_Fig2.eps}}
-\caption{Dynamics in 3 allele system
-{\bf (A) } The sperm-dependent transmission probabilities of alleles through
-female meiosis (female germ cells depicted as circles, sperm indicated by wiggly
-tails). In each case the top and bottom entry in each cell give the
-transmission probability of the left and right allele in the female
-being transmitted to the egg. In the left panel we show the transmission probabilities for
-  A, B, and B'. Where B' is a driver allele which is either promotes
-  itself through through female meiosis when sperm (a B$^+$ allele,
-  $d'>d$) or self-avoiding through the interaction of sperm with female meiosis (a B$^-$ allele,
-$d'<d$). In the right panel we depict the transmission probabilities for
-  A, B, and A$^-$ allele a non-driven allele that acts to reduce the
-  effects of female drive through sperm.
-{\bf (B)} Frequency trajectories in the three allele system. }
- \label{Eggsperm_3_allele_cartoon}
-\end{figure}
-
 
 
 
@@ -462,6 +443,31 @@ Therefore, sperm-acting drive facilitator alleles experience a profound disadvan
 We have found no parameter range of this
 	three allele system that allows the sperm-acting drive facilitator $B^{+}$ to
 	invade the population (Appendix Model 4, eqn. \eqref{coupling}, and Mathematical Supplement). 
+
+
+\begin{figure}
+	\includegraphics[width = 0.7
+          \textwidth]{Figures/twolocus.eps}
+\caption{Models of a sperm-acting drive modifier tightly linked to a meiotic driver. 
+{\bf (A) } Loci exist in tightly linked haplotypes (top of A). 
+	Genotype of sperm at the modifier locus (ancestral and sperm acting modifier empty and filled squares, respectively) alters transmission  
+	at the drive locus (circles) during female meiosis. 
+	{\bf{A1)}} In the standard model of drive, 
+	the driver (filled black circle) and non-driver (empty circle) are transmitted with probabilities $d_0$ 
+	and $1-d_0$, respectively. 
+	{\bf{A2)}} The $B^+$ haplotype increases the transmission of the drive allele ($d_1 > d_0$), and due to their shared genetic background, also increases its drive. 
+	{\bf{A3 \& A4)}} The sperm-acting modifier acts to decrease drive  ($d_1=1/2$ in A3 \& A4. More generally, $d_1 < d_0$). 
+		In {\bf{A3}} the drive suppressor exists on the drive background, forming the $B^-$ haplotype. 
+		In {\bf{A4}} the drive suppressor exists on the non-drive background, forming the $A^-$ haplotype. 		
+{\bf{(B)}} Invasion of a sperm-acting drive suppressor linked to a driver. 
+	After the driver ($B$ haplotype) reaches drive selection equilibrium, we introduce a sperm acting drive modifier. 
+	We assume full drive ($D_0 =1$), a recessive lethal fitness cost to drive ($h_s=0$, $s=1$) and that the sperm-acting modifier results in a fair meiosis. 
+{\bf {B1)}} The $B^-$ allele replaces the ancestral drive haplotype, but segregates at a lower equilibrium frequency.
+{\bf {B2)}} The $A^-$ allele replaces the ancestral non-driving haplotype, and in this case, removes the driver from the population. }
+ \label{Eggsperm_3_allele_cartoon}
+\end{figure}
+
+
 
 %%%sperm-acting drive suppressors
 While  sperm enhancement of a female drive cannot displace a polymorphic female driver, sperm based drive suppressors can. 
