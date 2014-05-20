@@ -605,8 +605,8 @@ We note that the timing of fertilization relative to female meiosis places anoth
 	so $d$ is bounded to be $<0.83$ \citep[see ][ for discussion]{Buckler1999}. 
 After drive and random mating, genotype frequencies are 
 	$f_{AA}'=f_A (f_{AA }+ f_{AB} (1 - d))$, 
-	$f_{AB}'=f_A (f_{BB} + f_{ABd}) + f_B (f_{AA} + f_{AB} (1 - d))$,
-	and $f_{BB}= f_B (f_{AB} d + f_{BB})$. 
+	$f_{AB}'=f_A (f_{BB} + f_{AB}d) + f_B (f_{AA} + f_{AB} (1 - d))$,
+	and $f_{BB}'= f_B (f_{AB} d + f_{BB})$. 
 %Assuming fitnesses $w_{AA}=1$, $w_{AB}-1 s_h$ and $w_{BB}=1-s$, 
 %Frequencies of genotype, $i$, after drive and selection are 
 %	\begin{equation} f_i''= f_i'w_i/\bar{w}\end{equation}
@@ -626,8 +626,8 @@ Therefore, genotype frequencies after drive are
 	$f_{AB}'=f_A f_B+f_B (f_{AA} + f_{AB}(1 - d)) $,
 	and $f_{BB}'= f_B (f_{AB} d + f_{BB} )$. 
 %As above, exact frequencies after drive, random mating and selection are $f_i''= f_i'w_i/\bar{w}$. 
-We iterate exact genotype frequency recursions ($f_g''= f_g'w_g/\bar{w}$) over generations to produce the frequency trajectories shown in the inset
-Figure \ref{IEggsperm}B by plotting $f_B=f_{BB}+ \frac{1}{2}f_{AB}$
+We iterate exact genotype frequency recursions ($f_g''= f_g'w_g/\bar{w}$) over generations to produce the frequency trajectories shown in the inset of 
+Figure \ref{Eggsperm}B by plotting $f_B=f_{BB}+ \frac{1}{2}f_{AB}$
 over time. %, and to assess the analytical approximations, below.
 To assess invasion or fixation criteria, as well as bistability points, we iterate this system and
 test whether $f_B$ increases over a grid of parameters. 
@@ -760,7 +760,7 @@ In the case when female meiotic drive depends on paternal genotype
   In this model, genotype frequencies after drive, random mating, and selection are 
   	$f_{AA}'' =   w_{AA}\left( f_{AA} [2 f_A + f_{AB} ] + f_{AB}^2 [1 - d_{het}] \right)/(2\bar{w})$,
 	$f_{AB}'' =   w_{AB}(f_{AA} [f_B + f_{AB}/2] + f_{AB} f_B + f_{BB} [ f_A - f_{AB} d_{hom}])/\bar{w}$, 
-	and 	$f_{AB}'' =   w_{AB}(f_{AB} (f_{AB} d_{het}/2 + f_{BB} d_{hom}) + f_{BB} f_B)/\bar{w}$. 
+	and 	$f_{BB}'' =   w_{BB}(f_{AB} (f_{AB} d_{het}/2 + f_{BB} d_{hom}) + f_{BB} f_B)/\bar{w}$. 
 % Above, $d > 1/2$ and $h$ ($0 \geq h \geq 1$) acts to specify the dominance of the $B$
 %allele's effect on female meiotic drive through the males genotype.
 %YB TRY_1 We assume that in a mating between a heterozygous female and an $AA$, $AB$, or $BB$ male, the female will transmit the $B$ allele 
