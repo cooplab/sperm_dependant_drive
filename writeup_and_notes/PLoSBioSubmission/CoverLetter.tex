@@ -1,0 +1,92 @@
+%%!TEX TS-program = latex
+% Template for PLoS
+% Version 1.0 January 2009
+%
+% To compile to pdf, run:
+% latex plos.template
+% bibtex plos.template
+% latex plos.template
+% latex plos.template
+% dvipdf plos.template
+
+\documentclass[10pt]{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+\usepackage{color} 
+
+% Use doublespacing - comment out for single spacing
+%\usepackage{setspace} 
+%\doublespacing
+
+
+% Text layout
+\topmargin 0.0cm
+\oddsidemargin 0.5cm
+\evensidemargin 0.5cm
+\textwidth 16cm 
+\textheight 21cm
+
+% Bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
+
+% Use the PLoS provided bibtex style
+\bibliographystyle{plos2009}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+% Leave date blank
+\date{}
+
+\pagestyle{myheadings}
+%% ** EDIT HERE **
+
+
+%% ** EDIT HERE **
+%% PLEASE INCLUDE ALL MACROS BELOW
+
+%% END MACROS SECTION
+
+\begin{document}
+
+% Title must be 150 characters or less
+\begin{flushleft}
+\textbf{Cover Letter for: Sperm should evolve to make female meiosis fair.}
+% Insert Author names, affiliations and corresponding author email.
+\newline by Yaniv Brandvain$^{\ast}$ and  Graham Coop \\
+
+\end{flushleft}
+
+We thank you for consideration of our manuscript \emph{Sperm should evolve to make female meiosis fair} for publication in \emph{PLoS Biology}. 
+\\ 
+
+The requirement of fertilization for the completion of female meiosis in many animal species presents an opportunity for sperm to interfere with the outcome of female meiosis. We employ population genetic theory to show that sperm that enforce fairness in female meiosis are nearly universally favored. As such, we offer a novel interpretation of the requirement of fertilization for the completion of female meiosis ? this requirement potentially represent a collaboration between mother and sperm in the control of fitness reducing meiotic drivers. The application of theory to a basic and unexplained feature of organismal biology, and the interplay between conflict and co-option by numerous parties involved in fertilization make this paper of broad interest to a wide-range of biologists.
+\\
+
+The broad appeal of this paper is evidenced by the reception of our bioR$\chi$iv -- preprint (link: http://biorxiv.org/content/early/2014/05/22/005363) which has been downloaded viewed more than 450 times since its submission 10 days ago, and whose Altmetric score places it above the 90$^{th}$ percentile for similar aged articles (link http://www.altmetric.com/details.php?domain=biorxiv.org\&citation\_id=2368591).
+\\
+
+We note that while we submitted this as a `Research article,' we are open to reformatting it as an `Unsolved mystery' if the editorial board feels that is more appropriate. 
+\\
+\\ 
+\begin{flushright}
+Sincerely,\\
+Yaniv Brandvain \\ \& Graham Coop\\
+May 31$^{st}$ 2014
+\end{flushright}
+\end{document}
