@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: male_dependent_drive.aux
+The style file: genetics.bst
+Database file #1: refs.bib
+Warning--can't use both author and editor fields in Masui_book
+You've used 29 entries,
+            2828 wiz_defined-function locations,
+            814 strings with 10128 characters,
+and the built_in function-call counts, 18756 in all, are:
+= -- 1587
+> -- 799
+< -- 25
++ -- 357
+- -- 207
+* -- 1660
+:= -- 2696
+add.period$ -- 58
+call.type$ -- 29
+change.case$ -- 208
+chr.to.int$ -- 28
+cite$ -- 30
+duplicate$ -- 1417
+empty$ -- 1401
+format.name$ -- 324
+if$ -- 3756
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 245
+newline$ -- 120
+num.names$ -- 116
+pop$ -- 509
+preamble$ -- 1
+purify$ -- 182
+quote$ -- 0
+skip$ -- 524
+stack$ -- 0
+substring$ -- 929
+swap$ -- 809
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 252
+warning$ -- 1
+while$ -- 130
+width$ -- 0
+write$ -- 351
+(There was 1 warning)
