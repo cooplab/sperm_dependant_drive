@@ -216,7 +216,7 @@ We present six related models, the first three of which represent the system wit
 {\bf{Model 1}} describes a traditional, single-locus, female meiotic driver, 
 {\bf{Model 2}} describes a single-locus sperm-dependent female driver -- that is, an allele whose transmission in female meiosis depends on sperm haplotype. 
 {\bf{Model 3}} describes a single-locus paternal-dependent female driver -- an allele whose transmission in female meiosis depends on paternal genotype. 
-Assuming that a traditional driver segregates at its equilibrium frequency ({\bf{Model 1}}), we investigate the evolution of tightly linked ({\bf{Models 4 and 5}}), and unlinked ({\bf{Model 6}}) sperm-dependent modifiers of drive. 
+Assuming that a traditional driver segregates at its equilibrium frequency ({\bf{Model 1}}), we investigate the evolution of tightly linked ({\bf{Models 4 and 5}}), and unlinked ({\bf{Model 6}}) sperm-dependent modifiers of drive (We also briefly compare Model 6, to Model 6' - the suppression of female drive by an unlinked female acting suppressor).  
 In {\bf{Models 4 and 5}}, we treat this two-locus system as if it consists of
 a single locus with three alleles: $A$, $B$ and $C$, corresponding to the case when the
 sperm-modifier arises once, tightly linked to one or other of the
@@ -236,7 +236,7 @@ After a complete generation $f_g'' = f_g' w_g/\bar{w}$, where $\bar{w}$ is the p
 
 We verbally describe our main results below.  
 Readers interested in the details of these results should turn to the Appendix for a mathematical treatment. 
-There we present critical analytical results in Equations 1-10, and describe our analyses and results in more detail.  
+There we present critical analytical results in Equations 1-11, and describe our analyses and results in more detail.  
 Because a number of our analyses are approximations based on assuming
 that genotype frequencies follow Hardy Weinberg Equilibrium (HWE), we note which analytical results are approximations. 
 We verify these approximations with exact numerical iterations in Figures S1-S3 and File S3 , and detail the derivation of these approximations in our File S2.
@@ -471,13 +471,19 @@ If this sperm-acting drive suppressor arises on
 	creating a third allele $A^{-}$, Figure \ref{Eggsperm_3_allele_cartoon}A4, Model 5), 
 	or is unlinked to the drive locus (Model 6), it readily invades a population segregating
 	for the drive system (Equations \ref{A-} and
-        \ref{unlinked}).  %%DELETED FIG REF HERE.
-This allele lowers the frequency of the original driver (perhaps to zero),
+        \ref{unlinked}).  %%DELETED FIG REF HERE. 
+        \newline
+        
+The sperm acting drive suppressing allele lowers the frequency of the original driver (perhaps to zero),
 	and spreads to fixation if it does not carry strong fitness costs
 	(Figure \ref{Eggsperm_3_allele_cartoon}B2). 
 This result is consistent with previous work showing that drive suppressors unlinked to, or in repulsion phase with drivers usually invade polymorphic drive systems \citep[e.g. ][]{Brandvain2012}.  
+\yb{We note that the evolution of sperm-acting drive  suppressors unlinked to a driver (Model 6) is both qualitatively and quantitatively similar to the evolution  of a female-acting drive suppressor (compare Equations \ref{unlinked} and \ref{femunlinked}).}
 Therefore, all two-locus models of sperm influence on female drive suggest that
-	sperm will evolve to oppose female meiotic drive. \newline 
+	sperm will evolve to oppose female meiotic drive. 
+\newline 
+
+
 
 
 \section*{Discussion}
@@ -760,8 +766,9 @@ Assuming HWE, a recessive fitness cost to drive, and assuming that the $A/B$ loc
 	\Delta C \approx -\epsilon f_{C^-}^2 \frac{ \left(2 d_0 s-\sqrt{2} \sqrt{s (2 d_0 (d_0 (s-2)+2)-1)}\right)}{2\bar{w}s (2 d_0 -1) }. \label{A-}
 \end{equation}
 For all values of interest ($0<s<1$, $0.5<d_0<1$), the change in frequency a rare $C$ allele is positive when it decreases drive (i.e. $\epsilon <0$, corresponding to the $A^-$ model, above), a result which holds qualitatively for a common $C$ allele, as well (File S2  ). 
-Somewhat counterintuitively, the spread of the $A^-$ allele is substantially slower than that of the $B^-$ allele (it is on the order of $C^{2}$ rather than $C$). 
-This is because the $A^-$ allele will never occur in drive-homozygotes and therefore only spreads by preventing itself from the cheating of the driver.
+%Somewhat counterintuitively, the spread of the $A^-$ allele is somewhat slower than that of the $B^-$ allele (it is on the order of $C^{2}$ rather than $C$). 
+%This is because the $A^-$ allele will never occur in drive-homozygotes and therefore only spreads by preventing itself from the cheating of the driver.
+% YB COMMENT {I removed bc this was actually quite a minor influence}
 
 \subsubsection*{Model 6. Unlinked drive-modifier:}
 For the unlinked model, we introduce another locus where drive is modified in $A/B$ females fertilized by $M$ allele, 
@@ -769,7 +776,15 @@ For the unlinked model, we introduce another locus where drive is modified in $A
 Assuming HWE and linkage equilibrium, the change in frequency of a rare unlinked, sperm-acting drive modifier is 
 \begin{equation} \Delta M =-\epsilon f_A f_B (f_B s + s_h (f_A - f_B) ) \frac{f_M}{\bar{w}}  \label{unlinked} \end{equation}
 Thus, a rare drive suppressor ($\epsilon<0$) will spread so long as the fitness cost of the driver does not display over- or under-dominance. 
-Notably, this result holds while assuming complete linkage equilibrium, and therefore sperm suppression of female meiotic drive is likely more powerful than more direct female-enforced drive suppressors  which usually spread due to the indirect benefit of avoiding drive haplotypes \citep[e.g. ][]{Brandvain2012}.  
+
+\subsubsection*{Model $6^\prime$. Unlinked female acting drive-modifier:}
+\yb{The dynamics of a female-acting drive modifier are comparable to those describing a female acting drive suppressor.  
+When rare and fully dominant and in linkage and in HWE, the change in frequency of a rare unlinked, female-acting drive modifier is 
+\begin{equation} \Delta M =-(d_h-d_0) f_A f_B (f_B s + s_h (f_A - f_B) ) \frac{f_M}{\bar{w}}  \label{femunlinked} \end{equation}
+When  when drive-modification is dominant ($d_h = d_1 = d_0 + \epsilon$), Equation \ref{femunlinked} is equal to Equation \ref{unlinked}.
+ However, if female drive suppression is less than fully dominant, sperm-acting drive suppressors are more efficacious when rare than are female-acting suppressors, and are therefore more likely to spread.  
+}
+
 
 \bibliography{refs}
 
