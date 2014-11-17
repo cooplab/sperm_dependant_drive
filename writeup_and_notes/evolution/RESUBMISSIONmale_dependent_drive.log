@@ -1,0 +1,986 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  16 NOV 2014 21:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**RESUBMISSIONmale_dependent_drive.tex
+(./RESUBMISSIONmale_dependent_drive.tex
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count88
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen107
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen108
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen109
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks16
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks17
+\eqnshift@=\dimen110
+\alignsep@=\dimen111
+\tagshift@=\dimen112
+\tagwidth@=\dimen113
+\totwidth@=\dimen114
+\lineht@=\dimen115
+\@envbody=\toks18
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psfrag/psfrag.sty
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count101
+\pfg@scount=\count102
+\pfg@temp=\write3
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/mathabx/mathabx.sty
+Package: mathabx 2003/07/29 v0.0 Non-standard LaTeX package mathabx
+\symmatha=\mathgroup4
+\symmathb=\mathgroup5
+\symmathx=\mathgroup6
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/mathabx/mathabx.dcl
+LaTeX Font Info:    Redeclaring math symbol \cdotp on input line 25.
+LaTeX Font Info:    Redeclaring math symbol \times on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \div on input line 34.
+LaTeX Font Info:    Redeclaring math symbol \cdot on input line 35.
+LaTeX Font Info:    Redeclaring math symbol \circ on input line 36.
+LaTeX Font Info:    Redeclaring math symbol \ast on input line 38.
+LaTeX Font Info:    Redeclaring math symbol \pm on input line 41.
+LaTeX Font Info:    Redeclaring math symbol \mp on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \diamond on input line 45.
+LaTeX Font Info:    Redeclaring math symbol \bullet on input line 46.
+LaTeX Font Info:    Redeclaring math symbol \star on input line 47.
+LaTeX Font Info:    Redeclaring math symbol \amalg on input line 51.
+LaTeX Font Info:    Redeclaring math symbol \equiv on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \sim on input line 84.
+LaTeX Font Info:    Redeclaring math symbol \approx on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \simeq on input line 86.
+LaTeX Font Info:    Redeclaring math symbol \asymp on input line 89.
+LaTeX Font Info:    Redeclaring math symbol \neg on input line 134.
+LaTeX Font Info:    Redeclaring math symbol \ll on input line 136.
+LaTeX Font Info:    Redeclaring math symbol \gg on input line 137.
+LaTeX Font Info:    Redeclaring math symbol \vdash on input line 139.
+LaTeX Font Info:    Redeclaring math symbol \dashv on input line 140.
+LaTeX Font Info:    Redeclaring math symbol \flat on input line 158.
+LaTeX Font Info:    Redeclaring math symbol \natural on input line 159.
+LaTeX Font Info:    Redeclaring math symbol \sharp on input line 160.
+LaTeX Font Info:    Redeclaring math symbol \infty on input line 161.
+LaTeX Font Info:    Redeclaring math symbol \propto on input line 162.
+LaTeX Font Info:    Redeclaring math symbol \dagger on input line 163.
+LaTeX Font Info:    Redeclaring math symbol \ddagger on input line 164.
+LaTeX Font Info:    Redeclaring math symbol \smile on input line 171.
+LaTeX Font Info:    Redeclaring math symbol \frown on input line 172.
+LaTeX Font Info:    Redeclaring math symbol \setminus on input line 218.
+LaTeX Font Info:    Redeclaring math symbol \mid on input line 222.
+LaTeX Font Info:    Redeclaring math symbol \forall on input line 279.
+LaTeX Font Info:    Redeclaring math symbol \partial on input line 281.
+LaTeX Font Info:    Redeclaring math symbol \exists on input line 284.
+LaTeX Font Info:    Redeclaring math symbol \emptyset on input line 288.
+LaTeX Font Info:    Redeclaring math symbol \top on input line 290.
+LaTeX Font Info:    Redeclaring math symbol \bot on input line 291.
+LaTeX Font Info:    Redeclaring math symbol \perp on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \in on input line 299.
+LaTeX Font Info:    Redeclaring math symbol \owns on input line 300.
+LaTeX Font Info:    Redeclaring math symbol \cap on input line 312.
+LaTeX Font Info:    Redeclaring math symbol \cup on input line 313.
+LaTeX Font Info:    Redeclaring math symbol \uplus on input line 314.
+LaTeX Font Info:    Redeclaring math symbol \sqcap on input line 315.
+LaTeX Font Info:    Redeclaring math symbol \sqcup on input line 316.
+LaTeX Font Info:    Redeclaring math symbol \wedge on input line 318.
+LaTeX Font Info:    Redeclaring math symbol \vee on input line 320.
+LaTeX Font Info:    Redeclaring math symbol \subset on input line 344.
+LaTeX Font Info:    Redeclaring math symbol \supset on input line 345.
+LaTeX Font Info:    Redeclaring math symbol \subseteq on input line 348.
+LaTeX Font Info:    Redeclaring math symbol \supseteq on input line 349.
+LaTeX Font Info:    Redeclaring math symbol \sqsubseteq on input line 380.
+LaTeX Font Info:    Redeclaring math symbol \sqsupseteq on input line 381.
+LaTeX Font Info:    Redeclaring math symbol \triangleleft on input line 407.
+LaTeX Font Info:    Redeclaring math symbol \triangleright on input line 409.
+LaTeX Font Info:    Redeclaring math symbol \leq on input line 439.
+LaTeX Font Info:    Redeclaring math symbol \geq on input line 441.
+LaTeX Font Info:    Redeclaring math symbol \prec on input line 498.
+LaTeX Font Info:    Redeclaring math symbol \succ on input line 499.
+LaTeX Font Info:    Redeclaring math symbol \preceq on input line 506.
+LaTeX Font Info:    Redeclaring math symbol \succeq on input line 507.
+LaTeX Font Info:    Redeclaring math symbol \leftarrow on input line 540.
+LaTeX Font Info:    Redeclaring math symbol \rightarrow on input line 542.
+LaTeX Font Info:    Redeclaring math symbol \nwarrow on input line 546.
+LaTeX Font Info:    Redeclaring math symbol \nearrow on input line 547.
+LaTeX Font Info:    Redeclaring math symbol \swarrow on input line 548.
+LaTeX Font Info:    Redeclaring math symbol \searrow on input line 549.
+LaTeX Font Info:    Redeclaring math symbol \leftrightarrow on input line 550.
+LaTeX Font Info:    Redeclaring math symbol \mapstochar on input line 557.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoonup on input line 560.
+LaTeX Font Info:    Redeclaring math symbol \rightharpoonup on input line 561.
+LaTeX Font Info:    Redeclaring math symbol \leftharpoondown on input line 562.
+
+LaTeX Font Info:    Redeclaring math symbol \rightharpoondown on input line 563
+.
+LaTeX Font Info:    Redeclaring math symbol \Leftarrow on input line 575.
+LaTeX Font Info:    Redeclaring math symbol \Rightarrow on input line 576.
+LaTeX Font Info:    Redeclaring math symbol \Leftrightarrow on input line 579.
+LaTeX Font Info:    Redeclaring math symbol \rhook on input line 612.
+LaTeX Font Info:    Redeclaring math symbol \lhook on input line 613.
+LaTeX Font Info:    Redeclaring math symbol \oplus on input line 658.
+LaTeX Font Info:    Redeclaring math symbol \ominus on input line 659.
+LaTeX Font Info:    Redeclaring math symbol \otimes on input line 661.
+LaTeX Font Info:    Redeclaring math symbol \odot on input line 663.
+LaTeX Font Info:    Redeclaring math symbol \oslash on input line 675.
+\mayacnter=\count103
+\mayacnta=\count104
+\mayacntb=\count105
+\mayacntc=\count106
+\mayawidth=\dimen116
+LaTeX Font Info:    Redeclaring math symbol \intop on input line 753.
+LaTeX Font Info:    Redeclaring math symbol \ointop on input line 760.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 842.
+LaTeX Info: Redefining \{ on input line 846.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 848.
+LaTeX Info: Redefining \} on input line 852.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 858.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 859.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 863.
+LaTeX Font Info:    Redeclaring math delimiter \Vert on input line 865.
+LaTeX Font Info:    Redeclaring math delimiter \uparrow on input line 868.
+LaTeX Font Info:    Redeclaring math delimiter \downarrow on input line 869.
+LaTeX Font Info:    Redeclaring math delimiter \updownarrow on input line 870.
+LaTeX Font Info:    Redeclaring math delimiter \Uparrow on input line 871.
+LaTeX Font Info:    Redeclaring math delimiter \Downarrow on input line 872.
+LaTeX Font Info:    Redeclaring math delimiter \Updownarrow on input line 873.
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 880.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 881.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 882.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 883.
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 884.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 885.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 903.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 905.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 907.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 909.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 944.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 946.
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 137.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip48
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen117
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box28
+\UL@hyphenbox=\box29
+\UL@skip=\skip49
+\UL@hook=\toks20
+\UL@height=\dimen118
+\UL@pe=\count107
+\UL@pixel=\dimen119
+\ULC@box=\box30
+Package: ulem 2012/05/18
+\ULdepth=\dimen120
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count108
+\output=\toks21
+\linenoprevgraf=\count109
+\linenumbersep=\dimen121
+\linenumberwidth=\dimen122
+\c@linenumber=\count110
+\c@pagewiselinenumber=\count111
+\c@LN@truepage=\count112
+\c@internallinenumber=\count113
+\c@internallinenumbers=\count114
+\quotelinenumbersep=\dimen123
+\bframerule=\dimen124
+\bframesep=\dimen125
+\bframebox=\box31
+LaTeX Info: Redefining \\ on input line 3056.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip50
+\f@ncyO@elh=\skip51
+\f@ncyO@erh=\skip52
+\f@ncyO@olh=\skip53
+\f@ncyO@orh=\skip54
+\f@ncyO@elf=\skip55
+\f@ncyO@erf=\skip56
+\f@ncyO@olf=\skip57
+\f@ncyO@orf=\skip58
+)
+No file RESUBMISSIONmale_dependent_drive.aux.
+\openout1 = `RESUBMISSIONmale_dependent_drive.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count115
+\scratchdimen=\dimen126
+\scratchbox=\box32
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen127
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks23
+) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+
+[1
+Non-PDF special ignored!
+
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+
+Package natbib Warning: Citation `Burt2006' on page 3 undefined on input line 7
+6.
+
+
+Package natbib Warning: Citation `Sandler1957' on page 3 undefined on input lin
+e 77.
+
+
+Package natbib Warning: Citation `Pardo-ManuelDeVillena2001a' on page 3 undefin
+ed on input line 77.
+
+
+Package natbib Warning: Citation `Prout1973' on page 3 undefined on input line 
+78.
+
+
+Package natbib Warning: Citation `Buckler1999' on page 3 undefined on input lin
+e 80.
+
+
+Package natbib Warning: Citation `Fishman2005' on page 3 undefined on input lin
+e 80.
+
+
+Package natbib Warning: Citation `Fishman2008' on page 3 undefined on input lin
+e 80.
+
+
+Package natbib Warning: Citation `Agulnik1990' on page 3 undefined on input lin
+e 81.
+
+
+Package natbib Warning: Citation `Wu2005' on page 3 undefined on input line 81.
+
+
+
+Package natbib Warning: Citation `Pardo-ManuelDeVillena2001c' on page 3 undefin
+ed on input line 81.
+
+
+Package natbib Warning: Citation `Prout1973' on page 3 undefined on input line 
+84.
+
+
+Package natbib Warning: Citation `Dawe1996' on page 3 undefined on input line 8
+5.
+
+
+Package natbib Warning: Citation `Fishman2008' on page 3 undefined on input lin
+e 85.
+
+
+Package natbib Warning: Citation `Haig1991' on page 3 undefined on input line 8
+9.
+
+
+Package natbib Warning: Citation `Mira1998' on page 3 undefined on input line 9
+0.
+
+
+Package natbib Warning: Citation `Malik2002a' on page 3 undefined on input line
+ 90.
+
+
+Package natbib Warning: Citation `Malik2009' on page 3 undefined on input line 
+90.
+
+
+Package natbib Warning: Citation `Haig2010' on page 3 undefined on input line 9
+0.
+
+
+Package natbib Warning: Citation `Brandvain2012' on page 3 undefined on input l
+ine 90.
+
+
+Package natbib Warning: Citation `Rice2013' on page 3 undefined on input line 9
+1.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--92
+
+ []
+
+
+Package natbib Warning: Citation `Masui_book' on page 3 undefined on input line
+ 95.
+
+
+Package natbib Warning: Citation `Gardner2010' on page 3 undefined on input lin
+e 100.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--105
+
+ []
+
+[3]
+
+Package natbib Warning: Citation `Miller:05' on page 4 undefined on input line 
+109.
+
+
+Package natbib Warning: Citation `Schatten:94' on page 4 undefined on input lin
+e 113.
+
+
+Package natbib Warning: Citation `Yasuda:95' on page 4 undefined on input line 
+118.
+
+
+Package natbib Warning: Citation `Loppin:05' on page 4 undefined on input line 
+118.
+
+
+Package natbib Warning: Citation `Miller:01' on page 4 undefined on input line 
+118.
+
+
+Package natbib Warning: Citation `McNally:05' on page 4 undefined on input line
+ 118.
+
+
+Package natbib Warning: Citation `Churchill:03' on page 4 undefined on input li
+ne 118.
+
+
+Package natbib Warning: Citation `McNally2012' on page 4 undefined on input lin
+e 120.
+
+
+Package natbib Warning: Citation `Karrbook:09' on page 4 undefined on input lin
+e 123.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--128
+
+ []
+
+
+Package natbib Warning: Citation `Burt2006' on page 4 undefined on input line 1
+34.
+
+
+Package natbib Warning: Citation `Agulnik1993' on page 4 undefined on input lin
+e 135.
+
+
+Package natbib Warning: Citation `Wu2005' on page 4 undefined on input line 135
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--140
+
+ []
+
+
+Package natbib Warning: Citation `Agulnik1990' on page 4 undefined on input lin
+e 145.
+
+
+Package natbib Warning: Citation `Fishman2008' on page 4 undefined on input lin
+e 145.
+
+
+Package natbib Warning: Citation `Hiatt2003' on page 4 undefined on input line 
+145.
+
+
+Package natbib Warning: Citation `Novitski1951' on page 4 undefined on input li
+ne 145.
+
+
+Package natbib Warning: Citation `Pardo-ManuelDeVillena2001c' on page 4 undefin
+ed on input line 145.
+
+
+Package natbib Warning: Citation `Anderson2008' on page 4 undefined on input li
+ne 148.
+
+
+Package natbib Warning: Citation `Anderson2009' on page 4 undefined on input li
+ne 148.
+
+
+Package natbib Warning: Citation `Axelsson2010' on page 4 undefined on input li
+ne 148.
+
+
+Package natbib Warning: Citation `Malik2009a' on page 4 undefined on input line
+ 148.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--154
+
+ []
+
+[4]
+
+Package natbib Warning: Citation `Pomiankowski1993' on page 5 undefined on inpu
+t line 171.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--210
+
+ []
+
+[6]
+
+Package natbib Warning: Citation `Ubeda2004' on page 7 undefined on input line 
+229.
+
+
+LaTeX Warning: Reference `Eggsperm' on page 7 undefined on input line 232.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--239
+
+ []
+
+[7]
+
+Package natbib Warning: Citation `Prout1973' on page 8 undefined on input line 
+241.
+
+
+Package natbib Warning: Citation `Ubeda2004' on page 8 undefined on input line 
+241.
+
+
+LaTeX Warning: Reference `Eggsperm' on page 8 undefined on input line 245.
+
+
+Package natbib Warning: Citation `Prout1973' on page 8 undefined on input line 
+246.
+
+
+LaTeX Warning: Reference `Eggsperm' on page 8 undefined on input line 248.
+
+
+Package natbib Warning: Citation `Burt2006' on page 8 undefined on input line 2
+51.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--252
+
+ []
+
+
+LaTeX Warning: Reference `Eggsperm' on page 8 undefined on input line 261.
+
+
+LaTeX Warning: Reference `deltadriver' on page 8 undefined on input line 262.
+
+
+LaTeX Warning: Reference `Eggsperm' on page 8 undefined on input line 263.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--264
+
+ []
+
+[8]
+
+LaTeX Warning: Reference `Eggsperm' on page 9 undefined on input line 272.
+
+
+LaTeX Warning: Reference `ineqA' on page 9 undefined on input line 276.
+
+
+LaTeX Warning: Reference `Eggsperm' on page 9 undefined on input line 276.
+
+
+LaTeX Warning: Reference `bistab_homozy_approx' on page 9 undefined on input li
+ne 278.
+
+
+LaTeX Warning: Reference `Bistab_homozyg_cost_fig' on page 9 undefined on input
+ line 279.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--283
+
+ []
+
+
+LaTeX Warning: Reference `sForHetFix' on page 9 undefined on input line 290.
+
+
+LaTeX Warning: Reference `thresh2' on page 9 undefined on input line 291.
+
+
+LaTeX Warning: Reference `bistable_additive' on page 9 undefined on input line 
+292.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--300
+
+ []
+
+
+Package natbib Warning: Citation `Joseph2004' on page 9 undefined on input line
+ 302.
+
+
+LaTeX Warning: Reference `Effect_of_dominance' on page 9 undefined on input lin
+e 312.
+
+
+LaTeX Warning: Reference `polymale' on page 9 undefined on input line 312.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--319
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 321--325
+
+ []
+
+
+LaTeX Warning: Reference `Eggsperm_3_allele_cartoon' on page 10 undefined on in
+put line 344.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 338--347
+
+ []
+
+[10]
+
+Package natbib Warning: Citation `Thomson1974' on page 11 undefined on input li
+ne 353.
+
+
+Package natbib Warning: Citation `Charlesworth1978' on page 11 undefined on inp
+ut line 353.
+
+
+Package natbib Warning: Citation `Haig1991' on page 11 undefined on input line 
+353.
+
+
+Package natbib Warning: Citation `Burt2006' on page 11 undefined on input line 
+354.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 348--358
+
+ []
+
+
+LaTeX Warning: Reference `Eggsperm_3_allele_cartoon' on page 11 undefined on in
+put line 366.
+
+
+LaTeX Warning: Reference `coupling' on page 11 undefined on input line 381.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--382
+
+ []
+
+[11]
+
+LaTeX Warning: Reference `Eggsperm_3_allele_cartoon' on page 12 undefined on in
+put line 392.
+
+
+LaTeX Warning: Reference `Eggsperm_3_allele_cartoon' on page 12 undefined on in
+put line 397.
+
+
+LaTeX Warning: Reference `coupling' on page 12 undefined on input line 397.
+
+
+LaTeX Warning: Reference `Eggsperm_3_allele_cartoon' on page 12 undefined on in
+put line 401.
+
+
+LaTeX Warning: Reference `A-' on page 12 undefined on input line 403.
+
+
+LaTeX Warning: Reference `unlinked' on page 12 undefined on input line 404.
+
+
+LaTeX Warning: Reference `unlinked' on page 12 undefined on input line 407.
+
+
+LaTeX Warning: Reference `femunlinked' on page 12 undefined on input line 407.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--409
+
+ []
+
+
+LaTeX Warning: Reference `Eggsperm_3_allele_cartoon' on page 12 undefined on in
+put line 412.
+
+
+Package natbib Warning: Citation `Brandvain2012' on page 12 undefined on input 
+line 413.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--417
+
+ []
+
+[12]
+
+Package natbib Warning: Citation `Arnqvist2005' on page 13 undefined on input l
+ine 426.
+
+
+Package natbib Warning: Citation `Burt2006' on page 13 undefined on input line 
+428.
+
+
+Package natbib Warning: Citation `Rice2013' on page 13 undefined on input line 
+429.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--451
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 453--469
+
+ []
+
+
+Package natbib Warning: Citation `Agulnik1993' on page 14 undefined on input li
+ne 483.
+
+
+Package natbib Warning: Citation `Wu2005' on page 14 undefined on input line 48
+3.
+
+[14]
+
+Package natbib Warning: Citation `Sawamura:1993aa' on page 15 undefined on inpu
+t line 501.
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 520--530
+
+ []
+
+
+Package natbib Warning: Citation `Partridge1998' on page 16 undefined on input 
+line 534.
+
+
+Package natbib Warning: Citation `Mira1998' on page 16 undefined on input line 
+540.
+
+
+Package natbib Warning: Citation `Masui_book' on page 16 undefined on input lin
+e 542.
+
+
+Package natbib Warning: Citation `Karrbook:09' on page 16 undefined on input li
+ne 542.
+
+[16]
+
+Package natbib Warning: Citation `Buckler1999' on page 17 undefined on input li
+ne 556.
+
+[17]
+
+LaTeX Warning: Reference `Eggsperm' on page 18 undefined on input line 576.
+
+
+Overfull \hbox (14.85017pt too wide) in paragraph at lines 587--592
+\OT1/cmr/m/n/12 sum-ing HWE ($\OML/cmm/m/it/12 F \U/matha/m/n/12 ^^P \OT1/cmr/m
+/n/12 0$) a com-mon, re-ces-sive, self-promoting driver in-vades if $[]$,
+ []
+
+
+LaTeX Warning: Reference `Bistab_homozyg_cost_fig' on page 18 undefined on inpu
+t line 601.
+
+
+LaTeX Warning: Reference `ineqA' on page 18 undefined on input line 602.
+
+
+LaTeX Warning: Reference `bistab_homozy_approx' on page 18 undefined on input l
+ine 602.
+
+[18]
+
+LaTeX Warning: Reference `thresh2' on page 19 undefined on input line 622.
+
+
+LaTeX Warning: Reference `bistable_additive' on page 19 undefined on input line
+ 623.
+
+
+LaTeX Warning: Reference `Effect_of_dominance' on page 19 undefined on input li
+ne 642.
+
+[19] [20] [21]
+
+LaTeX Warning: Reference `femunlinked' on page 22 undefined on input line 700.
+
+
+LaTeX Warning: Reference `unlinked' on page 22 undefined on input line 700.
+
+No file RESUBMISSIONmale_dependent_drive.bbl.
+[22] [23] [24] [25] [26
+
+
+
+] [27
+
+]
+
+LaTeX Warning: Reference `thresh2' on page 28 undefined on input line 796.
+
+
+LaTeX Warning: Reference `thresh2' on page 28 undefined on input line 796.
+
+
+Package natbib Warning: There were undefined citations.
+
+[28] (./RESUBMISSIONmale_dependent_drive.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3835 strings out of 493117
+ 50188 string characters out of 6135433
+ 113624 words of memory out of 5000000
+ 7233 multiletter control sequences out of 15000+600000
+ 16966 words of font info for 57 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 38i,12n,43p,1577b,270s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb>
+Output written on RESUBMISSIONmale_dependent_drive.pdf (28 pages, 175938 bytes)
+.
+PDF statistics:
+ 147 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
