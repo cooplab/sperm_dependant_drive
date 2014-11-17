@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  16 NOV 2014 21:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  17 NOV 2014 14:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -308,7 +308,7 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \bframebox=\box31
 LaTeX Info: Redefining \\ on input line 3056.
 )
-No file response_drive_MS.aux.
+(./response_drive_MS.aux)
 \openout1 = `response_drive_MS.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -323,6 +323,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
 LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
+
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
@@ -558,10 +559,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 199--207
 
 [11] (./response_drive_MS.aux) ) 
 Here is how much of TeX's memory you used:
- 3583 strings out of 493117
- 47207 string characters out of 6135433
- 108641 words of memory out of 5000000
- 7008 multiletter control sequences out of 15000+600000
+ 3586 strings out of 493117
+ 47269 string characters out of 6135433
+ 109641 words of memory out of 5000000
+ 7009 multiletter control sequences out of 15000+600000
  4996 words of font info for 19 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,5n,32p,1327b,121s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -569,7 +570,7 @@ Here is how much of TeX's memory you used:
 /public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmti12.pfb>
-Output written on response_drive_MS.pdf (11 pages, 72889 bytes).
+Output written on response_drive_MS.pdf (11 pages, 73103 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream

@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: RESUBMISSIONmale_dependent_drive.aux
+The style file: evolution.bst
+Database file #1: refs.bib
+Warning--can't use both author and editor fields in Masui_book
+You've used 44 entries,
+            2892 wiz_defined-function locations,
+            926 strings with 12754 characters,
+and the built_in function-call counts, 27021 in all, are:
+= -- 2278
+> -- 1287
+< -- 32
++ -- 420
+- -- 375
+* -- 1915
+:= -- 4297
+add.period$ -- 133
+call.type$ -- 44
+change.case$ -- 341
+chr.to.int$ -- 43
+cite$ -- 45
+duplicate$ -- 1913
+empty$ -- 1981
+format.name$ -- 535
+if$ -- 5447
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 390
+newline$ -- 227
+num.names$ -- 176
+pop$ -- 741
+preamble$ -- 1
+purify$ -- 301
+quote$ -- 0
+skip$ -- 602
+stack$ -- 0
+substring$ -- 1442
+swap$ -- 884
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 384
+warning$ -- 1
+while$ -- 202
+width$ -- 0
+write$ -- 577
+(There was 1 warning)
