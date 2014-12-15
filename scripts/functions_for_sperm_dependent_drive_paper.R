@@ -1,4 +1,4 @@
-
+directory<-"~/Dropbox/Ideas/Om/scripts/"
 
 library("RColorBrewer")   #color scheme used in many figures
 
@@ -13,7 +13,7 @@ iterate.1.locus.drive<-function(s.array,num.iterations,female.transmission.probs
        #     print("running 2 allele system to stablity")
 		allele.freqs<-initialize.allele.freqs	
 		names(allele.freqs)<-c("1","2","3")	
-
+ 
 	
 		geno.freqs["11"]<-allele.freqs["1"]^2
 		geno.freqs["22"]<-allele.freqs["2"]^2
@@ -48,12 +48,15 @@ iterate.1.locus.drive<-function(s.array,num.iterations,female.transmission.probs
 		geno.freqs<-geno.freqs/sum(geno.freqs)	
 
 		geno.freqs.array<-outer(rep(geno.freqs,each=2),rep(geno.freqs,each=2),"*")  ##one for each allele
-
-	geno.freqs.array<-(1-selfing.rate) * geno.freqs.array  ##selfing  (1-s) * pi *pj
-	diag(geno.freqs.array)<-diag(geno.freqs.array) +  selfing.rate * rep(geno.freqs,each=2)  #selfing  (1-s) * pi *pj + delta_{ij} s pi
+		geno.freqs.array<-(1-selfing.rate) * geno.freqs.array  ##selfing  (1-s) * pi *pj
+		for(geno in names(geno.freqs)){  #selfing  (1-s) * pi *pj + delta_{ij} s pi  
+			these.cols<-colnames(geno.freqs.array)==geno; these.rows<-rownames(geno.freqs.array)==geno
+			geno.freqs.array[these.rows,these.cols]<- geno.freqs.array[these.rows,these.cols] +  selfing.rate* geno.freqs[geno] 
+		}
+	
 
 	##transmission
-		tot.trans<-geno.freqs.array*female.transmission.probs*0.5
+		tot.trans<-geno.freqs.array*female.transmission.probs*0.5   ## 1/2 prob. of transmission of each male allele
 
 		new.geno.freqs<-rep(NA,6)	
 		names(new.geno.freqs)<-geno.names
