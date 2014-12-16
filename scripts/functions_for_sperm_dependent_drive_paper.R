@@ -422,6 +422,76 @@ figures.of.traj.for.figure.2<-function(){
 
 
 
+#####Affect of inbreeding in Figure 1.
+
+make.selfing.invasion.grid.supp.fig<-function(selfing.rate=0){
+	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd allele listed against the 1st.
+	
+	d.range<-seq(0.5,1,length=200)
+	s3.range<-seq(0,1,length=200)
+	print("invasion of self prop. driver")
+	####ivasion of self prop. driver
+	invasion.grid<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.invasion.self.prop(d=d,s.het=0,s.hom=s3,selfing.rate=selfing.rate)
+		})
+	})
+	invasion.lines.selfprop<-s3.range[apply(invasion.grid,1,function(x){max(which(x))})]
+
+	print("fixation of simpler driver")
+
+	###fixation of simpler driver
+	invasion.grid<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.fixation.of.simple.driver(d=d,s.het=0,x=0.001,s.hom=s3,selfing.rate=selfing.rate)
+		})
+	})
+	invasion.lines.simple.driver<-s3.range[apply(invasion.grid,1,function(x){max(which(x))})]
+
+	print("fixation of self prop. driver")
+
+	####fixation of self prop. driver
+	fixation.grid<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.invasion.self.prop(d=d,s.het=0,x=0.999,s.hom=s3,selfing.rate=selfing.rate)
+		})
+	})
+	fixation.lines.selfprop<-s3.range[apply(fixation.grid,1,function(x){max(which(x))})]
+
+	print("fixation of simpler driver")
+		
+	###fixation of simpler driver
+	fixation.grid<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.fixation.of.simple.driver(d=d,s.het=0,s.hom=s3,selfing.rate=selfing.rate)
+		})
+	})
+	fixation.lines.simple.driver<-s3.range[apply(fixation.grid,1,function(x){max(which(x))})]
+	
+save(file=paste(directory,"invasion_grid_homozy_cost",format(selfing.rate,dig=3),".Robj",sep=""),fixation.lines.simple.driver,fixation.lines.selfprop,invasion.lines.simple.driver,invasion.lines.selfprop,selfing.rate)
+}
+
+plot.selfing.invasion.grid<-function(){
+	pdf(file=paste(directory,"invasion_grid_w_selfing.pdf",sel=""))
+	for(selfing.rate in c(0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9)){
+		show(load(paste(directory,"invasion_grid_homozy_cost",format(selfing.rate,dig=3),".Robj",sep="")))
+		d.range<-seq(0.5,1,length=200)
+		s3.range<-seq(0,1,length=200)
+		par(mar=c(3,3,1,1))
+		plot(d.range,invasion.lines.simple.driver,lty=1,type="l",xlab="",ylab="",ylim=c(0,1))
+		mtext("Drive coefficient, d",side=1,line=2)
+		mtext("selection against homozygotes, s",side=2,line=2)
+		mtext(paste("selfing rate = ",selfing.rate),side=3,line=0)
+		lines(d.range,fixation.lines.simple.driver,lty=2)
+		lines(d.range,invasion.lines.selfprop,lty=1,col="red")
+		lines(d.range,fixation.lines.selfprop,lty=2,col="red")
+		legend("topright", legend=c("simple driver invasion","simple driver fixation","self promoting invasion", "self promoting fixation"), col=c("black","black","red","red"),lty=c(1,2,1,2),bg  ="white")
+		
+	}
+	dev.off()
+}
+
+
 
 #####  Supplementary figure of bistability of self promoting driver with recessive fitness cost.
 
