@@ -10,13 +10,12 @@ library("rncl")
 library("ape")
 
 
-
-write.csv(file="~/Dropbox/Ideas/Om/scripts/redone_meiotic_table.csv",cbind(meiotic.table[reordered.meiotic.table,],resolved_names.no.NAs))
-
 new.meiotic.table<-read.csv(file="~/Dropbox/Ideas/Om/scripts/redone_meiotic_table.csv",as.is=TRUE)[,-1]
 
 new.meiotic.table[grep("Lymnea",new.meiotic.table$unique_name),colnames(resolved_names.no.NAs)]<-tnrs_match_names("Lymnaeidae")
 new.meiotic.table[grep("Pectinaria",new.meiotic.table$unique_name),colnames(resolved_names.no.NAs)]<-tnrs_match_names("Pectinariidae")
+
+new.meiotic.table[grep("Patina",new.meiotic.table$unique_name),colnames(resolved_names.no.NAs)]<-tnrs_match_names("Patiria")
 
 tr <- tol_induced_subtree(ott_ids=new.meiotic.table$ott_id)
 
@@ -49,7 +48,7 @@ fertilization.site<-new.meiotic.table[order.meiotic.table.phy,]$V5
 names(fertilization.pch)<- c( "External"   ,  "Internal" ,    "Intraovarian", " ? " )
 # Abbreviations: GV germinal vesicle stage; Pron. pronucleus; MI metaphase I; Al anaphase I; MII metaphase II; AII anaphase II. 
 
-pdf(file=paste(directory,"../meiotic_phylogeny.pdf",sep=""))
+#pdf(file=paste(directory,"../meiotic_phylogeny.pdf",sep=""))
 
  par(mar=c(0,0,0,0))
  plot.phylo(tr,cex=0.75,label.offset=7) #,type="fan")
