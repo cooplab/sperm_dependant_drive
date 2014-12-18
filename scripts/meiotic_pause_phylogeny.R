@@ -26,6 +26,8 @@ old.names<- tr$tip.label
 order.meiotic.table.phy<- match(phylogeny.ott,new.meiotic.table$ott_id)
  tr$tip.label<-paste(new.meiotic.table[order.meiotic.table.phy,1],new.names)
 
+save(file="~/Dropbox/Ideas/Om/scripts/meiotic_tree.Robj",tr,order.meiotic.table.phy,new.meiotic.table)
+load(file="~/Dropbox/Ideas/Om/scripts/meiotic_tree.Robj")
 
 sperm.entry.stage<-new.meiotic.table[order.meiotic.table.phy,]$V3
 sperm.entry.stage[sperm.entry.stage ==" GV (-MI)"]<-" GV-MI"
