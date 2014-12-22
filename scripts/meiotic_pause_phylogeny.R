@@ -63,6 +63,7 @@ legend("topleft",pch=c(rep(19,length(stage.cols)),fertilization.pch) ,legend=c(n
 dev.off()
 
 
+phyla.midpoint<-sapply(unique(phyla),function(phylum){mean((1:length(phyla))[phyla==phylum])})
 
 #	reading in OCR text
 
