@@ -1,10 +1,10 @@
-
+directory<-"~/Dropbox/Ideas/Om/scripts/"
 
 library("RColorBrewer")   #color scheme used in many figures
 
 ###BASIC FUNCTIONS TO SETUP AND ITERATE DRIVE MODEL
 
-iterate.1.locus.drive<-function(s.array,num.iterations,female.transmission.probs,my.geno.freqs,initialize.allele.freqs=c(0.999,0.001,0)){
+iterate.1.locus.drive<-function(s.array,num.iterations,female.transmission.probs,my.geno.freqs,initialize.allele.freqs=c(0.999,0.001,0),selfing.rate=0){
 	geno.freqs<-rep(NA,6)
 	names(geno.freqs)<-geno.names
 
@@ -13,7 +13,7 @@ iterate.1.locus.drive<-function(s.array,num.iterations,female.transmission.probs
        #     print("running 2 allele system to stablity")
 		allele.freqs<-initialize.allele.freqs	
 		names(allele.freqs)<-c("1","2","3")	
-
+ 
 	
 		geno.freqs["11"]<-allele.freqs["1"]^2
 		geno.freqs["22"]<-allele.freqs["2"]^2
@@ -47,10 +47,16 @@ iterate.1.locus.drive<-function(s.array,num.iterations,female.transmission.probs
 	
 		geno.freqs<-geno.freqs/sum(geno.freqs)	
 
-		geno.freqs.array<-outer(rep(geno.freqs,each=2),rep(geno.freqs,each=2),"*")
+		geno.freqs.array<-outer(rep(geno.freqs,each=2),rep(geno.freqs,each=2),"*")  ##one for each allele
+		geno.freqs.array<-(1-selfing.rate) * geno.freqs.array  ##selfing  (1-s) * pi *pj
+		for(geno in names(geno.freqs)){  #selfing  (1-s) * pi *pj + delta_{ij} s pi  
+			these.cols<-colnames(geno.freqs.array)==geno; these.rows<-rownames(geno.freqs.array)==geno
+			geno.freqs.array[these.rows,these.cols]<- geno.freqs.array[these.rows,these.cols] +  selfing.rate* geno.freqs[geno] 
+		}
+	
 
 	##transmission
-		tot.trans<-geno.freqs.array*female.transmission.probs*0.5
+		tot.trans<-geno.freqs.array*female.transmission.probs*0.5   ## 1/2 prob. of transmission of each male allele
 
 		new.geno.freqs<-rep(NA,6)	
 		names(new.geno.freqs)<-geno.names
@@ -217,7 +223,7 @@ transmitted.allele<-c(1,1,1,2,1,3,2,2,2,3,3,3)
 ####FUNCTIONS TO TEST WHETHER DRIVER SPREADS
 #### test.invasion.self.prop used to construct invasion diagrams, allele intro'd at freq. x
 #### checks whether it increases in frequency
-test.invasion.self.prop<-function(d,s.het,s.hom,x=.001,steps=10,sperm.or.male="sperm"){
+test.invasion.self.prop<-function(d,s.het,s.hom,x=.001,steps=10,sperm.or.male="sperm",selfing.rate=0){
 	s.array<-rep(0,6)
 	names(s.array)<-c("11","12","13","23","22","33")
 	s.array["13"]<- s.het
@@ -233,13 +239,13 @@ test.invasion.self.prop<-function(d,s.het,s.hom,x=.001,steps=10,sperm.or.male="s
 	stopifnot(sperm.or.male=="sperm" | sperm.or.male=="male")
 	if(sperm.or.male=="sperm"){ female.transmission.probs<-make.sperm.dep.female.transmission.prob(D)}
 	if(sperm.or.male=="male"){ female.transmission.probs<-make.male.geno.dep.female.transmission.prob(D) }
-	old.geno.freqs<-iterate.1.locus.drive(s.array,num.iterations=steps,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(1-x, 0,x))
+	old.geno.freqs<-iterate.1.locus.drive(s.array,num.iterations=steps,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(1-x, 0,x),selfing.rate=selfing.rate)
 #recover()
 	invading<-old.geno.freqs[["allele.freqs"]][steps,3]>old.geno.freqs[["allele.freqs"]][1,3]
 	return(invading)
 }
 
-test.fixation.of.simple.driver<-function(d,s.het,s.hom,x=.999,steps=10){
+test.fixation.of.simple.driver<-function(d,s.het,s.hom,x=.999,steps=10,selfing.rate=0){
 	s.array<-rep(0,6)
 	names(s.array)<-c("11","12","13","23","22","33")
 	s.array["12"]<- s.het
@@ -253,7 +259,7 @@ test.fixation.of.simple.driver<-function(d,s.het,s.hom,x=.999,steps=10){
 	D["1 or 2","23"]<- 1-0.5
 	D["3","23"]<-0.5
 	female.transmission.probs<-make.sperm.dep.female.transmission.prob(D)
-	old.geno.freqs<-iterate.1.locus.drive(s.array=s.array,num.iterations=steps,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(1-x, x,0))
+	old.geno.freqs<-iterate.1.locus.drive(s.array=s.array,num.iterations=steps,female.transmission.probs=female.transmission.probs,initialize.allele.freqs =c(1-x, x,0),selfing.rate=selfing.rate)
 	fixing<-old.geno.freqs[["allele.freqs"]][steps,2]>old.geno.freqs[["allele.freqs"]][1,2]
 	return(fixing)
 }
@@ -262,7 +268,7 @@ test.fixation.of.simple.driver<-function(d,s.het,s.hom,x=.999,steps=10){
 
 ##############Phase diagram figure for Figure 1 with inset
 
-make.invasion.grid.fig.1<-function(){
+make.invasion.grid.fig.1<-function(selfing.rate=0){
 	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd allele listed against the 1st.
 	
 	d.range<-seq(0.5,1,length=200)
@@ -270,7 +276,7 @@ make.invasion.grid.fig.1<-function(){
 	
 	invasion.grid<-sapply(s3.range,function(s3){
 		sapply(d.range,function(d){
-			test.invasion.self.prop(d=d,s.het=0,s.hom=s3)
+			test.invasion.self.prop(d=d,s.het=0,s.hom=s3,selfing.rate=selfing.rate)
 		})
 	})
 	
@@ -278,20 +284,20 @@ make.invasion.grid.fig.1<-function(){
 	
 	fixation.grid<-sapply(s3.range,function(s3){
 		sapply(d.range,function(d){
-			test.fixation.of.simple.driver(d=d,s.het=0,s.hom=s3)
+			test.fixation.of.simple.driver(d=d,s.het=0,s.hom=s3,selfing.rate=selfing.rate)
 		})
 	})
 	fixation.lines.s3<-s3.range[apply(fixation.grid,1,function(x){max(which(x))})]
-save(file=paste(directory,"invasion_grid_homozy_cost.Robj",sep=""),fixation.lines.s3,fixation.grid,invasion.lines.s3.cutoff,invasion.grid)
+save(file=paste(directory,"invasion_grid_homozy_cost",format(selfing.rate,dig=3),".Robj",sep=""),fixation.lines.s3,fixation.grid,invasion.lines.s3.cutoff,invasion.grid,selfing.rate)
 }
 
 
 
 
-make.Figure.1<-function(){
-	show(load(paste(directory,"invasion_grid_homozy_cost.Robj",sep="")))
+make.Figure.1<-function(grid.file="invasion_grid_homozy_cost.Robj"){
+	show(load(paste(directory,grid.file,sep="")))
 
-my.cols<-brewer.pal(2,name="Dark2")
+my.cols<-c("red","blue")  #brewer.pal(2,name="Dark2")
 plot(c(0.5,1),c(0,1),xlab="",ylab="",type="n")
 mtext("Drive coefficient, d",side=1,line=2)
 mtext("selection against homozygotes, s",side=2,line=2)
@@ -338,7 +344,7 @@ for(i in 1:3){
 	lines(old.geno.freqs[["allele.freqs"]][,3],col=my.point.cols[i],lwd=2)
 	}
 text(x=50,y=0.95,"C.",cex=1)
-dev.copy2eps(file=paste(directory,"invasion_space_recessive_driver.eps",sep=""))
+#dev.copy2eps(file=paste(directory,"invasion_space_recessive_driver.eps",sep=""))
 }
 
 
@@ -414,6 +420,76 @@ figures.of.traj.for.figure.2<-function(){
 	dev.copy2eps(file=paste(directory,"trajectories_of_sperm_based_supressors.eps",sep=""))
 }
 
+
+
+#####Affect of inbreeding in Figure 1.
+
+make.selfing.invasion.grid.supp.fig<-function(selfing.rate=0){
+	D<-matrix(1/2,nrow=2,ncol=3,dimnames=list(c("1 or 2","3"),c("12","13","23"))) ##entries are drive coeff of the 2nd allele listed against the 1st.
+	
+	d.range<-seq(0.5,1,length=200)
+	s3.range<-seq(0,1,length=200)
+	print("invasion of self prop. driver")
+	####ivasion of self prop. driver
+	invasion.grid<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.invasion.self.prop(d=d,s.het=0,s.hom=s3,selfing.rate=selfing.rate)
+		})
+	})
+	invasion.lines.selfprop<-s3.range[apply(invasion.grid,1,function(x){max(which(x))})]
+
+	print("fixation of simpler driver")
+
+	###fixation of simpler driver
+	invasion.grid<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.fixation.of.simple.driver(d=d,s.het=0,x=0.001,s.hom=s3,selfing.rate=selfing.rate)
+		})
+	})
+	invasion.lines.simple.driver<-s3.range[apply(invasion.grid,1,function(x){max(which(x))})]
+
+	print("fixation of self prop. driver")
+
+	####fixation of self prop. driver
+	fixation.grid<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.invasion.self.prop(d=d,s.het=0,x=0.999,s.hom=s3,selfing.rate=selfing.rate)
+		})
+	})
+	fixation.lines.selfprop<-s3.range[apply(fixation.grid,1,function(x){max(which(x))})]
+
+	print("fixation of simpler driver")
+		
+	###fixation of simpler driver
+	fixation.grid<-sapply(s3.range,function(s3){
+		sapply(d.range,function(d){
+			test.fixation.of.simple.driver(d=d,s.het=0,s.hom=s3,selfing.rate=selfing.rate)
+		})
+	})
+	fixation.lines.simple.driver<-s3.range[apply(fixation.grid,1,function(x){max(which(x))})]
+	
+save(file=paste(directory,"invasion_grid_homozy_cost",format(selfing.rate,dig=3),".Robj",sep=""),fixation.lines.simple.driver,fixation.lines.selfprop,invasion.lines.simple.driver,invasion.lines.selfprop,selfing.rate)
+}
+
+plot.selfing.invasion.grid<-function(){
+	pdf(file=paste(directory,"invasion_grid_w_selfing.pdf",sel=""))
+	for(selfing.rate in c(0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9)){
+		show(load(paste(directory,"invasion_grid_homozy_cost",format(selfing.rate,dig=3),".Robj",sep="")))
+		d.range<-seq(0.5,1,length=200)
+		s3.range<-seq(0,1,length=200)
+		par(mar=c(3,3,1,1))
+		plot(d.range,invasion.lines.simple.driver,lty=1,type="l",xlab="",ylab="",ylim=c(0,1))
+		mtext("Drive coefficient, d",side=1,line=2)
+		mtext("selection against homozygotes, s",side=2,line=2)
+		mtext(paste("selfing rate = ",selfing.rate),side=3,line=0)
+		lines(d.range,fixation.lines.simple.driver,lty=2)
+		lines(d.range,invasion.lines.selfprop,lty=1,col="red")
+		lines(d.range,fixation.lines.selfprop,lty=2,col="red")
+		legend("topright", legend=c("simple driver invasion","simple driver fixation","self promoting invasion", "self promoting fixation"), col=c("black","black","red","red"),lty=c(1,2,1,2),bg  ="white")
+		
+	}
+	dev.off()
+}
 
 
 
