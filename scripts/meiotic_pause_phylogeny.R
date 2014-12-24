@@ -16,6 +16,8 @@ new.meiotic.table[grep("Lymnea",new.meiotic.table$unique_name),colnames(resolved
 new.meiotic.table[grep("Pectinaria",new.meiotic.table$unique_name),colnames(resolved_names.no.NAs)]<-tnrs_match_names("Pectinariidae")
 
 new.meiotic.table[grep("Patina",new.meiotic.table$unique_name),colnames(resolved_names.no.NAs)]<-tnrs_match_names("Patiria")
+new.meiotic.table[grep("Helix",new.meiotic.table$unique_name),colnames(resolved_names.no.NAs)]<-tnrs_match_names("Helicidae")
+new.meiotic.table[grep("Pedicellina",new.meiotic.table$unique_name),colnames(resolved_names.no.NAs)]<-tnrs_match_names("Entoprocta")
 
 tr <- tol_induced_subtree(ott_ids=new.meiotic.table$ott_id)
 
@@ -25,6 +27,9 @@ old.names<- tr$tip.label
  
 order.meiotic.table.phy<- match(phylogeny.ott,new.meiotic.table$ott_id)
  tr$tip.label<-paste(new.meiotic.table[order.meiotic.table.phy,1],new.names)
+
+ tr$tip.label[ tr$tip.label=="Entoprocta Entoprocta"]<-"Entoprocta Pedicellina"
+
 
 save(file="~/Dropbox/Ideas/Om/scripts/meiotic_tree.Robj",tr,order.meiotic.table.phy,new.meiotic.table)
 load(file="~/Dropbox/Ideas/Om/scripts/meiotic_tree.Robj")
@@ -40,8 +45,10 @@ unfertilized.stage<-new.meiotic.table[order.meiotic.table.phy,]$V4
 unfertilized.stage[unfertilized.stage =="Pron. "]<-" Pron."
 unfertilized.stage[unfertilized.stage ==" ?"]<-"?"
 
-stage.cols<-c(rainbow(length(unique( sperm.entry.stage))),"grey")
-names(stage.cols)<- c(unique(sperm.entry.stage),"?")
+stage.cols<-   stage.cols<-    c(brewer.pal(7,name="Accent"),"light grey")    #c(rainbow(length(unique( sperm.entry.stage))),"grey")
+
+											##ordered
+names(stage.cols)<- c(c(" GV"," GV-MI"," MI"," AI"," MII"," AII", " Pron."),"?")
 fertilization.site<-new.meiotic.table[order.meiotic.table.phy,]$V5
   fertilization.site<-new.meiotic.table[order.meiotic.table.phy,]$V5
   fertilization.site[grep("Internal",fertilization.site)]<-"Internal"
@@ -50,20 +57,24 @@ fertilization.site<-new.meiotic.table[order.meiotic.table.phy,]$V5
 names(fertilization.pch)<- c( "External"   ,  "Internal" ,    "Intraovarian", " ? " )
 # Abbreviations: GV germinal vesicle stage; Pron. pronucleus; MI metaphase I; Al anaphase I; MII metaphase II; AII anaphase II. 
 
-#pdf(file=paste(directory,"../meiotic_phylogeny.pdf",sep=""))
+pdf(file=paste(directory,"../meiotic_phylogeny.pdf",sep=""),width=7,height=10)
 
  par(mar=c(0,0,0,0))
- plot.phylo(tr,cex=0.75,label.offset=7) #,type="fan")
+plot.phylo(tr,cex=0.75,label.offset=7,y.lim=c(-9,75)) 
 
-legend("topleft",pch=c(rep(19,length(stage.cols)),fertilization.pch) ,legend=c(names(stage.cols),names(fertilization.pch)),col=c(stage.cols,rep("black",length(fertilization.pch))))
+my.meiotic.stages<-c( "germinal vesicle stage (GV)", "GV-MI" , "metaphase I (MI)","anaphase I", "metaphase II","anaphase II","pronucleus","?" )
+legend("topleft",pch=c(rep(21,length(stage.cols)),fertilization.pch) ,legend=c(my.meiotic.stages,names(fertilization.pch)[1:3]),pt.bg=c(stage.cols,rep("black",length(fertilization.pch))))
  points(rep(78, length(tr$tip.label)), 1:length(tr$tip.label), pch=21, bg=stage.cols[sperm.entry.stage], cex=1) 
  points(rep(80, length(tr$tip.label)), 1:length(tr$tip.label), pch=22, bg=stage.cols[unfertilized.stage], cex=1) 
  points(rep(82, length(tr$tip.label)), 1:length(tr$tip.label), pch= fertilization.pch, col="black",bg="black", cex=0.7) 
+text(72,y=-3,"Sperm penetration",srt=45,cex=0.7)
+text(74,y=-3,"Arrest unfertilized ",srt=45,cex=0.7)
+text(76,y=-3,"Natural fertilization",srt=45,cex=0.7)
 
 dev.off()
 
 
-phyla.midpoint<-sapply(unique(phyla),function(phylum){mean((1:length(phyla))[phyla==phylum])})
+#phyla.midpoint<-sapply(unique(phyla),function(phylum){mean((1:length(phyla))[phyla==phylum])})
 
 #	reading in OCR text
 
